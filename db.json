@@ -1,33 +1,33 @@
 {
-  "foods": [
+  "restaurants": [
     {
       "id": 1,
-      "name": "Ciambella",
-      "restourant": "Roma Food",
+      "name": "Roma Food",
+      "food": "Ciambella",
       "image": "https://picsum.photos/536/354"
     },
     {
       "id": 2,
-      "name": "Spaghetti",
-      "restourant": "Milano Food",
+      "name": "Milano Food",
+      "food": "Spaghetti",
       "image": "https://picsum.photos/536/354"
     },
     {
       "id": 3,
-      "name": "Polpette",
-      "restourant": "Puglia Food",
+      "name": "Barletta Food",
+      "food": "Polpette",
       "image": "https://picsum.photos/536/354"
     },
     {
       "id": 4,
-      "name": "Coarote grigliate",
-      "restourant": "Salerno Food",
+      "name": "Torino Food",
+      "food": "Focaccia",
       "image": "https://picsum.photos/536/354"
     },
     {
       "id": 5,
-      "name": "Alessandro al forno",
-      "restourant": "Cannibale food",
+      "name": "Salerno Food",
+      "food": "Pizza",
       "image": "https://picsum.photos/536/354"
     }
   ],
