@@ -53,15 +53,29 @@ export default {
 
                     <!-- menu -->
                     <li class="nav-item">
-                        <a class="nav-link nav-but" href="#">
-                            <span><i class="fa-solid fa-bars"></i>Menu</span>
+                        <button class="nav-but" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop"
+                            aria-controls="offcanvasTop"><span><i class="fa-solid fa-bars"></i></span> Menu</button>
 
-                        </a>
+                        <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop"
+                            aria-labelledby="offcanvasTopLabel">
+                            <div class="offcanvas-header">
+                                <h5 class="offcanvas-title" id="offcanvasTopLabel">Offcanvas top</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="offcanvas-body">
+                                ...
+                            </div>
+                        </div>
                     </li>
 
                 </ul>
             </div>
+
+
+
         </div>
+
     </nav>
 </template>
 
