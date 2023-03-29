@@ -1,12 +1,15 @@
 <script>
+import AppHeader from "./components/AppHeader.vue";
 import axios from "axios";
 export default {
   name: "App",
-  // components: "",
+  components: { AppHeader }
 }
 </script>
 
 
-<template></template>
+<template>
+  <app-header></app-header>
+</template>
 
 <style></style>
