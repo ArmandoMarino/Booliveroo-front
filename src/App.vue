@@ -1,5 +1,4 @@
 <script>
-import axios from "axios";
 import AppFooter from "./components/AppFooter.vue";
 export default {
   name: "App",
@@ -9,6 +8,7 @@ export default {
 
 
 <template>
+  <RouterView />
   <app-footer></app-footer>
 </template>
 
