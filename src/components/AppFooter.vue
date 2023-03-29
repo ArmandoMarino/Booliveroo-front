@@ -15,7 +15,6 @@ export default {
                         <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Discover
                                 Deliveroo</a>
                         </li>
-                        <li class="list-group-item"><a class="text-decoration-none" href="#">Investor</a></li>
                         <li class="list-group-item"><a class="text-decoration-none" href="#">About us</a></li>
                         <li class="list-group-item"><a class="text-decoration-none" href="#">Takeaway</a></li>
                         <li class="list-group-item"><a class="text-decoration-none" href="#">More</a></li>
