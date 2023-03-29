@@ -1,0 +1,44 @@
+{
+  "foods": [
+    {
+      "id": 1,
+      "name": "Ciambella",
+      "restourant": "Roma Food",
+      "image": "https://picsum.photos/536/354"
+    },
+    {
+      "id": 2,
+      "name": "Spaghetti",
+      "restourant": "Milano Food",
+      "image": "https://picsum.photos/536/354"
+    },
+    {
+      "id": 3,
+      "name": "Polpette",
+      "restourant": "Puglia Food",
+      "image": "https://picsum.photos/536/354"
+    },
+    {
+      "id": 4,
+      "name": "Coarote grigliate",
+      "restourant": "Salerno Food",
+      "image": "https://picsum.photos/536/354"
+    },
+    {
+      "id": 5,
+      "name": "Alessandro al forno",
+      "restourant": "Cannibale food",
+      "image": "https://picsum.photos/536/354"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

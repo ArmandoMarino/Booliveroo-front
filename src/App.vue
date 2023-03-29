@@ -1,14 +1,12 @@
 <script>
-
+import axios from "axios";
 export default {
   name: "App",
-  components: "",
+  // components: "",
 }
 </script>
 
 
-<template>
-  <h1>Test</h1>
-</template>
+<template></template>
 
 <style></style>
