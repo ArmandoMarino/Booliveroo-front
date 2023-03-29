@@ -1,12 +1,15 @@
 <script>
 import axios from "axios";
+import AppFooter from "./components/AppFooter.vue";
 export default {
   name: "App",
-  // components: "",
+  components: { AppFooter }
 }
 </script>
 
 
-<template></template>
+<template>
+  <app-footer></app-footer>
+</template>
 
 <style></style>
