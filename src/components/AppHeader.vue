@@ -48,16 +48,17 @@ export default {
                         </li>
 
                         <!-- CART -->
-                        <li class="d-none d-sm-block col-sm-3 offset-sm-3 col-md-2 text-end">
+                        <li class="d-none d-sm-block col-sm-3 col-md-2 text-end">
                             <button class="btn nav-but" aria-current="page" href="#">
                                 <span><i class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
                             </button>
                         </li>
 
                         <!-- SIGN UP -->
-                        <li class=" col-7  col-sm-5 col-md-4 text-end">
+                        <li class=" col-7  col-sm-5 col-md-3 text-end">
                             <button class="btn nav-but" href="#">
-                                <span><i class="primary-icon fa-solid fa-house"></i>Sign up or login</span>
+                                <span style="font-size:0.9rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
+                                    login</span>
                             </button>
                         </li>
 
