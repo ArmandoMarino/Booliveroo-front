@@ -1,13 +1,15 @@
 <script>
-import AppFooter from "./components/AppFooter.vue";
+import AppHeader from "./components/AppHeader.vue";
+import axios from "axios";
 export default {
   name: "App",
-  components: { AppFooter }
+  components: { AppHeader }
 }
 </script>
 
 
 <template>
+  <app-header></app-header>
   <RouterView />
   <app-footer></app-footer>
 </template>
