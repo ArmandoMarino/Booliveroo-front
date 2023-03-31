@@ -24,7 +24,7 @@ export default {
 
 <template>
     <!-- <app-main></app-main> -->
-    <restaurant-list></restaurant-list>
+    <restaurant-list :restaurants="restaurants"></restaurant-list>
 </template>
 
 <style></style>
