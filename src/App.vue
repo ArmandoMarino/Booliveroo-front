@@ -5,7 +5,7 @@ import AppFooter from "./components/AppFooter.vue";
 import axios from "axios";
 export default {
   name: "App",
-  components: { AppHeader, HomePage, AppFooter, AppMain }
+  components: { AppHeader, AppFooter }
 }
 </script>
 
