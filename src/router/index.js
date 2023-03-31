@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Importo le pagine che voglio usare
 import HomePage from "../pages/HomePage.vue";
+import RestaurantPage from "../pages/restaurants/RestaurantPage.vue"
 import NotFoundPage from "../pages/NotFoundPage.vue";
 
 // Creo il Router e definisco le rotte
@@ -13,6 +14,8 @@ const router = createRouter({
   // Rotte che useremo
   routes: [
     { path: "/", name: "home", component: HomePage },
+
+    { path: "/restaurants", name: "restaurants", component: RestaurantPage },
 
     // NotFoundPage (lasciatela come ultima posizione )
     { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundPage },

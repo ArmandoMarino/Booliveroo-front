@@ -1,30 +1,13 @@
 <script>
-import axios from "axios";
 import AppMain from "../components/AppMain.vue"
-import RestaurantList from "../components/restaurants/RestaurantList.vue";
 export default {
-    data() {
-        return {
-            restaurants: []
-        }
-    },
     name: 'HomePage',
-    components: { AppMain, RestaurantList },
-    methods: {
-        fetchRestaurants() {
-            axios.get('http://localhost:3000/restaurants')
-                .then(res => { console.log(res); this.restaurants = res.data; });
-        }
-    },
-    created() {
-        this.fetchRestaurants();
-    }
+    components: { AppMain },
 }
 </script>
 
 <template>
-    <!-- <app-main></app-main> -->
-    <restaurant-list :restaurants="restaurants"></restaurant-list>
+    <app-main></app-main>
 </template>
 
 <style></style>

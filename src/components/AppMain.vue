@@ -10,14 +10,22 @@ export default {
         <div class="container">
             <div class="row">
                 <!-- MAIN-TEXT -->
-                <div class="col-7 text-lg-center mx-lg-auto">
-                    <h1 class="main-text my-5">Restaurant food,takeaway andgroceries.Delivered.</h1>
-                    <p class="postal-code-text">Enter a postcode to see what we deliver</p>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control search-input" aria-label="Sizing example input"
-                            aria-describedby="inputGroup-sizing-default">
-                        <span class="input-group-text search-button" id="inputGroup-sizing-default">Search</span>
-                    </div>
+            <div class="col-7 text-lg-center mx-lg-auto">
+                <h1 class="main-text my-5">Restaurant food,takeaway andgroceries.Delivered.</h1>
+                <p class="postal-code-text">Enter a postcode to see what we deliver</p>
+
+                    <!-- TODO INPUT PASSERA' I DATI NELLA RestaurantPage -->
+                    <!-- <div class="input-group mb-3">
+                                                    <input type="text" class="form-control search-input" aria-label="Sizing example input"
+                                                        aria-describedby="inputGroup-sizing-default">
+                                                    <span class="input-group-text search-button" id="inputGroup-sizing-default">Search</span>
+                                                </div> -->
+
+                    <router-link class="btn btn-primary"
+                        :to="{ name: 'restaurants', params: { component: RestaurantPage } }">
+                        Search
+                    </router-link>
+
                     <p class="login-text">Enter a postcode to see what we deliver</p>
 
                 </div>
