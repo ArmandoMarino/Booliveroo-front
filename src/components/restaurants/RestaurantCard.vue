@@ -28,7 +28,6 @@ export default {
 
 <template>
     <!-- CARD -->
-    <!-- TODO gestire i dati -->
     <div class="col-lg-3 col-md-6 col-sm-10 my-card text-center bounce my-4">
         <div class="card">
             <img :src="restaurant.image" class="card-img-top" :alt="restaurant.name">
@@ -39,6 +38,8 @@ export default {
             </div>
         </div>
     </div>
+
+    <!--TODO    CARD CICLO SU restaurant.food -->
 </template>
 
 <style scoped lang="scss">
