@@ -6,6 +6,7 @@ import HomePage from "../pages/HomePage.vue";
 import RestaurantPage from "../pages/restaurants/RestaurantPage.vue"
 import RestaurantDetailPage from "../pages/restaurants/RestaurantDetailPage.vue"
 import NotFoundPage from "../pages/NotFoundPage.vue";
+import ContactPage from "../pages/ContactPage.vue";
 
 // Creo il Router e definisco le rotte
 const router = createRouter({
@@ -15,6 +16,9 @@ const router = createRouter({
   // Rotte che useremo
   routes: [
     { path: "/", name: "home", component: HomePage },
+    
+    // Rotta per la pagina del form
+    { path: '/contact', name: 'contact_page', component: ContactPage},
 
     { path: "/restaurants", name: "restaurants", component: RestaurantPage },
 
