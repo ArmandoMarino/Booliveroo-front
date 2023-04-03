@@ -9,16 +9,17 @@ export default {
         setVote() {
             let baseVote = this.restaurant.vote;
             const finalVote = Math.floor(baseVote);
-
             if (finalVote >= 0 && finalVote <= 3) {
-                return finalVote;
+                return " ";
             } else {
                 if (finalVote >= 3 && finalVote <= 4) {
-                    return finalVote + " " + "Ottimo";
+                    return " " + "Ottimo";
+                } else if (finalVote == 5) {
+                    return " " + "Eccellente";
                 } else {
-                    return finalVote + " " + "Eccellente";
+                    return "No Vote yet";
                 }
-            }
+            };
         }
     }
 }
@@ -27,37 +28,119 @@ export default {
 
 
 <template>
-    <div class="col-lg-3 col-md-6 col-sm-10 my-card text-center bounce my-4">
+    <div class="text-center my-4" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
+    ">
         <!--* ROUETR TO SHOW PICK ALL CARD-->
-        <router-link :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
+        <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
-            <div class="card">
-                <img :src="restaurant.image" class="card-img-top" :alt="restaurant.name">
-                <div class="card-body p-2 text-start">
-                    <p><strong>{{ restaurant.food }}</strong></p>
-                    <p>{{ setVote }}</p>
+            <div :class="isDetail ? 'd-flex' : 'card'">
+                <!-- IMAGE -->
+                <img :src="restaurant.image" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                " :alt="restaurant.name">
+
+                <!-- TEXT -->
+                <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
+                    <p :class="isDetail ? 'h1' : 'p m-0'"><strong>{{ restaurant.name }}</strong></p>
+                    <ul :class="isDetail ? 'd-flex' : 'd-flex flex-column mb-0 p-0'">
+                        <!-- VOTE -->
+                        <li>
+                            <span v-for="vote in Math.floor(restaurant.vote)">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                            {{ setVote }}
+                        </li>
+                        <!-- DISTANCE -->
+                        <li>Distanza 0.31 km</li>
+                        <!-- HOUR -->
+                        <li v-if="isDetail">Chiude alle 23.30</li>
+                    </ul>
+
+                    <!--TODO INFO JavaScript -->
+                    <div class="info" v-if="isDetail">
+                        <p><i class="me-2 fa-solid fa-circle-info"></i>Informazioni</p>
+                        <p>Allergeni e tanto altro</p>
+                    </div>
                     <!-- <p>{{ restaurant.distance }}</p> -->
                 </div>
+
+                <!-- TODO SLIDER CON FOCUS CHE ARRIVA AI PIATTI -->
             </div>
 
         </router-link>
     </div>
 
-
-
-
-    <!--TODO    CARD CICLO SU restaurant.food -->
+    <!--* FOOD-CARD IN DETAIL -->
+    <div v-if="isDetail" class="container">
+        <div class="row g-2">
+            <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
+                :key="restaurant.id">
+                <div class="p-3 card-food">
+                    <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
+                    <p><strong>{{ food.name }}</strong></p>
+                    <p>{{ food.piece }} pezzi</p>
+                    <p>{{ food.price }} €</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <style scoped lang="scss">
-.card-body {
-    p {
-        margin: 0;
+@use '../../assets/scss/partials/variables' as*;
+
+.pointer-none {
+    cursor: default;
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        margin-right: 2rem;
+
     }
+
+    li::marker {
+        color: gray;
+    }
+}
+
+// VOTE
+.fa-star::before {
+    color: $secondary;
+}
+
+.card-body {
+
+    .index-list {
+        list-style-type: none;
+    }
+
 }
 
 a {
     text-decoration: none;
     color: black;
+}
+
+.my-card-detail {
+    height: 300px;
+}
+
+
+
+// FOOD
+.card-food {
+    min-height: 100px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    p {
+        margin: 0;
+    }
 }
 </style>

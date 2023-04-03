@@ -35,7 +35,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.game-detail {
+.restaurant-detail {
     margin-top: 100px;
 }
 </style>
