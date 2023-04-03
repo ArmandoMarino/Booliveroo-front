@@ -6,7 +6,7 @@ import HomePage from "../pages/HomePage.vue";
 import RestaurantPage from "../pages/restaurants/RestaurantPage.vue"
 import NotFoundPage from "../pages/NotFoundPage.vue";
 import ContactPage from "../pages/ContactPage.vue";
-import AboutUsPage from "../pages/AboutUsPage";
+import AboutUsPage from "../pages/AboutUsPage.vue";
 
 // Creo il Router e definisco le rotte
 const router = createRouter({
