@@ -60,6 +60,10 @@ export default {
             <button type="submit" class="btn btn-primary">INVIA</button>
         </div>
     </form>
+    <div class="d-flex justify-content-end">
+
+        <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary mt-2 ">TORNA ALLA HOME</router-link>
+    </div>
 </template>
 
 <style scoped lang="scss">
