@@ -5,7 +5,6 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../pages/HomePage.vue";
 import RestaurantPage from "../pages/restaurants/RestaurantPage.vue"
 import NotFoundPage from "../pages/NotFoundPage.vue";
-import AboutUs from "../pages/AboutUs.vue";
 
 // Creo il Router e definisco le rotte
 const router = createRouter({
@@ -17,8 +16,6 @@ const router = createRouter({
     { path: "/", name: "home", component: HomePage },
 
     { path: "/restaurants", name: "restaurants", component: RestaurantPage },
-
-    { path: "/about_us", name: 'about_us', component: AboutUs},
 
     // NotFoundPage (lasciatela come ultima posizione )
     { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundPage },
