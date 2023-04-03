@@ -130,3 +130,10 @@ export default {
 .navbar-aboutus {
     flex-basis: 34%;
 }
+
+.section {
+    flex-basis: 64%;
+    background-color: whitesmoke;
+    padding: 2rem;
+}
+</style>
