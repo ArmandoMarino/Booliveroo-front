@@ -49,7 +49,8 @@ export default {
                     <div class="small-col mt-4">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Help</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Contact</a></li>
+                            <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
+                                    class="text-decoration-none">Contact</router-link></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">FAQs</a></li>
                         </ul>
                     </div>
