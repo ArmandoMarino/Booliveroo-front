@@ -74,11 +74,45 @@ export default {
         <div class="row g-2">
             <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
                 :key="restaurant.id">
-                <div class="p-3 card-food">
+                <div class="p-3 card-food d-flex justify-content-between">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
-                    <p><strong>{{ food.name }}</strong></p>
-                    <p>{{ food.piece }} pezzi</p>
-                    <p>{{ food.price }} €</p>
+                    <div class="text">
+                        <p><strong>{{ food.name }}</strong></p>
+                        <p>{{ food.piece }} pezzi</p>
+                        <p>{{ food.price }} €</p>
+                    </div>
+
+
+                    <div class="modal-food">
+                        <!--* MODAL BUTTON -->
+                        <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+
+                        <!--* MODAL -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>{{ food.name }}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-bool">Aggiungi al carrello</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -141,6 +175,12 @@ a {
 
     p {
         margin: 0;
+    }
+
+    .modal-food {
+        .btn-bool {
+            background-color: $primary;
+        }
     }
 }
 </style>
