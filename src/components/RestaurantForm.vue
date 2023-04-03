@@ -29,6 +29,10 @@ export default {
 </script>
 
 <template>
+    <div class="my-5">
+
+        <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary mt-2 ">TORNA ALLA HOME</router-link>
+    </div>
     <form @submit.prevent="sendForm">
         <div class="mb-3">
             <label for="email" class="form-label">Inidirizzo Email<sup class="text-danger">*</sup> </label>
@@ -50,20 +54,16 @@ export default {
         </div>
         <!-- check -->
 
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="subscription" id="subscription" value="1"
-                v-model.trim="form.subscription">
-            <label class="form-check-label" for="subscription">Iscriviti alla Newsletter!</label>
-        </div>
+        <!-- <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" name="subscription" id="subscription" value="1"
+                                    v-model.trim="form.subscription">
+                                <label class="form-check-label" for="subscription">Iscriviti alla Newsletter!</label>
+                            </div> -->
 
         <div class="d-flex justify-content-end my-3">
             <button type="submit" class="btn btn-primary">INVIA</button>
         </div>
     </form>
-    <div class="d-flex justify-content-end">
-
-        <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary mt-2 ">TORNA ALLA HOME</router-link>
-    </div>
 </template>
 
 <style scoped lang="scss">
