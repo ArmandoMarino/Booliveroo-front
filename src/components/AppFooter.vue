@@ -19,11 +19,14 @@ export default {
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Discover
                                     Deliveroo</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">About us</a></li>
+                            <!-- <li class="list-group-item"><a class="text-decoration-none" href="#">About us</a></li> -->
+                            <li class="list-group-item"><router-link :to="{ name: 'about_us' }" class="text-decoration-none"
+                                    href="#">About us</router-link></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Takeaway</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">More</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Git Cards</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Restaurant signup</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none" href="#">Restaurant signup</a>
+                            </li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Careers</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Become a rider</a></li>
                         </ul>
@@ -33,8 +36,10 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Legal</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Terms and conditions</a>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Legal</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none" href="#">Terms and
+                                    conditions</a>
                             </li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Privacy</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Cookies</a></li>
@@ -48,8 +53,11 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Help</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Contact</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" href="#">Help</a>
+                            </li>
+                            <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
+                                    class="text-decoration-none">Contact</router-link></li>
+
                             <li class="list-group-item"><a class="text-decoration-none" href="#">FAQs</a></li>
                         </ul>
                     </div>
@@ -99,6 +107,7 @@ export default {
 
 #footer-food {
     background-color: #252A33;
+    min-height: 400px;
 
     a,
     h2 {
