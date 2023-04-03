@@ -55,10 +55,10 @@ export default {
         <!-- check -->
 
         <!-- <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="subscription" id="subscription" value="1"
-                        v-model.trim="form.subscription">
-                    <label class="form-check-label" for="subscription">Iscriviti alla Newsletter!</label>
-                </div> -->
+                        <input class="form-check-input" type="checkbox" name="subscription" id="subscription" value="1"
+                            v-model.trim="form.subscription">
+                        <label class="form-check-label" for="subscription">Iscriviti alla Newsletter!</label>
+                    </div> -->
 
         <div class="d-flex justify-content-end my-3">
             <button type="submit" class="btn btn-primary">INVIA</button>
