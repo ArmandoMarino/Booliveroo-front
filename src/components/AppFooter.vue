@@ -12,7 +12,7 @@ export default {
 
         <div class="container py-4">
 
-            <div class="row list-footer py-4">
+        <div class="row list-footer py-4">
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
@@ -20,8 +20,8 @@ export default {
                                     Deliveroo</a>
                             </li>
                             <!-- <li class="list-group-item"><a class="text-decoration-none" href="#">About us</a></li> -->
-                            <li class="list-group-item"><router-link :to="{ name: 'about_us' }" class="text-decoration-none"
-                                    href="#">About us</router-link></li>
+                            <!-- <li class="list-group-item"><router-link :to="{ name: 'about_us' }" class="text-decoration-none"
+                                        href="#">About us</router-link></li> -->
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Takeaway</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">More</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Git Cards</a></li>
