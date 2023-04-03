@@ -55,10 +55,52 @@ export default {
                         <li v-if="isDetail">Chiude alle 23.30</li>
                     </ul>
 
-                    <!--TODO INFO JavaScript -->
-                    <div class="info" v-if="isDetail">
-                        <p><i class="me-2 fa-solid fa-circle-info"></i>Informazioni</p>
-                        <p>Allergeni e tanto altro</p>
+                    <!--! CHIAVE TELEFONO DB e POSIZIONE           INFO ALLERGENI MODAL -->
+                    <div class="info pe-auto" v-if="isDetail">
+                        <button type="button" class="btn d-flex align-items-center" data-bs-toggle="modal"
+                            data-bs-target="#modal-info">
+                            <i class="fa-solid fa-circle-info"></i>
+                            <div class="mx-3">
+                                <p>Informazioni</p>
+                                <p>Allergeni e tanto altro </p>
+                            </div>
+                            <i style="color: #00CCBC;" class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                        <div class="modal fade" id="modal-info" tabindex="-1" aria-labelledby="modal-info-Label"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="modal-info-Label">Informazioni su {{
+                                            restaurant.name }}</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h1 class="modal-title fs-5">Allergeni</h1>
+                                        <br>
+                                        <p class="my-3">Hai delle domande? Chiedi a <strong>{{ restaurant.name }}</strong>
+                                            informazioni
+                                            più dettagliate
+                                            sui metodi di cottura e sugli ingredienti utilizzati.
+                                        </p>
+                                        <p>
+                                            <a href="tel:+390000000000">
+                                                <i style="color: #00CCBC;" class="fa-solid fa-phone me-2"></i>
+                                                Chiama {{ restaurant.name }} al numero
+                                                +390000000000
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <!-- <p>{{ restaurant.distance }}</p> -->
                 </div>
@@ -85,17 +127,17 @@ export default {
 
                     <div class="modal-food">
                         <!--* MODAL BUTTON -->
-                        <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#modal-cart">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </button>
 
                         <!--* MODAL -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="modal-cart" tabindex="-1" aria-labelledby="modal-cart-Label"
                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                        <h1 class="modal-title fs-5" id="modal-cart-Label">Modal title</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -124,6 +166,10 @@ export default {
 
 .pointer-none {
     cursor: default;
+}
+
+.btn-bool {
+    background-color: $primary;
 }
 
 p {
@@ -177,10 +223,5 @@ a {
         margin: 0;
     }
 
-    .modal-food {
-        .btn-bool {
-            background-color: $primary;
-        }
-    }
 }
 </style>
