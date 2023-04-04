@@ -1,8 +1,7 @@
 <script>
-//*******RIMETTERE LE CHIAMATE API COME DA CONVENZIONE /api
 import axios from "axios";
 import RestaurantCard from "../../components/restaurants/RestaurantCard.vue";
-const apiBaseUrl = "http://localhost:3000/";
+const apiBaseUrl = "http://localhost:8000/api/";
 export default {
     name: "RestaurantDetailPage",
     components: { RestaurantCard },

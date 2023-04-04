@@ -4,7 +4,7 @@ export default {
     name: 'RestaurantList',
     components: { RestaurantCard },
     props: {
-        restaurants: Array,
+        restaurants: Object,
         // category : Object,
     },
 
