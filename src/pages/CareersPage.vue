@@ -3,6 +3,7 @@
 export default {
     name: "Careers",
 
+
 }
 </script>
 
@@ -73,7 +74,7 @@ export default {
         <div class="container">
             <div class="row">
                 <h1 class="text-center fw-bold my-5">Our values</h1>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="customer">
@@ -85,7 +86,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="trust">
@@ -97,7 +98,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="think big">
@@ -109,7 +110,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="difference">
@@ -121,7 +122,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="solutions">
@@ -133,7 +134,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="team">
@@ -145,7 +146,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="obstacles">
@@ -157,7 +158,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="results">
@@ -169,7 +170,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="simplify">
@@ -181,7 +182,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="embrace">
@@ -193,7 +194,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="frugal">
@@ -205,7 +206,7 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
                         <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
                             class="card-img-top" alt="no my job">
@@ -221,6 +222,35 @@ export default {
 
 
             </div>
+        </div>
+    </section>
+    <section id="roles">
+        <div class="container">
+            <h1 class="text-center fw-bold my-5">Available roles</h1>
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">All departments</a>
+                    <a class="navbar-brand" href="#">Consumer</a>
+                    <a class="navbar-brand" href="#">Customer Care</a>
+                    <a class="navbar-brand" href="#">Dark Stores</a>
+                    <a class="navbar-brand" href="#">Delivery Operations</a>
+                </div>
+            </nav>
+            <section id="all-roles">
+                <h1>all roles</h1>
+            </section>
+            <section id="consumer-role">
+                <h1>Consumer</h1>
+            </section>
+            <section id="customer-role">
+                <h1>Customer</h1>
+            </section>
+            <section id="darkstore-role">
+                <h1>Dark stores</h1>
+            </section>
+            <section id="delivery-role">
+                <h1>Delivery operations</h1>
+            </section>
         </div>
     </section>
 </template>
@@ -266,5 +296,12 @@ export default {
 
 .h-card {
     min-height: 380px;
+}
+
+#consumer-role,
+#customer-role,
+#darkstore-role,
+#delivery-role {
+    display: none;
 }
 </style>
