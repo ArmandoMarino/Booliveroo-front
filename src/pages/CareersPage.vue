@@ -67,10 +67,158 @@ export default {
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section id="values">
+        <div class="container">
             <div class="row">
-                <div class="col-12 col-sm-3 col-lg-4 mt-3">
-
+                <h1 class="text-center fw-bold my-5">Our values</h1>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="customer">
+                        <div class="card-body">
+                            <h3 class="card-title">We are customer obsessed</h3>
+                            <p class="card-text">Our customers are at the heart of everything we do – no two are alike. We
+                                walk in their shoes to drive decisions.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="trust">
+                        <div class="card-body">
+                            <h3 class="card-title">We build trust</h3>
+                            <p class="card-text">We actively listen, we’re straightforward, and we treat our teams and
+                                colleagues with respect.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="think big">
+                        <div class="card-body">
+                            <h3 class="card-title">We think big</h3>
+                            <p class="card-text">We imagine what’s seemingly impossible, not what’s been done before. We’re
+                                changing the way people eat and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="difference">
+                        <div class="card-body">
+                            <h3 class="card-title">We celebrate difference</h3>
+                            <p class="card-text">Diverse perspectives drive better outcomes for both Deliveroo and our
+                                customers. We value all contributions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="solutions">
+                        <div class="card-body">
+                            <h3 class="card-title">We get to the bottom of things</h3>
+                            <p class="card-text">We get to the root cause of an issue as quickly as we can using intuition
+                                and data to develop our solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="team">
+                        <div class="card-body">
+                            <h3 class="card-title">We work as a team</h3>
+                            <p class="card-text">We demonstrate respect and practice empathy to drive our people and our
+                                teams closer together.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="obstacles">
+                        <div class="card-body">
+                            <h3 class="card-title">We're relentless</h3>
+                            <p class="card-text">There will be lots of unfamiliar obstacles. We either knock them down or
+                                figure out a way to get around them.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="results">
+                        <div class="card-body">
+                            <h3 class="card-title">We deliver results</h3>
+                            <p class="card-text">We take ownership for the tasks at hand and deliver high quality. We’re
+                                accountable and follow through.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="simplify">
+                        <div class="card-body">
+                            <h3 class="card-title">We simplify</h3>
+                            <p class="card-text">We simplify our explanations, processes, and approach. We frame issues for
+                                those who don’t have context.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="embrace">
+                        <div class="card-body">
+                            <h3 class="card-title">We embrace change</h3>
+                            <p class="card-text">We plan for the long term and short term, and adapt where needed. The road
+                                is full of twists and turns.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="frugal">
+                        <div class="card-body">
+                            <h3 class="card-title">We're frugal</h3>
+                            <p class="card-text">We spend wisely. We prioritise carefully and spend the company’s resources,
+                                time and money efficiently.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-3 mt-3">
+                    <div class="card h-card">
+                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                            class="card-img-top" alt="no my job">
+                        <div class="card-body">
+                            <h3 class="card-title">We never say "it's not my job"</h3>
+                            <p class="card-text">We’re shopkeepers. We have ownership over our own things, but we do what we
+                                can to run the best shop in town.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
 
             </div>
         </div>
@@ -114,5 +262,9 @@ export default {
 
 .text-card {
     padding-top: 4rem;
+}
+
+.h-card {
+    min-height: 380px;
 }
 </style>
