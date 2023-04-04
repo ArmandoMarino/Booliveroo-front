@@ -10,37 +10,39 @@ export default {
             <div class="row align-items-center">
 
                 <!-- logo -->
-                <div class="col-4 col-sm-4 col-md-3">
-                    <div class="logo">
-                        <img src="https://1000marche.net/wp-content/uploads/2021/01/Deliveroo-logo.png" alt="logo-deliveroo"
-                            class="img-fluid">
+                <div class="col-2 col-sm-4 col-md-3 col-lg-5 col-xl-6">
+                    <div class="logo m-0">
+                        <router-link :to="{ name: 'home', params: { component: HomePage } }">
+                            <img src="../assets/img/Logo-BOOLIVEROO-PRIMARY.png" alt="logo-deliveroo" class="img-fluid">
+                        </router-link>
                     </div>
                 </div>
 
                 <!-- navbar-menu -->
-                <div class="col-8 col-sm-8 col-md-9">
-                    <ul class="row">
+                <div class="col-8 col-sm-8 col-md-9 col-lg-7 col-xl-6">
+                    <ul class="row text-end">
 
                         <!-- PARTNER WITH US -->
-                        <li class="d-none d-md-block col-md-4 text-end">
+                        <li class="d-none d-md-block col-md-4">
                             <div class="partner-with-us">
                                 <div class="dropdown">
                                     <button class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
                                         aria-expanded="false" id="partner-dropdown">
-                                        <span><i class="primary-icon fa-solid fa-chevron-down"></i>Partner with us</span>
+                                        <span style="font-size:0.9rem;"><i
+                                                class="primary-icon fa-solid fa-chevron-down"></i>Partner with us</span>
                                     </button>
 
                                     <!-- SUB-MENU -->
                                     <ul class="dropdown-menu" aria-labelledby="partner-dropdown">
-                                        <li><a class="dropdown-item" href="#"><span><i
+                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
                                                         class="primary-icon fa-solid fa-bicycle"></i>Riders</span></a></li>
-                                        <li><a class="dropdown-item" href="#"><span><i
+                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
                                                         class="primary-icon fa-solid fa-utensils"></i>Restaurants</span></a>
                                         </li>
-                                        <li><a class="dropdown-item" href="#"><span><i
+                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
                                                         class="primary-icon fa-solid fa-briefcase"></i>Riders</span></a>
                                         </li>
-                                        <li><a class="dropdown-item" href="#"><span><i
+                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
                                                         class="primary-icon fa-solid fa-shop"></i>Riders</span></a></li>
                                     </ul>
                                 </div>
@@ -48,47 +50,52 @@ export default {
                         </li>
 
                         <!-- CART -->
-                        <li class="d-none d-sm-block col-sm-3 col-md-2 text-end">
+                        <li class="d-none d-sm-block col-sm-3 col-md-2">
                             <button class="btn nav-but" aria-current="page" href="#">
-                                <span><i class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
+                                <span style="font-size:0.8rem;"><i
+                                        class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
                             </button>
                         </li>
 
                         <!-- SIGN UP -->
-                        <li class=" col-7  col-sm-5 col-md-3 text-end">
+                        <li class=" col-8  col-sm-5 col-md-3">
                             <button class="btn nav-but" href="#">
-                                <span style="font-size:0.9rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
+                                <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
                                     login</span>
                             </button>
                         </li>
 
                         <!-- MENU -->
-                        <li class="col-5 col-sm-3  col-md-2 text-center">
+                        <li class="col-4 col-sm-3  col-md-2">
                             <button class="btn nav-but" type="button" data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span><i
+                                data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span
+                                    style="font-size:0.9rem;"><i
                                         class="primary-icon fa-solid fa-bars"></i>Menu</span></button>
 
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                                 aria-labelledby="offcanvasRightLabel">
-                                <div class="offcanvas-header d-flex justify-content-between">
-                                    <!-- LOGO -->
-                                    <div class="logo">
-                                        <img src="https://1000marche.net/wp-content/uploads/2021/01/Deliveroo-logo.png"
-                                            alt="logo-deliveroo" class="img-fluid ms-3">
+                                <div class="offcanvas-header ">
+                                    <!-- LOGO AND CLOSE UP BUTTON-->
+                                    <div class="logo d-flex align-items-center">
+                                        <img src="../assets/img/Logo-COLORATO-BOOLEVEROO-.png" alt="logo-deliveroo"
+                                            class="img-fluid ">
+
+                                        <button type="button" class="btn-close ms-5 " data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
 
-                                    <button type="button" class="btn-close me-3  " data-bs-dismiss="offcanvas"
-                                        aria-label="Close"></button>
+
                                 </div>
-                                <hr>
+
                                 <div class="offcanvas-body">
+                                    <hr>
                                     <!-- OFFCANVAS SIGN UP BUTTON -->
-                                    <div class="my-5">
-                                        <a href="#" class="sign-up-button ">Sign up or login</a>
+                                    <div class="my-5 ">
+                                        <a href="#" class="sign-up-button me-3">Sign up or login</a>
                                     </div>
 
                                     <!-- OFFCANVAS MENU -->
-                                    <div class="container">
+                                    <div class="container off-canvas-menu">
                                         <div class="row text-start ms-4">
 
                                             <!-- CART -->
@@ -156,11 +163,7 @@ export default {
                                                 </select>
                                             </div>
                                         </div>
-
                                     </div>
-
-
-
                                 </div>
                             </div>
                         </li>
@@ -173,13 +176,16 @@ export default {
 
 <style lang="scss" scoped>
 @use '../assets/scss/partials/variables' as*;
+@use '../assets/scss/style.scss' as*;
+
+
 
 
 header {
     background-color: black;
 
     .logo {
-        width: 140px;
+        width: 200px;
     }
 
 
@@ -191,6 +197,10 @@ header {
 
     }
 
+    .sub-menu-item {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 
     .primary-icon {
         color: $primary;
@@ -201,8 +211,10 @@ header {
     .sign-up-button {
         color: white;
         background-color: $primary;
-        padding: 15px 130px;
+        padding: 15px 125px;
         border-radius: 6px;
+
+
     }
 
 
@@ -214,72 +226,17 @@ header {
 
     .offcanvas-body {
         position: relative;
+
+        .off-canvas-menu {
+            a {
+                color: black;
+            }
+        }
     }
 
     .region {
         position: absolute;
         bottom: 20px;
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* generics */
-
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-/* utils */
-.large-container {
-    margin: 0 auto;
-    max-width: 1400px;
-}
-
-.container {
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.small-container {
-    margin: 0 auto;
-    max-width: 1000px;
-}
-
-.xs-container {
-    margin: 0 auto;
-    max-width: 600px;
-}
-
-ul li {
-    list-style-type: none;
 }
 </style>

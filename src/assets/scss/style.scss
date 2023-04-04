@@ -3,3 +3,28 @@
 //     background: ;
 //     margin-top: 70px; 
 // }
+
+
+/* reset */
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* generics */
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
