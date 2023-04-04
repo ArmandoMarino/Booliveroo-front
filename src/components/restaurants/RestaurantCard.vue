@@ -35,12 +35,12 @@ export default {
 
             <div :class="isDetail ? 'd-flex' : 'card'">
                 <!-- IMAGE -->
-                <img :src="restaurant.image" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                <img :src="restaurant.banner" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
                 " :alt="restaurant.name">
 
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
-                    <p :class="isDetail ? 'h1' : 'p m-0'"><strong>{{ restaurant.name }}</strong></p>
+                    <p :class="isDetail ? 'h1' : 'p m-0'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <ul :class="isDetail ? 'd-flex' : 'd-flex flex-column mb-0 p-0'">
                         <!-- VOTE -->
                         <li>
@@ -50,7 +50,7 @@ export default {
                             {{ setVote }}
                         </li>
                         <!-- DISTANCE -->
-                        <li>Distanza 0.31 km</li>
+                        <li>{{ restaurant.address }}</li>
                         <!-- HOUR -->
                         <li v-if="isDetail">Chiude alle 23.30</li>
                     </ul>
@@ -73,14 +73,15 @@ export default {
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="modal-info-Label">Informazioni su {{
-                                            restaurant.name }}</h1>
+                                            restaurant.restaurant_name }}</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <h1 class="modal-title fs-5">Allergeni</h1>
                                         <br>
-                                        <p class="my-3">Hai delle domande? Chiedi a <strong>{{ restaurant.name }}</strong>
+                                        <p class="my-3">Hai delle domande? Chiedi a <strong>{{ restaurant.restaurant_name
+                                        }}</strong>
                                             informazioni
                                             più dettagliate
                                             sui metodi di cottura e sugli ingredienti utilizzati.
