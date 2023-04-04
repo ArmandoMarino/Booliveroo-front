@@ -24,7 +24,6 @@ export default {
                 .catch((err) => {
                     console.error(err);
                 })
-                // Loading a chiamata finita a false (off)
                 .then(() => {
                 });
         },

@@ -4,6 +4,7 @@ export default {
     name: 'HomePage',
     components: { AppMain },
 }
+
 </script>
 
 <template>
