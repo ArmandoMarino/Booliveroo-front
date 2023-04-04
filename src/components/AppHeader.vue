@@ -57,8 +57,10 @@ export default {
                         <!-- SIGN UP -->
                         <li class=" col-7  col-sm-5 col-md-3 text-end">
                             <button class="btn nav-but" href="#">
-                                <span style="font-size:0.9rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
-                                    login</span>
+                                <router-link :to="{ name: 'login_page' }" class="text-decoration-none">
+                                    <span style="font-size:0.9rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
+                                        login</span>
+                                </router-link>
                             </button>
                         </li>
 
