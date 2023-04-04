@@ -25,7 +25,8 @@ export default {
                             <li class="list-group-item"><a class="text-decoration-none" href="#">More</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Git Cards</a></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Restaurant signup</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Careers</a></li>
+                            <li class="list-group-item"><router-link :to="{ name: 'careers' }"
+                                    class="text-decoration-none">Careers</router-link></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">Become a rider</a></li>
                         </ul>
                     </div>
