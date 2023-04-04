@@ -11,15 +11,15 @@ export default {
 
         <div class="container">
             <h1 class="text-white fw-bold py-5">About Us</h1>
-            <div class="d-flex justify-content-between">
-                <div class="list-group navbar-aboutus">
-                    <a href="#" class="list-group-item list-group-item-action py-3">The Story of Booliveroo</a>
-                    <a href="#" class="list-group-item list-group-item-action py-3">Riders</a>
-                    <a href="#" class="list-group-item list-group-item-action py-3">Driven by technology</a>
-                    <a href="#" class="list-group-item list-group-item-action py-3">Innovation, delivered</a>
-                    <a href="#" class="list-group-item list-group-item-action py-3">Our Values</a>
+            <div class="row justify-content-between">
+                <div class="col-md-5 col-12 d-none d-sm-block list-group navbar-aboutus mt-2">
+                    <a href="#story" class="list-group-item list-group-item-action py-3">The Story of Booliveroo</a>
+                    <a href="#riders" class="list-group-item list-group-item-action py-3">Riders</a>
+                    <a href="#technology" class="list-group-item list-group-item-action py-3">Driven by technology</a>
+                    <a href="#innovation" class="list-group-item list-group-item-action py-3">Innovation, delivered</a>
+                    <a href="#values" class="list-group-item list-group-item-action py-3">Our Values</a>
                 </div>
-                <div class="section rounded-2">
+                <div class="col-md-7 col-12 section rounded-2 mt-2">
                     <section id="story">
                         <h2>The Story of Booliveroo</h2>
                         <img src="https://j7a5u2n2.stackpathcdn.com/wp-content/uploads/2022/04/Richard-Liu-148552-detailp.png"
@@ -108,10 +108,12 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="container d-flex justify-content-end">
-
-            <div class="pt-5">
-                <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary mt-2 ">TORNA ALLA HOME</router-link>
+        <div class="container d-flex justify-content-end py-3">
+            <div>
+                <a href="#about-us" class="btn btn-sm btn-primary me-2">TORNA SU</a>
+            </div>
+            <div>
+                <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary">TORNA ALLA HOME</router-link>
             </div>
 
         </div>
@@ -122,17 +124,11 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 #about-us {
-    // height: 100vh;
     background-image: linear-gradient($primary 10%, whitesmoke 15%, whitesmoke);
 
 }
 
-.navbar-aboutus {
-    flex-basis: 34%;
-}
-
 .section {
-    flex-basis: 64%;
     background-color: whitesmoke;
     padding: 2rem;
 }
