@@ -4,24 +4,70 @@ export default {
     name: "Careers",
     data() {
         return {
-            // roleLinks: [
-            //     { link: 'All department', isClicked: false },
-            //     { link: 'Consumer', isClicked: false },
-            //     { link: 'Customer Care', isClicked: false },
-            //     { link: 'Dark store', isClicked: false },
-            //     { link: 'Delivery Operations', isClicked: false },
-            // ],
+            currentIndex: 0,
+            roleLinks: [
+                {
+                    link: 'All department',
+                    isClicked: true,
+                    role: [
+                        { id: 1, name: 'CRM Assistant', location: 'Roma', job: 'CRM Team' },
+                        { id: 2, name: 'Local Growth Marketing Manager', location: 'Roma', job: 'Local Marketing Team' },
+                        { id: 3, name: 'Content Specialist, Customer Care', location: 'Roma', job: 'Policy and Automation Team' },
+                        { id: 4, name: 'Workforce Planning Manager', location: 'Roma', job: 'Ctrl Workforce Management Team' },
+                        { id: 5, name: 'Warehouse Supervisor', location: 'Roma', job: 'Dark Stores Site Operations Team' },
+                        { id: 6, name: 'Marketing & Merchandising Operations', location: 'Roma', job: 'Dark Stores HQ Team' },
+                        { id: 7, name: 'Global Operations Manager', location: 'Roma', job: 'Ctrl Rider Onboarding Team' },
+                        { id: 8, name: 'Senior operations Strategy Associate', location: 'Roma', job: 'Local Operations Strategy Team' },
+                    ]
+                },
+                {
+                    link: 'Consumer',
+                    isClicked: false,
+                    role: [
+                        { id: 1, name: 'CRM Assistant', location: 'Roma', job: 'CRM Team' },
+                        { id: 2, name: 'Local Growth Marketing Manager', location: 'Roma', job: 'Local Marketing Team' },
+                    ]
+                },
+                {
+                    link: 'Customer Care',
+                    isClicked: false,
+                    role: [
+                        { id: 1, name: 'Content Specialist, Customer Care', location: 'Roma', job: 'Policy and Automation Team' },
+                        { id: 2, name: 'Workforce Planning Manager', location: 'Roma', job: 'Ctrl Workforce Management Team' },
+                    ]
+                },
+                {
+                    link: 'Dark store',
+                    isClicked: false,
+                    role: [
+                        { id: 1, name: 'Warehouse Supervisor', location: 'Roma', job: 'Dark Stores Site Operations Team' },
+                        { id: 2, name: 'Marketing & Merchandising Operations', location: 'Roma', job: 'Dark Stores HQ Team' },
+                    ]
+                },
+                {
+                    link: 'Delivery Operations',
+                    isClicked: false,
+                    role: [
+                        { id: 1, name: 'Global Operations Manager', location: 'Roma', job: 'Ctrl Rider Onboarding Team' },
+                        { id: 2, name: 'Senior operations Strategy Associate', location: 'Roma', job: 'Local Operations Strategy Team' },
+                    ]
+                },
+            ],
         }
     },
-    // methods: {
-    //     showSpecificRole(i) {
-    //         if (this.roleLinks[i].isClicked) {
-    //             this.roleLinks[i].isClicked = false;
-    //         } else {
-    //             this.roleLinks.isClicked = true;
-    //         }
-    //     }
-    // }
+    methods: {
+        showSpecificRole(i) {
+            this.currentIndex = i;
+            this.roleLinks[this.currentIndex].isClicked = true;
+            this.roleLinks.forEach(element => {
+                if (element.isClicked === true) {
+                    element.isClicked = false;
+                    this.roleLinks[this.currentIndex].isClicked = true;
+                }
+            });
+
+        }
+    }
 
 }
 </script>
@@ -89,13 +135,13 @@ export default {
             </div>
         </div>
     </section>
-    <section id="values pb-5">
+    <section id="values">
         <div class="container">
-            <div class="row">
+            <div class="row mb-5">
                 <h1 class="text-center fw-bold my-5">Our values</h1>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://wp.salesforce.com/blog/wp-content/uploads/sites/2/2019/06/customer-focus-header.jpg"
                             class="card-img-top" alt="customer">
                         <div class="card-body">
                             <h3 class="card-title">We are customer obsessed</h3>
@@ -107,7 +153,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://www.imsa-search.com/wp-content/uploads/2020/10/culture-pf-trust.jpg"
                             class="card-img-top" alt="trust">
                         <div class="card-body">
                             <h3 class="card-title">We build trust</h3>
@@ -131,7 +177,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://images2.minutemediacdn.com/image/upload/c_fill,w_720,ar_16:9,f_auto,q_auto,g_auto/shape/cover/sport/570901-gettyimages-655478994-e9c1dc00920195f65bade67c9ce7c2ff.jpg"
                             class="card-img-top" alt="difference">
                         <div class="card-body">
                             <h3 class="card-title">We celebrate difference</h3>
@@ -143,7 +189,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="data:image/jpeg;base64,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"
                             class="card-img-top" alt="solutions">
                         <div class="card-body">
                             <h3 class="card-title">We get to the bottom of things</h3>
@@ -155,7 +201,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-team-work-cartoon-illustration-image_1427069.jpg"
                             class="card-img-top" alt="team">
                         <div class="card-body">
                             <h3 class="card-title">We work as a team</h3>
@@ -167,7 +213,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://previews.123rf.com/images/rawpixel/rawpixel1604/rawpixel160408007/54706665-business-plan-strategy-vision-objective-planning-concept.jpg"
                             class="card-img-top" alt="obstacles">
                         <div class="card-body">
                             <h3 class="card-title">We're relentless</h3>
@@ -179,7 +225,7 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        <img src="https://saasbpm.com/wp-content/uploads/2021/07/How-to-Design-an-Onboarding-Process-That-Improve-Business-Results-1130x662.png"
                             class="card-img-top" alt="results">
                         <div class="card-body">
                             <h3 class="card-title">We deliver results</h3>
@@ -189,89 +235,38 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                    <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                            class="card-img-top" alt="simplify">
-                        <div class="card-body">
-                            <h3 class="card-title">We simplify</h3>
-                            <p class="card-text">We simplify our explanations, processes, and approach. We frame issues for
-                                those who don’t have context.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                    <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                            class="card-img-top" alt="embrace">
-                        <div class="card-body">
-                            <h3 class="card-title">We embrace change</h3>
-                            <p class="card-text">We plan for the long term and short term, and adapt where needed. The road
-                                is full of twists and turns.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                    <div class="card h-card">
-                    <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                        class="card-img-top" alt="frugal">
-                    <div class="card-body">
-                        <h3 class="card-title">We're frugal</h3>
-                        <p class="card-text">We spend wisely. We prioritise carefully and spend the company’s resources,
-                            time and money efficiently.
-                        </p>
-                    </div>
-                </div>
+
             </div>
-            <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                <div class="card h-card">
-                    <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                        class="card-img-top" alt="no my job">
-                    <div class="card-body">
-                        <h3 class="card-title">We never say "it's not my job"</h3>
-                        <p class="card-text">We’re shopkeepers. We have ownership over our own things, but we do what we
-                            can to run the best shop in town.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
-    </div>
-</section>
-    <!-- <section id="roles">
-                    <div class="container">
-                        <h1 class="text-center fw-bold my-5">Available roles</h1>
-                        <nav class="navbar bg-body-tertiary">
-                            <div class="container-fluid"> <button class="navbar-brand border-0 rounded-2">Delivery Operations</button>
-
-                                <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
-                                    class="navbar-brand border-0 rounded-2">{{ link.link
-                                    }}</button>
-
+    </section>
+    <section id="roles">
+        <div class="container">
+            <h1 class="text-center fw-bold available-roles">Available roles</h1>
+            <nav class="navbar bg-body-tertiary mt-5">
+                <div class="container-fluid">
+                    <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
+                        class="btn-role fw-semibold navbar-brand border-0 rounded-2 my-2">{{ link.link
+                        }}</button>
+                </div>
+            </nav>
+            <section v-for="link in roleLinks" :key="link.link">
+                <div v-if="link.isClicked" class="row">
+                    <div v-for="role in link.role" :key="role.id" class="col-sm-6 col-12">
+                        <!-- <div>{{ role.name }}</div> -->
+                        <div class="card my-3 card-role">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ role.name }}</h5>
+                                <div class="card-text">
+                                    <p class="fs-4"><i class="fs-5">city: </i>{{ role.location }}</p>
+                                    <p class="fs-4"><i class="fs-5">role: </i>{{ role.job }}</p>
+                                </div>
                             </div>
-                        </nav>
-                        <section id="all-roles">
-                            <h1>all roles</h1>
-                        </section>
-                        <section id="consumer-role">
-                            <h1>Consumer</h1>
-                        </section>
-                        <section id="customer-role">
-                            <h1>Customer</h1>
-                        </section>
-                        <section id="darkstore-role">
-                            <h1>Dark stores</h1>
-                        </section>
-                        <section id="delivery-role">
-                            <h1>Delivery operations</h1>
-                        </section>
+                        </div>
                     </div>
-                </section> -->
+                </div>
+            </section>
+        </div>
+    </section>
 </template>
 
 <style coped lang="scss">
@@ -314,6 +309,23 @@ export default {
 }
 
 .h-card {
-    min-height: 380px;
+    min-height: 390px;
+
+    img {
+        height: 180px;
+    }
+}
+
+.available-roles {
+    margin: 6rem auto 3rem;
+}
+
+.btn-role {
+    background-color: whitesmoke;
+    color: $primary;
+}
+
+.card-role {
+    min-height: 230px;
 }
 </style>
