@@ -4,25 +4,24 @@ export default {
     name: "Careers",
     data() {
         return {
-            // isClicked: false,
-            roleLinks: [
-                { link: 'All department', isClicked: false },
-                { link: 'Consumer', isClicked: false },
-                { link: 'Customer Care', isClicked: false },
-                { link: 'Dark store', isClicked: false },
-                { link: 'Delivery Operations', isClicked: false },
-            ],
+            // roleLinks: [
+            //     { link: 'All department', isClicked: false },
+            //     { link: 'Consumer', isClicked: false },
+            //     { link: 'Customer Care', isClicked: false },
+            //     { link: 'Dark store', isClicked: false },
+            //     { link: 'Delivery Operations', isClicked: false },
+            // ],
         }
     },
-    methods: {
-        showSpecificRole(i) {
-            if (this.roleLinks[i].isClicked) {
-                this.roleLinks[i].isClicked = false;
-            } else {
-                this.roleLinks.isClicked = true;
-            }
-        }
-    }
+    // methods: {
+    //     showSpecificRole(i) {
+    //         if (this.roleLinks[i].isClicked) {
+    //             this.roleLinks[i].isClicked = false;
+    //         } else {
+    //             this.roleLinks.isClicked = true;
+    //         }
+    //     }
+    // }
 
 }
 </script>
@@ -90,7 +89,7 @@ export default {
             </div>
         </div>
     </section>
-    <section id="values">
+    <section id="values pb-5">
         <div class="container">
             <div class="row">
                 <h1 class="text-center fw-bold my-5">Our values</h1>
@@ -216,63 +215,63 @@ export default {
                 </div>
                 <div class="col-12 col-sm-6 col-lg-3 mt-4">
                     <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                            class="card-img-top" alt="frugal">
-                        <div class="card-body">
-                            <h3 class="card-title">We're frugal</h3>
-                            <p class="card-text">We spend wisely. We prioritise carefully and spend the company’s resources,
-                                time and money efficiently.
-                            </p>
-                        </div>
+                    <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        class="card-img-top" alt="frugal">
+                    <div class="card-body">
+                        <h3 class="card-title">We're frugal</h3>
+                        <p class="card-text">We spend wisely. We prioritise carefully and spend the company’s resources,
+                            time and money efficiently.
+                        </p>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 mt-4">
-                    <div class="card h-card">
-                        <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
-                            class="card-img-top" alt="no my job">
-                        <div class="card-body">
-                            <h3 class="card-title">We never say "it's not my job"</h3>
-                            <p class="card-text">We’re shopkeepers. We have ownership over our own things, but we do what we
-                                can to run the best shop in town.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
-
             </div>
-        </div>
-    </section>
-    <section id="roles">
-        <div class="container">
-            <h1 class="text-center fw-bold my-5">Available roles</h1>
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid"> <button class="navbar-brand border-0 rounded-2">Delivery Operations</button>
-                    -->
-                    <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
-                        class="navbar-brand border-0 rounded-2">{{ link.link
-                        }}</button>
-
+            <div class="col-12 col-sm-6 col-lg-3 mt-4">
+                <div class="card h-card">
+                    <img src="https://images.ctfassets.net/gg4ddi543f5b/25bBkGrwyh2plLSk2caNgu/d0657bc7f169ea0b25e09afa8596260c/9-Ways-to-Build-Trust-in-a-Team-3.jpeg"
+                        class="card-img-top" alt="no my job">
+                    <div class="card-body">
+                        <h3 class="card-title">We never say "it's not my job"</h3>
+                        <p class="card-text">We’re shopkeepers. We have ownership over our own things, but we do what we
+                            can to run the best shop in town.
+                        </p>
+                    </div>
                 </div>
-            </nav>
-            <section id="all-roles">
-                <h1>all roles</h1>
-            </section>
-            <section id="consumer-role">
-                <h1>Consumer</h1>
-            </section>
-            <section id="customer-role">
-                <h1>Customer</h1>
-            </section>
-            <section id="darkstore-role">
-                <h1>Dark stores</h1>
-            </section>
-            <section id="delivery-role">
-                <h1>Delivery operations</h1>
-            </section>
+            </div>
+
+
+
         </div>
-    </section>
+    </div>
+</section>
+    <!-- <section id="roles">
+                    <div class="container">
+                        <h1 class="text-center fw-bold my-5">Available roles</h1>
+                        <nav class="navbar bg-body-tertiary">
+                            <div class="container-fluid"> <button class="navbar-brand border-0 rounded-2">Delivery Operations</button>
+
+                                <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
+                                    class="navbar-brand border-0 rounded-2">{{ link.link
+                                    }}</button>
+
+                            </div>
+                        </nav>
+                        <section id="all-roles">
+                            <h1>all roles</h1>
+                        </section>
+                        <section id="consumer-role">
+                            <h1>Consumer</h1>
+                        </section>
+                        <section id="customer-role">
+                            <h1>Customer</h1>
+                        </section>
+                        <section id="darkstore-role">
+                            <h1>Dark stores</h1>
+                        </section>
+                        <section id="delivery-role">
+                            <h1>Delivery operations</h1>
+                        </section>
+                    </div>
+                </section> -->
 </template>
 
 <style coped lang="scss">
