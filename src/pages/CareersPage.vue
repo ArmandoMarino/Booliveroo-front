@@ -2,7 +2,27 @@
 
 export default {
     name: "Careers",
-
+    data() {
+        return {
+            // isClicked: false,
+            roleLinks: [
+                { link: 'All department', isClicked: false },
+                { link: 'Consumer', isClicked: false },
+                { link: 'Customer Care', isClicked: false },
+                { link: 'Dark store', isClicked: false },
+                { link: 'Delivery Operations', isClicked: false },
+            ],
+        }
+    },
+    methods: {
+        showSpecificRole(i) {
+            if (this.roleLinks[i].isClicked) {
+                this.roleLinks[i].isClicked = false;
+            } else {
+                this.roleLinks.isClicked = true;
+            }
+        }
+    }
 
 }
 </script>
@@ -228,12 +248,12 @@ export default {
         <div class="container">
             <h1 class="text-center fw-bold my-5">Available roles</h1>
             <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">All departments</a>
-                    <a class="navbar-brand" href="#">Consumer</a>
-                    <a class="navbar-brand" href="#">Customer Care</a>
-                    <a class="navbar-brand" href="#">Dark Stores</a>
-                    <a class="navbar-brand" href="#">Delivery Operations</a>
+                <div class="container-fluid"> <button class="navbar-brand border-0 rounded-2">Delivery Operations</button>
+                    -->
+                    <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
+                        class="navbar-brand border-0 rounded-2">{{ link.link
+                        }}</button>
+
                 </div>
             </nav>
             <section id="all-roles">
@@ -296,12 +316,5 @@ export default {
 
 .h-card {
     min-height: 380px;
-}
-
-#consumer-role,
-#customer-role,
-#darkstore-role,
-#delivery-role {
-    display: none;
 }
 </style>
