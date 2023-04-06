@@ -257,8 +257,8 @@ export default {
                             <div class="card-body">
                                 <h5 class="card-title">{{ role.name }}</h5>
                                 <div class="card-text">
-                                    <p class="fs-4"><i class="fs-5">city: </i>{{ role.location }}</p>
-                                    <p class="fs-4"><i class="fs-5">role: </i>{{ role.job }}</p>
+                                    <p class="fs-4 location"><i class="fs-5">city: </i>{{ role.location }}</p>
+                                    <p class="fs-4 job"><i class="fs-5">role: </i>{{ role.job }}</p>
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@ export default {
 .small-col {
     min-height: 250px;
     position: relative;
-    background-color: #ebebeb;
+    background-color: $background-color;
     padding: 1rem;
 
 }
@@ -321,11 +321,21 @@ export default {
 }
 
 .btn-role {
-    background-color: whitesmoke;
+    background-color: $background-color;
     color: $primary;
 }
 
 .card-role {
     min-height: 230px;
+    background-color: $background-color;
+
+    .location,
+    .job {
+        color: $primary;
+
+        i {
+            color: black;
+        }
+    }
 }
 </style>

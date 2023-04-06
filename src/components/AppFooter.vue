@@ -111,7 +111,7 @@ export default {
 }
 
 .small-col {
-    min-height: 300px;
+    min-height: 320px;
     background-color: #323844;
 }
 
