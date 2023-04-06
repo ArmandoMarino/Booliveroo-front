@@ -59,10 +59,12 @@ export default {
 
                         <!-- SIGN UP -->
                         <li class=" col-8  col-sm-5 col-md-3">
-                            <button class="btn nav-but" href="#">
-                                <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
-                                    login</span>
-                            </button>
+                            <a href="http://127.0.0.1:8000/login">
+                                <button class="btn nav-but" href="#">
+                                    <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
+                                        login</span>
+                                </button>
+                            </a>
                         </li>
 
                         <!-- MENU -->
