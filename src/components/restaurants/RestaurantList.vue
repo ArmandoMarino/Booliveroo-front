@@ -5,7 +5,7 @@ export default {
     components: { RestaurantCard },
     props: {
         restaurants: Object,
-        // category : Object,
+        // food: Object,
     },
 
 }

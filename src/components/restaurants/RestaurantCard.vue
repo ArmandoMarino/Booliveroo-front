@@ -115,13 +115,11 @@ export default {
     <!--* FOOD-CARD IN DETAIL -->
     <div v-if="isDetail" class="container">
         <div class="row g-2">
-            <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
-                :key="restaurant.id">
+            <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods" :key="food.id">
                 <div class="p-3 card-food d-flex justify-content-between">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
                     <div class="text">
-                        <p><strong>{{ food.name }}</strong></p>
-                        <p>{{ food.piece }} pezzi</p>
+                        <p><strong>{{ food.label }}</strong></p>
                         <p>{{ food.price }} €</p>
                     </div>
 
