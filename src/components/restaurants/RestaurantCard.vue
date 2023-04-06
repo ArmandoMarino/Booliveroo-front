@@ -35,7 +35,7 @@ export default {
 
             <div :class="isDetail ? 'd-flex' : 'card'">
                 <!-- IMAGE -->
-                <img :src="restaurant.banner" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
                 " :alt="restaurant.name">
 
                 <!-- TEXT -->
