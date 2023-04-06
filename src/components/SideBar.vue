@@ -1,8 +1,28 @@
 <script>
+import axios from 'axios';
+
+const apiBaseUrl = 'http://127.0.0.1:8000/api';
 export default {
     name: "AppFooter",
+    data() {
+        return {
+            categories: [],
+        }
+    },
     methods: {
-
+        fetchRestaurants() {
+            axios.get(apiBaseUrl + '/categories').then(res => {
+                this.categories = res.data;
+                console.log(res.data);
+            }).catch((err) => {
+                //
+            }).then(() => {
+                // fare il loading
+            })
+        }
+    },
+    created() {
+        this.fetchRestaurants();
     }
 };
 </script>
@@ -18,58 +38,26 @@ export default {
             </div>
             <h3 class="section-category border-top border-dark-subtle">Categorie</h3>
 
-        <div class="bottom-sidebar">
-            <div class="list-group-item">
-                <label>
-                    <input class="form-check-input me-2" type="checkbox">
+            <div class="bottom-sidebar">
+                <div v-for="category in categories" :key="category.id" class="list-group-item">
+                    <label>
+                        <input class="form-check-input me-2" type="checkbox">
+                        <span>{{ category.label }}</span>
                     </label>
-            </div>
-            <button type="button" class="btn btn-primary mt-4">Visualizza</button>
-
-            <!-- <li class="list-group-item d-flex align-items-center mb-2">
-                <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                <label class="form-check-label fs-4" for="category">Italiano <span
-                        class="tot-restaurant fs-5">(124)</span></label>
-            </li> -->
-            <!-- <li class="list-group-item d-flex align-items-center mb-2">
-                        <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                        <label class="form-check-label fs-4" for="category">Giapponese <span
-                                class="tot-restaurant fs-5">(46)</span></label>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center mb-2">
-                        <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                        <label class="form-check-label fs-4" for="category">Cinese <span
-                                class="tot-restaurant fs-5">(52)</span></label>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center mb-2">
-                        <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                        <label class="form-check-label fs-4" for="category">Argentino <span
-                                class="tot-restaurant fs-5">(23)</span></label>
-                    </li>
-                    <li class="list-group-item d-flex align-items-center mb-2">
-                                                                <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                                                                <label class="form-check-label fs-4" for="category">Pizzerie <span
-                                                                        class="tot-restaurant fs-5">(146)</span></label>
-                                                            </li>
-                                                            <li class="list-group-item d-flex align-items-center mb-2">
-                                                                <input class="form-check-input me-2" type="checkbox" id="category" name="category">
-                                                                <label class="form-check-label fs-4" for="category">Pub <span
-                                                                        class="tot-restaurant fs-5">(178)</span></label>
-                                                            </li> -->
+                </div>
+                <button type="button" class="btn btn-primary mt-4">Visualizza</button>
 
             </div>
 
         </div>
         <div id="main-content">
             <div class="row">
-                <div class="col-4">
-                    <div class="card border-primary h-100">
-                        <div class="card-header">
-                            category: <span class="text-primary">Italiano</span>
-                        </div>
+                <div class="col-4 mx-auto my-4">
+                    <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">Da Pippo</h4>
-
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                                the card's content.</p>
                         </div>
                     </div>
                 </div>
