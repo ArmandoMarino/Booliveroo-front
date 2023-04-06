@@ -31,7 +31,7 @@ const router = createRouter({
     { path: "/restaurants/:id", name: "restaurant-detail", component: RestaurantDetailPage },
 
     //Rotta per il recupero dei restaurants appartenenti a una category
-    { path: '/category/:id/restaurants', name: 'category-restaurants', component: CategoryRestaurantsPage },
+    { path: '/categories/:id/restaurants', name: 'categories-restaurants', component: CategoryRestaurantsPage },
 
     // NotFoundPage (lasciatela come ultima posizione )
     { path: "/:pathMatch(.*)*", name: "not-found", component: NotFoundPage },

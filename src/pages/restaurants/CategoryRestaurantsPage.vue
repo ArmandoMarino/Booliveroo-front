@@ -1,23 +1,23 @@
 <script>
 import axios from 'axios';
 import RestaurantList from '../../components/restaurants/RestaurantList.vue';
-const apiBaseUrl = 'http://127.0.0.1:8000/api/'
+const apiBaseUrl = 'http://127.0.0.1:8000/api'
 export default {
     name: 'CategoryRestaurantsPage',
     components: { RestaurantList },
     data: () => ({
         restaurants: {},
-        category: null
+        categories: null
     }),
     methods: {
         fetchRestaurants(endpoint = null) {
             if (!endpoint)
-                endpoint = `${apiBaseUrl}/category/${this.$route.params.id}/restaurants`;
+                endpoint = `${apiBaseUrl}/categories/${this.$route.params.id}/restaurants`;
             axios.get(endpoint).then((res) => {
                 // TODO GUARDA LE CHIAVI
-                this.restaurants = res.data.category.restaurants;
-                this.category = res.data.category;
-
+                this.restaurants = res.data;
+                this.categories = res.data.categories;
+                console.log(this.categories, 'quiiiiiii');
             }).catch((err) => {
                 // TODO LOADER
                 console.error(err)
@@ -34,5 +34,5 @@ export default {
 
 
 <template>
-    <restaurant-list :restaurants="restaurants" :category="category"></restaurant-list>
+    <restaurant-list :restaurants="restaurants" :categories="categories"></restaurant-list>
 </template>
