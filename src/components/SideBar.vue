@@ -7,6 +7,7 @@ export default {
     data() {
         return {
             categories: [],
+            selectRestaurants: []
         }
     },
     methods: {
@@ -19,7 +20,31 @@ export default {
             }).then(() => {
                 // fare il loading
             })
-        }
+        },
+        filterRestaurant(event) {
+            if (event.target.checked) {
+                this.selectRestaurants.push(event.target.id);
+            } else {
+                const id = event.target.id;
+                for (let data of this.selectRestaurants) {
+                    if (data === id) {
+                        const index = this.selectRestaurants.indexOf(data);
+                        this.selectRestaurants.splice(index, 1);
+                    }
+                }
+            }
+        },
+        // getFilteredRestaurant() {
+        //     const pars = this.selectRestaurants.map((str) => {
+        //         return parseInt(str);
+        //     });
+
+        //     const data = {
+        //         selectedRestaurants: pars,
+        //     }
+        //     console.log(data);
+        // }
+
     },
     created() {
         this.fetchRestaurants();
@@ -41,11 +66,12 @@ export default {
             <div class="bottom-sidebar">
                 <div v-for="category in categories" :key="category.id" class="list-group-item">
                     <label>
-                        <input class="form-check-input me-2" type="checkbox">
+                        <input class="form-check-input me-2" type="checkbox" @click="filterRestaurant($event)"
+                            :id="category.id" :checked="category.checked">
                         <span>{{ category.label }}</span>
                     </label>
                 </div>
-                <button type="button" class="btn btn-primary mt-4">Visualizza</button>
+                <button type="button" class="btn btn-primary mt-4" @click="getFilteredRestaurant()">Visualizza</button>
 
             </div>
 
