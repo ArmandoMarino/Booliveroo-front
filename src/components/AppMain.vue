@@ -1,47 +1,51 @@
 <script>
 export default {
-    name: 'AppMain'
+    name: 'AppMain',
+    props: {
+        restaurants: Object
+    }
 }
 </script>
 
 <template>
-    <!-- JUMBOTRON -->
+    <!--! JUMBOTRON -->
     <div class="jumbotron">
         <div class="container">
-            <div class="row">
-                <!-- MAIN-TEXT -->
-                <div class="col-9 text-lg-center mx-lg-auto">
-                <h1 class="main-text my-4">Restaurant food,takeaway and groceries.<span
-                        class="primary-color">Delivered.</span></h1>
-                <p class="postal-code-text">Enter a postcode to see what we deliver</p>
+        <div class="row">
+            <!-- MAIN-TEXT -->
+            <div class="col-9 text-lg-center mx-lg-auto">
+                <h1 class="main-text my-4">I piatti che ami, a <span class="primary-color">domicilio.</span>
+                    </h1>
+                    <p class="postal-code-text">Inserisci il tuo indirizzo per trovare ristoranti nei dintorni</p>
 
                     <!-- TODO INPUT PASSERA' I DATI NELLA RestaurantPage -->
                     <!-- <div class="input-group mb-3">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <input type="text" class="form-control search-input" aria-label="Sizing example input"
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        aria-describedby="inputGroup-sizing-default">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <span class="input-group-text search-button" id="inputGroup-sizing-default">Search</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <input type="text" class="form-control search-input" aria-label="Sizing example input"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            aria-describedby="inputGroup-sizing-default">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <span class="input-group-text search-button" id="inputGroup-sizing-default">Search</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div> -->
 
                     <router-link class="search-button "
                         :to="{ name: 'restaurants', params: { component: RestaurantPage } }">
                         Search
                     </router-link>
 
-                    <p class="login-text pt-3"><span class="primary-color">Log in </span>for your recent addresses</p>
+                    <p class="login-text pt-3"><span class="primary-color">Accedi </span>per visualizzare i tuoi indirizzi
+                        recenti.</p>
 
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- DYNAMIC IMAGES COLLECTION -->
+    <!--! DYNAMIC IMAGES COLLECTION -->
     <div class="dynamic-img-collection text-center">
         <h1>images collection</h1>
     </div>
 
 
 
-    <!-- DELIVEROO'S SELECTION -->
+    <!--! DELIVEROO'S SELECTION -->
     <div class="deliveroo-selection  my-5 ">
         <div class="container ">
             <h2 class="selection-title m-0 py-4">La selezione di Booliveroo</h2>
@@ -53,86 +57,85 @@ export default {
 
                 <!-- COMFORT FOOD -->
                 <div class="col-12 col-sm-6 col-lg-5">
-                    <div class="selection-card mb-5">
-                        <!-- CARD-IMG -->
-                        <div class="selection-img">
-                            <h3 class="img-text text-center">Comfort Food</h3>
-                        </div>
+                    <a href="#">
+                        <div class="selection-card mb-5">
+                            <!-- CARD-IMG -->
+                            <div class="selection-img">
+                                <h3 class="img-text text-center">Comfort Food</h3>
+                            </div>
 
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <p class="card-description m-0">Some quick example text to build on the card title and make up
-                                the bulk of the card's content.</p>
-                            <p class="discover-link"><a href="#">Scopri Comfort food</a></p>
+                            <!-- CARD-TEXT -->
+                            <div class="card-body">
+                                <p class="card-description my-2">I grandi classici che scaldano il cuore, perfetti in ogni
+                                    momento.</p>
+                                <p class="discover-link"><a href="#">Scopri Comfort food</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- COMFORT FOOD -->
+                <!-- DOLCI E DESSERT -->
                 <div class="col-12 col-sm-6 col-lg-7">
-                    <div class="selection-card">
-                        <!-- CARD-IMG -->
-                        <div class="selection-img">
-                            <h3 class="img-text text-center">Comfort Food</h3>
-                        </div>
+                    <a href="#">
+                        <div class="selection-card mb-5">
+                            <!-- CARD-IMG -->
+                            <div class="selection-img">
+                                <h3 class="img-text text-center">Dolci e dessert</h3>
+                            </div>
 
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <p class="card-description m-0">Some quick example text to build on the card title and make up
-                                the
-                                bulk
-                                of
-                                the card's content.</p>
-                            <p class="discover-link"><a href="#">Scopri Comfort food</a></p>
+                            <!-- CARD-TEXT -->
+                            <div class="card-body">
+                                <p class="card-description my-2">Dolci piaceri per rendere la giornata ancora più gustosa.
+                                </p>
+                                <p class="discover-link"><a href="#">Scopri Dolci e dessert</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- COMFORT FOOD -->
+                <!-- PERFETTI DA CONDIVIDERE -->
                 <div class="col-12 col-sm-6 col-lg-7">
-                    <div class="selection-card">
-                        <!-- CARD-IMG -->
-                        <div class="selection-img">
-                            <h3 class="img-text text-center">Comfort Food</h3>
-                        </div>
+                    <a href="#">
+                        <div class="selection-card mb-5">
+                            <!-- CARD-IMG -->
+                            <div class="selection-img">
+                                <h3 class="img-text text-center">Perfetti da condividere </h3>
+                            </div>
 
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <p class="card-description m-0">Some quick example text to build on the card title and make up
-                                the
-                                bulk
-                                of
-                                the card's content.</p>
-                            <p class="discover-link"><a href="#">Scopri Comfort food</a></p>
+                            <!-- CARD-TEXT -->
+                            <div class="card-body">
+                                <p class="card-description my-2">Serve una scusa per stare insieme? Ordina dai ristoranti
+                                    che trasformeranno la tua serata in una vera festa.</p>
+                                <p class="discover-link"><a href="#">Scopri Perfetti da condividere</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
 
-                <!-- COMFORT FOOD -->
+                <!-- ESCLUSIVA DELIVEROO -->
                 <div class="col-12 col-sm-6 col-lg-5">
-                    <div class="selection-card">
-                        <!-- CARD-IMG -->
-                        <div class="selection-img">
-                            <h3 class="img-text text-center">Comfort Food</h3>
-                        </div>
+                    <a href="#">
+                        <div class="selection-card mb-5">
+                            <!-- CARD-IMG -->
+                            <div class="selection-img">
+                                <h3 class="img-text text-center">Esclusiva Booliveroo</h3>
+                            </div>
 
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <p class="card-description m-0">Some quick example text to build on the card title and make up
-                                the
-                                bulk
-                                of
-                                the card's content.</p>
-                            <p class="discover-link"><a href="#">Scopri Comfort food</a></p>
+                            <!-- CARD-TEXT -->
+                            <div class="card-body">
+                                <p class="card-description my-2">I più famosi, i più buoni, i preferiti. Quelli che trovi
+                                    solo su Booliveroo</p>
+                                <p class="discover-link"><a href="#">Scopri Esclusiva Boolivero</a></p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FAVOURITES RESTAURANTS-->
+    <!--! FAVOURITES RESTAURANTS-->
     <div class="favourite-restaurants my-5">
         <div class="container">
             <h2 class="favourite-rest-title">I tuoi piatti preferiti, consegnati da noi</h2>
@@ -141,67 +144,43 @@ export default {
             <div class="row selection-collection d-flex justify-content-center">
 
                 <!-- COMFORT FOOD -->
-                <div class="col-12 col-md-4">
-                    <div class="selection-card mb-5">
-                        <!-- CARD-IMG -->
-                        <div class="card-img">
-                            <img src="https://media.istockphoto.com/id/618630648/it/foto/hamburger-smash-al-formaggio-fatto-in-casa.jpg?s=612x612&w=0&k=20&c=hRo3VZF0OZwXgkFTIXbks25H2ikQiFCPZtk0wYVAAxA="
-                                class="img-fluid mb-2" alt="...">
-                        </div>
+                <div v-for="category in restaurants.categories" :key="category.id" class="col-12 col-md-4">
 
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <h5>McDonald's</h5>
-                        </div>
-                    </div>
-                </div>
+                    <router-link :to="{ name: 'category-restaurants', params: { id: restaurant.category.id } }">
+                        <div class="categories-card mb-5">
+                            <!-- CARD-IMG -->
+                            <div class="card-img">
+                                <img :src="category.image" class="img-fluid mb-2" :alt="category.name">
+                            </div>
 
-                <!-- COMFORT FOOD -->
-                <div class="col-12 col-md-4">
-                    <div class="selection-card mb-5">
-                        <!-- CARD-IMG -->
-                        <div class="card-img">
-                            <img src="https://media.istockphoto.com/id/618630648/it/foto/hamburger-smash-al-formaggio-fatto-in-casa.jpg?s=612x612&w=0&k=20&c=hRo3VZF0OZwXgkFTIXbks25H2ikQiFCPZtk0wYVAAxA="
-                                class="img-fluid mb-2" alt="...">
+                            <!-- CARD-TEXT -->
+                            <div class="card-body">
+                                <h2 class="categories-text">{{ category.name }}</h2>
+                            </div>
                         </div>
-
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <h5>McDonald's</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- COMFORT FOOD -->
-                <div class="col-12 col-md-4">
-                    <div class="selection-card mb-5">
-                        <!-- CARD-IMG -->
-                        <div class="card-img">
-                            <img src="https://media.istockphoto.com/id/618630648/it/foto/hamburger-smash-al-formaggio-fatto-in-casa.jpg?s=612x612&w=0&k=20&c=hRo3VZF0OZwXgkFTIXbks25H2ikQiFCPZtk0wYVAAxA="
-                                class="img-fluid mb-2" alt="...">
-                        </div>
-
-                        <!-- CARD-TEXT -->
-                        <div class="card-body">
-                            <h5>McDonald's</h5>
-                        </div>
-                    </div>
+                    </router-link>
                 </div>
 
 
 
-            </div>
+
+
         </div>
     </div>
+</div>
 
-    <!-- OTHER-FOODS -->
-    <div class="other-foods">
-        <div class="container">
-            <h2 class="other-foods-title">Cerchi qualcos'altro?</h2>
-        </div>
-    </div>
+<!--! OTHER-FOODS -->
+    <!-- <div class="other-foods">
+                                                                    <div class="container">
+                                                                        <h2 class="other-foods-title primary-color">Cerchi qualcos'altro?</h2>
+                                                                                                                                                <ul class="other-foods-list">
+                                                                                                                                                    <li class="btn other-food-list-item"><a href="#" class=" primary-color">ciao</a></li>
+                                                                                                                                                    <li class="btn other-food-list-item"><a href="#" class=" primary-color">ciao</a></li>
+                                                                                                                                                </ul>
+                                                                                                                                            </div>
+                                                                                                                                        </div> -->
 
-    <!-- NEWS -->
+    <!--! NEWS -->
     <div class="news my-5 pb-4">
         <div class="container">
             <h2 class="news-title py-3">Novità dalla nostra cucina</h2>
@@ -218,8 +197,8 @@ export default {
                     <div class="col-6">
                         <div class="card-text">
                             <h4>Deliveroo for Work</h4>
-                            <p>Hungry clients or hungry staff, our corporate team can help.</p>
-                            <a href="#" class="primary-button">Enquire</a>
+                            <p>Clienti o colleghi affamati? Il nostro team Corporate ti può aiutare.</p>
+                            <a href="#" class="primary-button">Contattaci</a>
                         </div>
                     </div>
 
@@ -236,22 +215,22 @@ export default {
                         <div class="card-text ps-3 row">
 
                             <div class="col-12">
-                                <h4>Have you got the app?</h4>
+                                <h4>Hai già la nostra app?</h4>
                             </div>
                             <div class="d-none d-md-block ">
-                                <p>Get yours now - available on the iOS and Android app stores!</p>
+                                <p>Scaricala ora - disponibile su Apple Store e Google Play!</p>
                             </div>
                             <div class="col-12">
                                 <div class="row">
-                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="col-12 col-sm-6 col-md-3">
                                         <a href="#">
-                                            <img class="img-fluid download"
+                                            <img class="img-fluid download "
                                                 src="https://chiavari.ditechmobility.com/wp-content/uploads/2018/04/apple-store.png"
                                                 alt="download-appstore">
                                         </a>
                                     </div>
 
-                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                                    <div class="col-12 col-sm-6 col-md-3">
                                         <a href="#">
                                             <img class="img-fluid download"
                                                 src="https://chiavari.ditechmobility.com/wp-content/uploads/2018/04/apple-store.png"
@@ -274,7 +253,7 @@ export default {
     </div>
 
 
-    <!-- WORK WITH DELIVEROO -->
+    <!--! WORK WITH DELIVEROO -->
     <div class="work-with-deliveroo my-5">
         <div class="container">
             <h2 class="work-title py-4">Lavora con Booliveroo</h2>
@@ -368,6 +347,8 @@ export default {
 <style scoped lang="scss">
 @use '../assets/scss/partials/variables' as*;
 
+
+
 // ****** GENERAL******
 .primary-button {
     padding: 10px 20px;
@@ -383,6 +364,11 @@ export default {
 
 a {
     text-decoration: none;
+}
+
+
+li {
+    list-style-type: none;
 }
 
 
@@ -427,6 +413,9 @@ a {
     color: white;
 
     .selection-card {
+        a {
+            color: white;
+        }
 
         .selection-img {
             position: relative;
@@ -455,10 +444,42 @@ a {
 }
 
 
-// FAVOURITES RESTAURANTS
+// RESTAURANTS CATEGORIES
 
-.favourite-restaurants {}
+.categories-card {
+    position: relative;
 
+    .categories-img {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .categories-text {
+        color: white;
+
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+}
+
+
+// OTHER FOODS
+
+.other-foods {
+    background-color: black;
+
+    .other-foods-list {
+
+
+        .other-food-list-item {
+            background-color: white;
+            padding: 5px 10px;
+            border-radius: 6px;
+        }
+    }
+}
 
 
 
