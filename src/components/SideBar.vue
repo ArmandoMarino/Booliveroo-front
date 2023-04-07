@@ -6,48 +6,93 @@ export default {
     name: "AppFooter",
     data() {
         return {
+            restaurants: [],
             categories: [],
-            selectRestaurants: []
+            filteredCategories: [],
+            filteredRestaurants: [],
         }
     },
+
+    computed: {
+        filterRest() {
+            this.restaurants.forEach(rest => {
+                if (rest.categories.length) {
+                    rest.categories.forEach(cat => {
+                        if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
+                            this.filteredRestaurants.push(rest);
+                        }
+                        console.log(this.filteredRestaurants);
+
+                    });
+                }
+
+            })
+            return this.filteredRestaurants;
+        }
+    },
+
     methods: {
-        fetchRestaurants() {
+        fetchCategories() {
             axios.get(apiBaseUrl + '/categories').then(res => {
                 this.categories = res.data;
-                console.log(res.data);
             }).catch((err) => {
                 //
             }).then(() => {
                 // fare il loading
             })
         },
-        filterRestaurant(event) {
-            if (event.target.checked) {
-                this.selectRestaurants.push(event.target.id);
-            } else {
-                const id = event.target.id;
-                for (let data of this.selectRestaurants) {
-                    if (data === id) {
-                        const index = this.selectRestaurants.indexOf(data);
-                        this.selectRestaurants.splice(index, 1);
-                    }
-                }
-            }
-        },
-        // getFilteredRestaurant() {
-        //     const pars = this.selectRestaurants.map((str) => {
-        //         return parseInt(str);
-        //     });
 
-        //     const data = {
-        //         selectedRestaurants: pars,
-        //     }
-        //     console.log(data);
+        fetchRestaurants() {
+            axios.get(apiBaseUrl + '/restaurants').then(res => {
+                this.restaurants = res.data;
+                // console.log(res.data);
+            }).catch((err) => {
+                //
+            }).then(() => {
+                // fare il loading
+            })
+        },
+
+        getFilteredRestaurant() {
+            this.restaurants.forEach(rest => {
+                if (rest.categories.length) {
+                    rest.categories.forEach(cat => {
+                        if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
+                            this.filteredRestaurants.push(rest);
+                        }
+                        console.log(this.filteredRestaurants);
+
+                    });
+                }
+
+            })
+            return this.filteredRestaurants;
+        }
+
+        // filterCategories(category) {
+        //     this.filteredCategories.push(category);
+        //     return this.filteredCategories;
+        // },
+
+        // getfilteredRestaurant() {
+        //     this.filterCategories().forEach(element => {
+        //         const idCategory = element;
+        //         this.restaurants.forEach(rest => {
+        //             console.log(rest.restaurant_name);
+        //             if (rest.categories.includes(idCategory)) {
+        //                 this.filteredRestaurants.push(rest);
+        //                 console.log(this.filteredRestaurants);
+        //             }
+        //         })
+        //         console.log(element);
+        //     });
         // }
+
 
     },
     created() {
         this.fetchRestaurants();
+        this.fetchCategories();
     }
 };
 </script>
@@ -66,22 +111,21 @@ export default {
             <div class="bottom-sidebar">
                 <div v-for="category in categories" :key="category.id" class="list-group-item">
                     <label>
-                        <input class="form-check-input me-2" type="checkbox" @click="filterRestaurant($event)"
-                            :id="category.id" :checked="category.checked">
+                        <input class="form-check-input me-2" type="checkbox" :value="category.id"
+                            v-model="filteredCategories">
                         <span>{{ category.label }}</span>
                     </label>
                 </div>
                 <button type="button" class="btn btn-primary mt-4" @click="getFilteredRestaurant()">Visualizza</button>
-
             </div>
 
         </div>
         <div id="main-content">
             <div class="row">
-                <div class="col-4 mx-auto my-4">
+                <div v-for="restaurant in filterRest" :key="restaurant.id" class="col-4 mx-auto my-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
+                            <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                                 the card's content.</p>
                         </div>
