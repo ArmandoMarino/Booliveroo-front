@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const apiBaseUrl = 'http://127.0.0.1:8000/api';
 export default {
-    name: "AppFooter",
+    name: "SideBar",
     data() {
         return {
             restaurants: [],
@@ -13,23 +13,34 @@ export default {
         }
     },
 
+    // computed: {
+    //     filterRest() {
+    //         this.restaurants.forEach(rest => {
+    //             if (rest.categories.length) {
+    //                 rest.categories.forEach(cat => {
+    //                     if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
+    //                         this.filteredRestaurants.push(rest);
+    //                     }
+    //                     console.log(this.filteredRestaurants);
+
+    //                 });
+    //             }
+
+    //         })
+    //         return this.filteredRestaurants;
+    //     }
+    // },
     computed: {
-        filterRest() {
+        addKeyIsChecked() {
             this.restaurants.forEach(rest => {
-                if (rest.categories.length) {
-                    rest.categories.forEach(cat => {
-                        if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
-                            this.filteredRestaurants.push(rest);
-                        }
-                        console.log(this.filteredRestaurants);
-
-                    });
-                }
-
+                rest['isChecked'] = false;
+                console.log(this.restaurants);
             })
-            return this.filteredRestaurants;
+            return this.restaurants;
         }
+
     },
+
 
     methods: {
         fetchCategories() {
@@ -54,42 +65,29 @@ export default {
         },
 
         getFilteredRestaurant() {
+            this.filteredRestaurants = [];
             this.restaurants.forEach(rest => {
                 if (rest.categories.length) {
                     rest.categories.forEach(cat => {
                         if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
+                            rest.isChecked = true;
                             this.filteredRestaurants.push(rest);
                         }
-                        console.log(this.filteredRestaurants);
 
+
+                        // console.log(this.filteredRestaurants);
                     });
                 }
 
+                return this.filteredRestaurants;
             })
-            return this.filteredRestaurants;
-        }
 
-        // filterCategories(category) {
-        //     this.filteredCategories.push(category);
-        //     return this.filteredCategories;
-        // },
+        },
 
-        // getfilteredRestaurant() {
-        //     this.filterCategories().forEach(element => {
-        //         const idCategory = element;
-        //         this.restaurants.forEach(rest => {
-        //             console.log(rest.restaurant_name);
-        //             if (rest.categories.includes(idCategory)) {
-        //                 this.filteredRestaurants.push(rest);
-        //                 console.log(this.filteredRestaurants);
-        //             }
-        //         })
-        //         console.log(element);
-        //     });
-        // }
 
 
     },
+
     created() {
         this.fetchRestaurants();
         this.fetchCategories();
@@ -116,18 +114,26 @@ export default {
                         <span>{{ category.label }}</span>
                     </label>
                 </div>
+                <div>
+                    <label>
+                        <input class="form-check-input me-2" type="checkbox" value="Tutti" v-model="restaurants">
+                        <span>Mostra Tutti</span>
+                    </label>
+                </div>
                 <button type="button" class="btn btn-primary mt-4" @click="getFilteredRestaurant()">Visualizza</button>
             </div>
 
         </div>
         <div id="main-content">
             <div class="row">
-                <div v-for="restaurant in filterRest" :key="restaurant.id" class="col-4 mx-auto my-4">
+                <div v-for="restaurant in filteredRestaurants" :key="restaurant.id" class="col-4 mx-auto my-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                                the card's content.</p>
+                            <ul>
+                                <li v-for="cat in restaurant.categories" :key="cat.id" class="list-group-item">{{ cat.label
+                                }}</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
