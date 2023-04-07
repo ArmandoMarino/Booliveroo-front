@@ -6,6 +6,7 @@ export default {
     name: "SideBar",
     data() {
         return {
+            isChecked: false,
             restaurants: [],
             categories: [],
             filteredCategories: [],
@@ -34,9 +35,8 @@ export default {
         addKeyIsChecked() {
             this.restaurants.forEach(rest => {
                 rest['isChecked'] = false;
-                console.log(this.restaurants);
             })
-            return this.restaurants;
+            return this.restaurants
         }
 
     },
@@ -64,27 +64,24 @@ export default {
             })
         },
 
+
         getFilteredRestaurant() {
-            this.filteredRestaurants = [];
+            // this.filteredRestaurants = [];
             this.restaurants.forEach(rest => {
-                if (rest.categories.length) {
+                if (!this.filteredCategories.categories.length) {
+                    this.filteredRestaurants = this.restaurants;
+                } else if (rest.categories.length) {
                     rest.categories.forEach(cat => {
-                        if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
-                            rest.isChecked = true;
+                        // this.filteredCategories.isChecked = true;
+                        if (this.filteredCategories.categories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
                             this.filteredRestaurants.push(rest);
                         }
-
-
-                        // console.log(this.filteredRestaurants);
                     });
                 }
-
                 return this.filteredRestaurants;
             })
 
         },
-
-
 
     },
 
@@ -115,17 +112,28 @@ export default {
                     </label>
                 </div>
                 <div>
-                    <label>
-                        <input class="form-check-input me-2" type="checkbox" value="Tutti" v-model="restaurants">
-                        <span>Mostra Tutti</span>
-                    </label>
+                    <button type="button" class="btn btn-success mt-4 me-2"
+                        @click="getFilteredRestaurant()">Visualizza</button>
+                    <button type="button" class="btn btn-primary mt-4" @click="deleteFilter()">Mostra Tutti</button>
                 </div>
-                <button type="button" class="btn btn-primary mt-4" @click="getFilteredRestaurant()">Visualizza</button>
             </div>
 
         </div>
         <div id="main-content">
-            <div class="row">
+            <div v-if="!this.filteredCategories.length && !isChecked" class="row">
+                <div v-for="restaurant in restaurants" :key="restaurant.id" class="col-4 mx-auto my-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
+                            <ul>
+                                <li v-for="cat in restaurant.categories" :key="cat.id" class="list-group-item">{{ cat.label
+                                }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div v-else class="row">
                 <div v-for="restaurant in filteredRestaurants" :key="restaurant.id" class="col-4 mx-auto my-4">
                     <div class="card">
                         <div class="card-body">
