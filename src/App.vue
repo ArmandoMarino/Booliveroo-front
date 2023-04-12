@@ -5,7 +5,12 @@ import AppFooter from "./components/AppFooter.vue";
 import axios from "axios";
 export default {
   name: "App",
-  components: { AppHeader, AppFooter }
+  components: { AppHeader, AppFooter },
+  methods: {
+    async mounted() {
+      await this.$store.commit('initialiseStore')
+    },
+  }
 }
 </script>
 
