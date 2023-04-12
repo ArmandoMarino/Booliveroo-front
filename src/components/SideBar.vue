@@ -6,85 +6,52 @@ export default {
     name: "SideBar",
     data() {
         return {
-            isChecked: false,
+            // array di ristoranti da api
             restaurants: [],
+            // array di categorie da api
             categories: [],
-            filteredCategories: [],
-            filteredRestaurants: [],
+
+            // array of new categories
+            alternateCategories: [],
         }
     },
-
-    // computed: {
-    //     filterRest() {
-    //         this.restaurants.forEach(rest => {
-    //             if (rest.categories.length) {
-    //                 rest.categories.forEach(cat => {
-    //                     if (this.filteredCategories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
-    //                         this.filteredRestaurants.push(rest);
-    //                     }
-    //                     console.log(this.filteredRestaurants);
-
-    //                 });
-    //             }
-
-    //         })
-    //         return this.filteredRestaurants;
-    //     }
-    // },
     computed: {
-        addKeyIsChecked() {
-            this.restaurants.forEach(rest => {
-                rest['isChecked'] = false;
-            })
-            return this.restaurants
-        }
-
+        // filter restaurant
+        filteredRestaurants() {
+            if (this.alternateCategories.length === 0) {
+                return this.restaurants;
+            } else {
+                return this.restaurants.filter((restaurant) => {
+                    return this.alternateCategories.every(categoryId => {
+                        return restaurant.categories.some(category => {
+                            return category.id === categoryId;
+                        });
+                    });
+                });
+            }
+        },
     },
+
+
+
 
 
     methods: {
+        // # fetch categories
         fetchCategories() {
             axios.get(apiBaseUrl + '/categories').then(res => {
                 this.categories = res.data;
-            }).catch((err) => {
-                //
-            }).then(() => {
-                // fare il loading
-            })
+            });
         },
 
+        // # fetch restaurants
         fetchRestaurants() {
             axios.get(apiBaseUrl + '/restaurants').then(res => {
                 this.restaurants = res.data;
-                // console.log(res.data);
-            }).catch((err) => {
-                //
-            }).then(() => {
-                // fare il loading
-            })
-        },
-
-
-        getFilteredRestaurant() {
-            // this.filteredRestaurants = [];
-            this.restaurants.forEach(rest => {
-                if (!this.filteredCategories.categories.length) {
-                    this.filteredRestaurants = this.restaurants;
-                } else if (rest.categories.length) {
-                    rest.categories.forEach(cat => {
-                        // this.filteredCategories.isChecked = true;
-                        if (this.filteredCategories.categories.includes(cat.id) && !(this.filteredRestaurants.includes(rest))) {
-                            this.filteredRestaurants.push(rest);
-                        }
-                    });
-                }
-                return this.filteredRestaurants;
-            })
-
+            });
         },
 
     },
-
     created() {
         this.fetchRestaurants();
         this.fetchCategories();
@@ -95,52 +62,37 @@ export default {
 <template>
     <div id="main">
         <div id="side-bar">
+            <!-- immagine motorino -->
             <div class="top-sidebar">
                 <i class="fa-solid fa-bicycle me-2 fa-2x" style="color: #1a1835;"></i>
                 <span class="fs-3 fw-bold">Roma</span>
                 <img class="img-fluid rounded-3"
                     src="https://www.mangiaebevi.it/wp-content/uploads/2020/04/fooddeliveryman.jpg" alt="Roma food">
             </div>
+
+            <!-- categorie -->
             <h3 class="section-category border-top border-dark-subtle">Categorie</h3>
-
             <div class="bottom-sidebar">
+                <!-- # lista categorie -->
                 <div v-for="category in categories" :key="category.id" class="list-group-item">
-                    <label>
-                        <input class="form-check-input me-2" type="checkbox" :value="category.id"
-                            v-model="filteredCategories">
-                        <span>{{ category.label }}</span>
-                    </label>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-success mt-4 me-2"
-                        @click="getFilteredRestaurant()">Visualizza</button>
-                    <button type="button" class="btn btn-primary mt-4" @click="deleteFilter()">Mostra Tutti</button>
+                    <input :id="'cat-' + category.id" type="checkbox" class="btn btn-sm btn-success mb-3" role="button"
+                        :value="category.id" v-model="alternateCategories">
+                    <label :for="'cat-' + category.id" class="ms-3">{{ category.label }}</label>
                 </div>
             </div>
-
         </div>
+
+        <!-- ristoranti -->
         <div id="main-content">
-            <div v-if="!this.filteredCategories.length && !isChecked" class="row">
-                <div v-for="restaurant in restaurants" :key="restaurant.id" class="col-4 mx-auto my-4">
+            <div class="row">
+                <!-- # ciclo ristoranti da visualizzare -->
+                <div v-for="restaurant in filteredRestaurants" class="col-4 mx-auto my-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
                             <ul>
-                                <li v-for="cat in restaurant.categories" :key="cat.id" class="list-group-item">{{ cat.label
-                                }}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div v-else class="row">
-                <div v-for="restaurant in filteredRestaurants" :key="restaurant.id" class="col-4 mx-auto my-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ restaurant.restaurant_name }}</h5>
-                            <ul>
-                                <li v-for="cat in restaurant.categories" :key="cat.id" class="list-group-item">{{ cat.label
-                                }}</li>
+                                <li v-for="category in restaurant.categories" :key="category.id" class="list-group-item">{{
+                                    category.label }}</li>
                             </ul>
                         </div>
                     </div>
