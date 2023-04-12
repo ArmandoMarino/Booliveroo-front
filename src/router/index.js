@@ -6,6 +6,7 @@ import HomePage from "../pages/HomePage.vue";
 import RestaurantPage from "../pages/restaurants/RestaurantPage.vue";
 import RestaurantDetailPage from "../pages/restaurants/RestaurantDetailPage.vue";
 import CategoryRestaurantsPage from "../pages/restaurants/CategoryRestaurantsPage.vue";
+import Cart from "../pages/Cart.vue";
 import NotFoundPage from "../pages/NotFoundPage.vue";
 import ContactPage from "../pages/ContactPage.vue";
 import AboutUsPage from "../pages/AboutUsPage.vue";
@@ -18,6 +19,9 @@ const router = createRouter({
   // Rotte che useremo
   routes: [
     { path: "/", name: "home", component: HomePage },
+
+    // CART
+    { path: "/cart", name: "cart", component: Cart },
 
     // Rotta per la pagina del form
     { path: '/contact', name: 'contact_page', component: ContactPage },

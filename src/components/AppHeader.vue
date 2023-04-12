@@ -57,6 +57,18 @@ export default {
                             </button>
                         </li>
 
+                        <!-- NEW CART -->
+                        <li class="d-none d-sm-block col-sm-3 col-md-2">
+                            <router-link class="nav-link" :class="$route.name == 'Cart' ? 'active' : ''" aria-current="page"
+                                :to="{ name: 'cart', params: { component: Cart } }">
+                                <i class="bi bi-cart3 h4"></i>
+                                <span v-if="$store.state.cart.length > 0"
+                                    class="align-items-center justify-content-center translate-middle badge rounded-pill bg-secondary">
+                                    {{ $store.state.cart.length }}
+                                </span>
+                            </router-link>
+                        </li>
+
                         <!-- SIGN UP -->
                         <li class=" col-8  col-sm-5 col-md-3">
                             <a href="http://127.0.0.1:8000/login">
