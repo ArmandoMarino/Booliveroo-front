@@ -42,7 +42,7 @@ export default {
 
 <template>
     <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm btn-outline-secondary me-2">
-        <i :class="toAdd ? 'bi bi-cart' : 'bi bi-cart-check'"></i>
+        <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-cart-shopping'"></i>
     </button>
     <CartAddRemove v-if="!toAdd" :product="item" />
 </template>

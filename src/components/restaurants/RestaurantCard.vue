@@ -1,6 +1,8 @@
 <script>
+import CartBTN from '../CartBTN.vue';
 export default {
     name: "RestaurantCard",
+    components: { CartBTN },
     props: {
         restaurant: Object,
         isDetail: Boolean,
@@ -116,76 +118,20 @@ export default {
     <div v-if="isDetail" class="container">
         <div class="row g-2">
             <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods" :key="food.id">
-                <div class="p-3 card-food d-flex justify-content-between">
+                <div class="p-3 card-food">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
-                    <div class="text">
+                    <div class="text mb-3">
                         <p><strong>{{ food.label }}</strong></p>
-                        <p>{{ food.price }} €</p>
                     </div>
 
-                    <!--! MODAL CART -->
-                    <div class="modal-food">
-                        <!--* MODAL BUTTON -->
-                        <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#modal-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
-
-                        <!--* MODAL -->
-                        <div class="modal fade" id="modal-cart" tabindex="-1" aria-labelledby="modal-cart-Label"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="modal-cart-Label">{{ food.label }}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- TODO IMG FOOD -->
-                                        <p>{{ food.description }}</p>
-                                    </div>
-
-
-                                    <div class="modal-footer">
-                                        <!--* QUANTITY -->
-                                        <div class="d-flex justify-content-between align-items-center mb-4"
-                                            style="width: 100%">
-
-                                            <!-- CLOSE -->
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-
-                                            <div class="w-50 d-flex justify-content-between align-items-center">
-                                                <!-- LESS -->
-                                                <button class="btn btn-primary px-3 me-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                                    <i class="fas fa-minus"></i>
-                                                </button>
-
-                                                <!-- IMPUT NUMBER -->
-                                                <div class="form-outline">
-
-                                                    <input id="form1" min="0" name="quantity" value="1" type="number"
-                                                        class="form-control" />
-                                                </div>
-                                                <!-- MORE -->
-                                                <button class="btn btn-primary px-3 ms-2"
-                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                                    <i class="fas fa-plus"></i>
-                                                </button>
-                                            </div>
-
-                                        </div>
-
-                                        <button type="button" class="btn btn-bool">Aggiungi al carrello</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <CartBTN :product="food" />
                         </div>
-
+                        <small class="text-muted"><i class="fa-solid fa-euro me-2"></i>{{ food.price }}</small>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
