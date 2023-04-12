@@ -123,7 +123,7 @@ export default {
                         <p>{{ food.price }} €</p>
                     </div>
 
-
+                    <!--! MODAL CART -->
                     <div class="modal-food">
                         <!--* MODAL BUTTON -->
                         <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#modal-cart">
@@ -144,9 +144,39 @@ export default {
                                         <!-- TODO IMG FOOD -->
                                         <p>{{ food.description }}</p>
                                     </div>
+
+
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
+                                        <!--* QUANTITY -->
+                                        <div class="d-flex justify-content-between align-items-center mb-4"
+                                            style="width: 100%">
+
+                                            <!-- CLOSE -->
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+
+                                            <div class="w-50 d-flex justify-content-between align-items-center">
+                                                <!-- LESS -->
+                                                <button class="btn btn-primary px-3 me-2"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+
+                                                <!-- IMPUT NUMBER -->
+                                                <div class="form-outline">
+
+                                                    <input id="form1" min="0" name="quantity" value="1" type="number"
+                                                        class="form-control" />
+                                                </div>
+                                                <!-- MORE -->
+                                                <button class="btn btn-primary px-3 ms-2"
+                                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                            </div>
+
+                                        </div>
+
                                         <button type="button" class="btn btn-bool">Aggiungi al carrello</button>
                                     </div>
                                 </div>
