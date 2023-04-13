@@ -6,11 +6,9 @@ import axios from "axios";
 export default {
   name: "App",
   components: { AppHeader, AppFooter },
-  methods: {
-    async mounted() {
-      await this.$store.commit('initialiseStore')
-    },
-  }
+  async mounted() {
+    await this.$store.commit('initialiseStore')
+  },
 }
 </script>
 
