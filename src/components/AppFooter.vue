@@ -17,7 +17,7 @@ export default {
                     <div class="small-col mt-4">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" disabled>Discover
-                                    Deliveroo</a>
+                                    Booliveroo</a>
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'about_us' }"
                                     class="text-decoration-none">About us</router-link></li>
@@ -64,7 +64,7 @@ export default {
                         <ul class="p-3">
                             <li class="list-group-item d-none d-sm-block">
                                 <a class="text-decoration-none fs-4 fw-bold" disabled>Take
-                                    Deliveroo
+                                    Booliveroo
                                     with you</a>
                             </li>
                         </ul>
@@ -91,7 +91,7 @@ export default {
                 </div>
                 <div class="col-sm-3 col-12 d-none d-sm-flex copyright d-flex align-items-center justify-content-end">
                     <span class="me-3 copyright-icon fs-4">&copy</span>
-                    <span class="text-copyright">2023 Deliveroo</span>
+                    <span class="text-copyright">2023 Booliveroo</span>
                 </div>
             </div>
         </div>
