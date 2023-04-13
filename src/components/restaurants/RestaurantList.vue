@@ -74,15 +74,20 @@ export default {
             <section class="restaurants">
                 <!-- <h4 v-if="category?.label">{{ category.label }}</h4> -->
                 <!-- TODO scritta dinamica -->
-                <!-- # lista categorie -->
 
+
+                <!-- * lista categorie -->
                 <!-- TODO colori bottoni -->
-                <div class="my-4 d-flex justify-content-end align-items-center">
+                <div class="my-4 flex-column flex-md-row d-flex justify-content-end align-items-center">
                     <p class="m-0 me-4">Filtra per ristoranti :</p>
-                    <div v-for="category in categories" :key="category.id" class="btn-group categories me-2" role="group">
-                        <input :id="'cat-' + category.id" type="checkbox" class="btn-check" autocomplete="off"
-                            :value="category.id" v-model="alternateCategories">
-                        <label :for="'cat-' + category.id" class="btn btn-outline-primary">{{ category.label }}</label>
+                    <div class="my-3">
+                        <div v-for="category in categories" :key="category.id" class="btn-group categories me-2"
+                            role="group">
+                            <input :id="'cat-' + category.id" type="checkbox" class="btn-check" autocomplete="off"
+                                :value="category.id" v-model="alternateCategories">
+                            <label :for="'cat-' + category.id" class="btn btn-outline-primary btn-sm">{{ category.label
+                            }}</label>
+                        </div>
                     </div>
                 </div>
 
