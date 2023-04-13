@@ -33,14 +33,14 @@ export default {
         <!--* ROUETR TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
-            <div :class="isDetail ? 'd-flex' : 'card'">
+            <div id="card-restaurant" :class="isDetail ? 'd-flex' : 'card h-100'">
                 <!-- IMAGE -->
                 <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
                 " :alt="restaurant.name">
 
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
-                    <p :class="isDetail ? 'h1' : 'p m-0'"><strong>{{ restaurant.restaurant_name }}</strong></p>
+                    <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
                         <p v-if="isDetail"><strong>Categorie :</strong></p>
                         <span :class="isDetail ? 'p' : 'categories'" v-for="(category, i) in restaurant.categories">
@@ -170,6 +170,8 @@ export default {
 
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
+
+
 
 .pointer-none {
     cursor: default;
