@@ -7,10 +7,6 @@ export default {
             this.$store.commit('addRemoveCart', { product: item, toAdd: false })
         },
     },
-    mounted() {
-
-    }
-
 }
 </script>
 
