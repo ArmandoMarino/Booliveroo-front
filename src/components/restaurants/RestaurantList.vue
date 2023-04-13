@@ -38,11 +38,6 @@ export default {
             }
         },
     },
-
-
-
-
-
     methods: {
         // # fetch categories
         fetchCategories() {
