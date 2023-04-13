@@ -69,25 +69,28 @@ export default {
                             </li>
                         </ul>
                         <div class="images-footer ms-5">
-                            <a href="#">
+                            <router-link :to="{ name: 'work_in_progress' }">
                                 <img class="img-fluid"
                                     src="https://chiavari.ditechmobility.com/wp-content/uploads/2018/04/apple-store.png"
                                     alt="download-appstore">
-                            </a>
-                            <a href="#">
+                            </router-link>
+                            <router-link :to="{ name: 'work_in_progress' }">
                                 <img class="img-fluid mt-3 border border-white rounded-3"
                                     src="https://www.hiboost.com/eu/wp-content/uploads/2020/03/get-it-on-google-play.png"
                                     alt="google-play">
-                            </a>
+                            </router-link>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row justify-content-between align-items-center mt-4">
                 <div class="col-sm-3 col-12 icon-footer d-flex">
-                    <a href="#"><i class="fa-brands fa-facebook fa-2x me-3" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-brands fa-twitter fa-2x me-3" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram fa-2x me-3" style="color: #ffffff;"></i></a>
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-facebook fa-2x me-3"
+                            style="color: #ffffff;"></i></router-link>
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-twitter fa-2x me-3"
+                            style="color: #ffffff;"></i></router-link>
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-instagram fa-2x me-3"
+                            style="color: #ffffff;"></i></router-link>
                 </div>
                 <div class="col-sm-3 col-12 d-none d-sm-flex copyright d-flex align-items-center justify-content-end">
                     <span class="me-3 copyright-icon fs-4">&copy</span>
