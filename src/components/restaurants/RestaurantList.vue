@@ -87,9 +87,9 @@ export default {
                 </div>
 
 
-                <h4>I nostri ristoranti</h4>
 
                 <div class="row">
+                    <h4>I nostri Ristoranti</h4>
                     <!-- TODO V-IF RESTAURANTS.LENGTH -->
                     <restaurant-card v-for="restaurant in filteredRestaurants" :key="restaurant.name"
                         :restaurant="restaurant"></restaurant-card>
