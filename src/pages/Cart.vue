@@ -25,9 +25,9 @@ export default {
 
                             <div class="row">
                                 <div class="col-lg-7">
-                                    <h5 class="mb-3"><router-link :to="{ name: 'home', params: { component: HomePage } }"
-                                            class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Continue
-                                            shopping</router-link>
+                                    <h5 class="mb-3"><button @click="$router.back()" class="text-body"><i
+                                                class="fas fa-long-arrow-alt-left me-2"></i>Continue
+                                            shopping</button>
                                     </h5>
                                     <hr>
 
