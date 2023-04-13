@@ -35,6 +35,6 @@ export default {
 
 <style scoped lang="scss">
 .restaurant-detail {
-    margin-top: 100px;
+    // margin-top: 100px;
 }
 </style>

@@ -28,18 +28,21 @@ export default {
 
 
 <template>
-    <div class="text-center my-4" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
+    <div class="text-center my-4" :class="isDetail ? 'col-9 mx-auto  mx-lg-3 mx-sm-auto' : 'col-lg-3 col-md-6 col-sm-10'
     ">
         <!--* ROUETR TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
-            <div id="card-restaurant" :class="isDetail ? 'd-flex' : 'card h-100'">
+            <div id="card-restaurant"
+                :class="isDetail ? 'd-flex justify-content-center flex-column flex-lg-row' : 'card h-100'">
                 <!-- IMAGE -->
-                <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
-                " :alt="restaurant.name">
+                <div id="image-restaurant">
+                    <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                    " :alt="restaurant.name">
+                </div>
 
                 <!-- TEXT -->
-                <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
+                <div class="text-start" :class="isDetail ? 'card-body m-4' : 'ms-3'">
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
                         <p v-if="isDetail"><strong>Categorie :</strong></p>
@@ -57,7 +60,7 @@ export default {
                             {{ setVote }}
                         </li>
                         <!-- DISTANCE -->
-                        <li class="mt-1">{{ restaurant.address }}</li>
+                        <li :class="isDetail ? '' : 'mt-1'">{{ restaurant.address }}</li>
                         <!-- HOUR -->
                         <li v-if="isDetail">Chiude alle 23.30</li>
                     </ul>
