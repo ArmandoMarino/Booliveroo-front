@@ -10,6 +10,8 @@ import NotFoundPage from "../pages/NotFoundPage.vue";
 import ContactPage from "../pages/ContactPage.vue";
 import AboutUsPage from "../pages/AboutUsPage.vue";
 import CareersPage from "../pages/CareersPage.vue";
+import WorkInProgressPage from "../pages/WorkInProgressPage.vue";
+
 
 
 // Creo il Router e definisco le rotte
@@ -29,6 +31,9 @@ const router = createRouter({
 
     // Rotta per la pagina Careers
     { path: '/careers', name: 'careers', component: CareersPage},
+
+    // Rotta per la pagina Work in Progress
+    { path: '/work_in_progress', name: 'work_in_progress', component: WorkInProgressPage},
 
     { path: "/restaurants", name: "restaurants", component: RestaurantPage },
 
