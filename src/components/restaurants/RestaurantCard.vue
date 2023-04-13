@@ -41,6 +41,13 @@ export default {
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <p :class="isDetail ? 'h1' : 'p m-0'"><strong>{{ restaurant.restaurant_name }}</strong></p>
+                    <div :class="isDetail ? 'mb-3' : ''">
+                        <p v-if="isDetail"><strong>Categorie :</strong></p>
+                        <span :class="isDetail ? 'p' : 'categories'" v-for="(category, i) in restaurant.categories">
+                            <i>{{ category.label }}</i><span v-if="i === restaurant.categories.length - 1"> </span>
+                            <span v-else> - </span>
+                        </span>
+                    </div>
                     <ul :class="isDetail ? 'd-flex' : 'd-flex flex-column mb-0 p-0'">
                         <!-- VOTE -->
                         <li>
@@ -50,7 +57,7 @@ export default {
                             {{ setVote }}
                         </li>
                         <!-- DISTANCE -->
-                        <li>{{ restaurant.address }}</li>
+                        <li class="mt-1">{{ restaurant.address }}</li>
                         <!-- HOUR -->
                         <li v-if="isDetail">Chiude alle 23.30</li>
                     </ul>
@@ -212,6 +219,11 @@ a {
     height: 300px;
 }
 
+
+.categories {
+    font-size: 0.8rem;
+    color: rgb(130, 130, 130);
+}
 
 
 // FOOD

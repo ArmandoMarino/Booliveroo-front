@@ -85,7 +85,7 @@ export default {
                             role="group">
                             <input :id="'cat-' + category.id" type="checkbox" class="btn-check" autocomplete="off"
                                 :value="category.id" v-model="alternateCategories">
-                            <label :for="'cat-' + category.id" class="btn btn-outline-primary btn-sm">{{ category.label
+                            <label :for="'cat-' + category.id" class="btn btn-outline-myprimary btn-sm">{{ category.label
                             }}</label>
                         </div>
                     </div>
@@ -108,5 +108,22 @@ export default {
 
 
 <style lang="scss" scoped>
-.categories {}
+@use '../../assets/scss/partials/variables' as*;
+
+.btn-outline-myprimary {
+    --bs-btn-color: #00717c;
+    --bs-btn-border-color: #00CCBC;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #00CCBC;
+    --bs-btn-hover-border-color: #00CCBC;
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #00CCBC;
+    --bs-btn-active-border-color: #00CCBC;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #00CCBC;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #00CCBC;
+    --bs-gradient: none;
+}
 </style>
