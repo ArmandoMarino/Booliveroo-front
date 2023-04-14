@@ -41,14 +41,16 @@ export default {
 </script>
 
 <template>
-    <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm btn-outline-secondary me-2">
-        <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-cart-shopping'"></i>
+    <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm me-2">
+        <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-trash-can text-danger'"></i>
     </button>
     <CartAddRemove v-if="!toAdd" :product="item" />
 </template>
 
 
-<style>
+<style scoped lang="scss">
+@use '../assets/scss/partials/variables' as *;
+
 .cart-btn {
     width: 40px;
     height: 38px;
@@ -56,5 +58,9 @@ export default {
 
 .plus-minus input {
     max-width: 50px;
+}
+
+.fa-cart-plus {
+    color: $secondary;
 }
 </style>
