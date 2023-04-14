@@ -7,10 +7,10 @@ export default {
 <template>
     <header>
         <div class="container">
-            <div class="row align-items-center">
+            <div class="navbar d-flex">
 
                 <!-- logo -->
-                <div class="col-2 col-sm-4 col-md-3 col-lg-5 col-xl-6">
+                <div>
                     <div class="logo m-0">
                         <router-link :to="{ name: 'home', params: { component: HomePage } }">
                             <img src="../assets/img/Logo-BOOLIVEROO-PRIMARY.png" alt="logo-deliveroo" class="img-fluid">
@@ -19,11 +19,10 @@ export default {
                 </div>
 
                 <!-- navbar-menu -->
-                <div class="col-8 col-sm-8 col-md-9 col-lg-7 col-xl-6">
-                    <ul class="row text-end">
-
+                <div class="navbar-menu ">
+                    <ul class=" d-flex mb-0">
                         <!-- PARTNER WITH US -->
-                        <li class="d-none d-md-block col-md-4">
+                        <li>
                             <div class="partner-with-us">
                                 <div class="dropdown">
                                     <button class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
@@ -50,7 +49,7 @@ export default {
                         </li>
 
                         <!-- CART -->
-                        <li class="d-none d-sm-block col-sm-3 col-md-2">
+                        <li class="cart">
                             <button class="btn nav-but" aria-current="page" href="#">
                                 <span style="font-size:0.8rem;"><i
                                         class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
@@ -70,7 +69,7 @@ export default {
                         </li>
 
                         <!-- SIGN UP -->
-                        <li class=" col-8  col-sm-5 col-md-3">
+                        <li class="login">
                             <a href="http://127.0.0.1:8000/login">
                                 <button class="btn nav-but" href="#">
                                     <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
@@ -80,7 +79,7 @@ export default {
                         </li>
 
                         <!-- MENU -->
-                        <li class="col-4 col-sm-3  col-md-2">
+                        <li class="menu">
                             <button class="btn nav-but" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span
                                     style="font-size:0.9rem;"><i
@@ -88,24 +87,24 @@ export default {
 
                             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                                 aria-labelledby="offcanvasRightLabel">
-                                <div class="offcanvas-header ">
+                                <div class="offcanvas-header">
                                     <!-- LOGO AND CLOSE UP BUTTON-->
                                     <div class="logo d-flex align-items-center">
                                         <img src="../assets/img/Logo-COLORATO-BOOLEVEROO-.png" alt="logo-deliveroo"
                                             class="img-fluid ">
 
-                                        <button type="button" class="btn-close ms-5 " data-bs-dismiss="offcanvas"
+                                        <button type="button" class="btn-close m-0" data-bs-dismiss="offcanvas"
                                             aria-label="Close"></button>
                                     </div>
 
 
                                 </div>
 
-                                <div class="offcanvas-body">
+                                <div class="offcanvas-body text-center">
                                     <hr>
                                     <!-- OFFCANVAS SIGN UP BUTTON -->
                                     <div class="my-5 ">
-                                        <a href="#" class="sign-up-button me-3">Sign up or login</a>
+                                        <a href="#" class="sign-up-button">Sign up or login</a>
                                     </div>
 
                                     <!-- OFFCANVAS MENU -->
@@ -150,7 +149,7 @@ export default {
 
                                         <!-- region LANGUAGE  -->
 
-                                        <div class="region ms-4">
+                                        <div class="region">
                                             <div class="languages">
                                                 <select name="languages" id="languages" class="choose-your-button mx-auto">
                                                     <option value="">English</option>
@@ -194,6 +193,31 @@ export default {
 
 
 
+@media only screen and (max-width: 778px) {
+    .partner-with-us {
+        display: none;
+    }
+
+    .login {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 650px) {
+    .cart {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 554px) {
+    .login {
+        display: none;
+    }
+
+}
+
 
 header {
     background-color: black;
@@ -208,6 +232,7 @@ header {
         background-color: white;
         padding: 5px 10px;
         border-radius: 6px;
+        margin-left: 5px;
 
     }
 
@@ -225,7 +250,7 @@ header {
     .sign-up-button {
         color: white;
         background-color: $primary;
-        padding: 15px 125px;
+        padding: 15px 100px;
         border-radius: 6px;
 
 
