@@ -28,12 +28,12 @@ export default {
 
 
 <template>
-    <div class="text-center my-4" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
+    <div class="text-center container" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
     ">
         <!--* ROUETR TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
-            <div id="card-restaurant" :class="isDetail ? 'd-flex' : 'card h-100'">
+            <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'card h-100'">
                 <!-- IMAGE -->
                 <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
                 " :alt="restaurant.name">
@@ -50,7 +50,7 @@ export default {
                     </div>
                     <ul :class="isDetail ? 'd-flex' : 'd-flex flex-column mb-0 p-0'">
                         <!-- VOTE -->
-                        <li>
+                        <li class="d-flex">
                             <span v-for="vote in Math.floor(restaurant.vote)">
                                 <i class="fa-solid fa-star"></i>
                             </span>
@@ -122,8 +122,9 @@ export default {
     <!--* FOOD-CARD IN DETAIL -->
     <div v-if="isDetail" class="container">
         <div class="row g-2">
-            <div class="pop-card text-left p-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods" :key="food.id">
-                <div class="p-3 card-food d-flex justify-content-between">
+            <div class="pop-card text-left py-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
+                :key="food.id">
+                <div class="p-2 card-food d-flex justify-content-between">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
                     <div class="text">
                         <p><strong>{{ food.label }}</strong></p>
