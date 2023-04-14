@@ -42,6 +42,10 @@ export default {
 
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
+                    <!-- cart flag -->
+                    <div class="cart-flag" v-if="$store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
+                    "></div>
+
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
                         <p v-if="isDetail"><strong>Categorie :</strong></p>
@@ -147,7 +151,20 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
 
-
+.cart-flag {
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background-color: #00CCBC;
+        position: absolute;
+        right: -9px;
+        top: -9px;
+    }
+}
 
 .pointer-none {
     cursor: default;
