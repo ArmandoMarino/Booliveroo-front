@@ -1,10 +1,10 @@
 <script>
 import axios from 'axios';
-import RestaurantList from '../../components/restaurants/RestaurantList.vue';
+import SingleCategoryRestaurant from '../../components/restaurants/SingleCategoryRestaurant.vue';
 const apiBaseUrl = 'http://127.0.0.1:8000/api'
 export default {
     name: 'CategoryRestaurantsPage',
-    components: { RestaurantList },
+    components: { SingleCategoryRestaurant },
     data: () => ({
         restaurants: {},
         categories: null
@@ -34,5 +34,6 @@ export default {
 
 
 <template>
-    <restaurant-list :restaurants="restaurants" :categories="categories"></restaurant-list>
+    <!-- <restaurant-list :restaurants="restaurants" :categories="categories"></restaurant-list> -->
+    <single-category-restaurant :restaurants="restaurants" :categories="categories"></single-category-restaurant>
 </template>
