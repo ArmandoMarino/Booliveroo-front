@@ -50,19 +50,10 @@ export default {
 
                         <!-- CART -->
                         <li class="cart">
-                            <button class="btn nav-but" aria-current="page" href="#">
-                                <span style="font-size:0.8rem;"><i
-                                        class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
-                            </button>
-                        </li>
-
-                        <!-- NEW CART -->
-                        <li class="d-none d-sm-block col-sm-3 col-md-2">
-                            <router-link class="nav-link" :class="$route.name == 'Cart' ? 'active' : ''" aria-current="page"
-                                :to="{ name: 'cart', params: { component: Cart } }">
-                                <i class="bi bi-cart3 h4"></i>
-                                <span v-if="$store.state.cart.length > 0"
-                                    class="align-items-center justify-content-center translate-middle badge rounded-pill bg-secondary">
+                            <router-link class="btn nav-but" :class="$route.name == 'Cart' ? 'active' : ''"
+                                aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
+                                <i class="primary-icon fa-solid fa-cart-shopping"></i>
+                                <span v-if="$store.state.cart.length > 0">
                                     {{ $store.state.cart.length }}
                                 </span>
                             </router-link>
