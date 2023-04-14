@@ -35,5 +35,5 @@ export default {
 
 <template>
     <!-- <restaurant-list :restaurants="restaurants" :categories="categories"></restaurant-list> -->
-    <single-categories-restaurant :restaurants="restaurants" :categories="categories"></single-categories-restaurant>
+    <single-category-restaurant :restaurants="restaurants" :categories="categories"></single-category-restaurant>
 </template>
