@@ -49,7 +49,7 @@ export default {
                         </li>
 
                         <!-- CART -->
-                        <li class="cart">
+                        <li v-if="$store.state.cart.length" class="cart">
                             <router-link class="btn nav-but" :class="$route.name == 'Cart' ? 'active' : ''"
                                 aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
                                 <i class="primary-icon fa-solid fa-cart-shopping"></i>
