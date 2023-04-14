@@ -60,7 +60,8 @@ export default {
                                                                 class="bi bi-currency-dollar"></i>{{ item.price }}</small>
                                                     </div>
                                                     <a role="button" @click="removeItem(item)" class="ms-4"
-                                                        style="color: #cecece;"><i class="fa-solid fa-trash h4"></i></a>
+                                                        style="color: #cecece;"><i
+                                                            class="fa-solid fa-trash-can text-danger h4"></i></a>
                                                 </div>
                                             </div>
                                         </div>
