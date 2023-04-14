@@ -130,11 +130,16 @@ export default {
         <div class="row g-2">
             <div class="pop-card text-left py-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
                 :key="food.id">
-                <div class="p-2 card-food d-flex justify-content-between">
+                <div class="p-2 card-food">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
-                    <div class="text mb-3">
-                        <p><strong>{{ food.label }}</strong></p>
+                    <div class="text mb-3 d-flex">
+                        <div style="height: auto; width: 30%;">
+                            <img :src="food.image" class="img-fluid">
+                        </div>
+                        <p class="ms-2"><strong>{{ food.label }}</strong></p>
                     </div>
+
+
 
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
@@ -224,7 +229,7 @@ a {
 
 // FOOD
 .card-food {
-    min-height: 100px;
+    min-height: 125px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     p {
