@@ -2,6 +2,7 @@
 import CartAddRemove from './CartAddRemove.vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
+
 export default {
     props: ['product'],
     components: { CartAddRemove },
@@ -13,19 +14,40 @@ export default {
     },
     methods: {
         async addOrRemove() {
-            this.item.qty = 1
-            this.$store.commit('addRemoveCart', { product: this.item, toAdd: this.toAdd })
-            let toasMSG;
-            this.toAdd ?
-                toasMSG = 'Added to cart' : toasMSG = 'Removed from cart'
-            toast(toasMSG, {
-                autoClose: 1000,
+            this.item.qty = 1;
+            let restaurantId = this.item.restaurant_id;
+            let cart = this.$store.state.cart;
+            let sameRestaurant = true;
+
+            cart.forEach((item) => {
+                if (item.restaurant_id !== restaurantId) {
+                    sameRestaurant = false;
+                }
             });
-            this.toAdd = !this.toAdd
-        }
+
+            if (sameRestaurant) {
+                this.$store.commit('addRemoveCart', { product: this.item, toAdd: this.toAdd });
+                let toastMSG;
+                this.toAdd ? toastMSG = 'Articolo aggiunto al carrello' : toastMSG = 'Articolo rimosso dal carrello';
+                toast(toastMSG, {
+                    autoClose: 1000,
+                    limit: 3
+                });
+                this.toAdd = !this.toAdd;
+            } else {
+
+                toast.warning('Non puoi ordinare da più di un ristorante alla volta, clicca qui per modificare il carrello', {
+                    autoClose: false,
+                    onClick: () => {
+                        this.$router.push({ name: 'cart' })
+                    },
+                    limit: 1,
+                })
+            }
+        },
     },
     mounted() {
-        console.log(this.$store.state.cart)
+        // console.log(this.$store.state.cart)
         let cart = this.$store.state.cart
         let obj = cart.find(o => o.id === this.product.id);
         if (obj) {
