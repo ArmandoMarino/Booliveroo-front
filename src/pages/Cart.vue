@@ -1,11 +1,16 @@
 <script>
 import CartAddRemove from '../components/CartAddRemove.vue';
+import store from '../store';
 export default {
     components: { CartAddRemove },
     methods: {
         removeItem(item) {
             this.$store.commit('addRemoveCart', { product: item, toAdd: false })
         },
+
+        emptyCart() {
+            this.$store.commit('emptyCart', this.$store.state)
+        }
     },
 }
 </script>
@@ -31,6 +36,11 @@ export default {
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div>
                                             <p class="mb-0">You have {{ $store.state.cart.length }} items in your cart</p>
+                                        </div>
+
+                                        <div>
+                                            <button class="btn btn-sm btn-danger" @click="emptyCart()">Svuota
+                                                carrello</button>
                                         </div>
                                     </div>
 

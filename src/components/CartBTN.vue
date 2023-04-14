@@ -33,10 +33,9 @@ export default {
                 });
                 this.toAdd = !this.toAdd;
             } else {
-                toast('Puoi ordinare solo da un ristorante alla volta!', { autoClose: 1000 });
+                toast("<p>ciaone</p>", { autoClose: 105000, theme: "dark" });
             }
-        }
-
+        },
     },
     mounted() {
         // console.log(this.$store.state.cart)
