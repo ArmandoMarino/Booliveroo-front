@@ -13,19 +13,33 @@ export default {
     },
     methods: {
         async addOrRemove() {
-            this.item.qty = 1
-            this.$store.commit('addRemoveCart', { product: this.item, toAdd: this.toAdd })
-            let toasMSG;
-            this.toAdd ?
-                toasMSG = 'Added to cart' : toasMSG = 'Removed from cart'
-            toast(toasMSG, {
-                autoClose: 1000,
+            this.item.qty = 1;
+            let restaurantId = this.item.restaurant_id;
+            let cart = this.$store.state.cart;
+            let sameRestaurant = true;
+
+            cart.forEach((item) => {
+                if (item.restaurant_id !== restaurantId) {
+                    sameRestaurant = false;
+                }
             });
-            this.toAdd = !this.toAdd
+
+            if (sameRestaurant) {
+                this.$store.commit('addRemoveCart', { product: this.item, toAdd: this.toAdd });
+                let toastMSG;
+                this.toAdd ? toastMSG = 'Articolo aggiunto al carrello' : toastMSG = 'Articolo rimosso dal carrello';
+                toast(toastMSG, {
+                    autoClose: 1000,
+                });
+                this.toAdd = !this.toAdd;
+            } else {
+                toast('Puoi ordinare solo da un ristorante alla volta!', { autoClose: 1000 });
+            }
         }
+
     },
     mounted() {
-        console.log(this.$store.state.cart)
+        // console.log(this.$store.state.cart)
         let cart = this.$store.state.cart
         let obj = cart.find(o => o.id === this.product.id);
         if (obj) {
