@@ -2,6 +2,7 @@
 import CartAddRemove from './CartAddRemove.vue';
 import { toast } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css';
+
 export default {
     props: ['product'],
     components: { CartAddRemove },
@@ -30,10 +31,18 @@ export default {
                 this.toAdd ? toastMSG = 'Articolo aggiunto al carrello' : toastMSG = 'Articolo rimosso dal carrello';
                 toast(toastMSG, {
                     autoClose: 1000,
+                    limit: 3
                 });
                 this.toAdd = !this.toAdd;
             } else {
-                toast("<p>ciaone</p>", { autoClose: 105000, theme: "dark" });
+
+                toast.warning('Non puoi ordinare da più di un ristorante alla volta, clicca qui per modificare il carrello', {
+                    autoClose: false,
+                    onClick: () => {
+                        this.$router.push({ name: 'cart' })
+                    },
+                    limit: 1,
+                })
             }
         },
     },
