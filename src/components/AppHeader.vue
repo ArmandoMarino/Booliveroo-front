@@ -23,28 +23,12 @@ export default {
                     <ul class=" d-flex mb-0">
                         <!-- PARTNER WITH US -->
                         <li>
-                            <div class="partner-with-us">
-                                <div class="dropdown">
-                                    <button class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false" id="partner-dropdown">
-                                        <span style="font-size:0.9rem;"><i
-                                                class="primary-icon fa-solid fa-chevron-down"></i>Partner with us</span>
-                                    </button>
-
-                                    <!-- SUB-MENU -->
-                                    <ul class="dropdown-menu" aria-labelledby="partner-dropdown">
-                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                                                        class="primary-icon fa-solid fa-bicycle"></i>Riders</span></a></li>
-                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                                                        class="primary-icon fa-solid fa-utensils"></i>Restaurants</span></a>
-                                        </li>
-                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                                                        class="primary-icon fa-solid fa-briefcase"></i>Riders</span></a>
-                                        </li>
-                                        <li><a class="dropdown-item sub-menu-item" href="#"><span><i
-                                                        class="primary-icon fa-solid fa-shop"></i>Riders</span></a></li>
-                                    </ul>
-                                </div>
+                            <div class="contact-us">
+                                <a class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false" id="partner-dropdown">
+                                    <span style="font-size:0.9rem;"><i
+                                            class="primary-icon fa-solid fa-chevron-down"></i>Contact us</span>
+                                </a>
                             </div>
                         </li>
 
@@ -185,7 +169,7 @@ export default {
 
 
 @media only screen and (max-width: 778px) {
-    .partner-with-us {
+    .contact-us {
         display: none;
     }
 
