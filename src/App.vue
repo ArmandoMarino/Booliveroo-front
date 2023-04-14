@@ -4,15 +4,25 @@ import AppFooter from "./components/AppFooter.vue";
 
 export default {
   name: "App",
-  components: { AppHeader, AppFooter }
+  components: { AppHeader, AppFooter },
+  async mounted() {
+    await this.$store.commit('initialiseStore')
+  },
 }
 </script>
 
 
 <template>
   <app-header></app-header>
-  <RouterView />
+  <div class="wrapper">
+    <RouterView />
+
+  </div>
   <app-footer></app-footer>
 </template>
 
-<style></style>
+<style>
+.wrapper {
+  min-height: 800px;
+}
+</style>

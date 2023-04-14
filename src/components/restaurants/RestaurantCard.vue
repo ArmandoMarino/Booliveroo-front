@@ -1,6 +1,8 @@
 <script>
+import CartBTN from '../CartBTN.vue';
 export default {
     name: "RestaurantCard",
+    components: { CartBTN },
     props: {
         restaurant: Object,
         isDetail: Boolean,
@@ -40,6 +42,10 @@ export default {
 
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
+                    <!-- cart flag -->
+                    <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
+                    "></div>
+
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
                         <p v-if="isDetail"><strong>Categorie :</strong></p>
@@ -126,44 +132,18 @@ export default {
                 :key="food.id">
                 <div class="p-2 card-food d-flex justify-content-between">
                     <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
-                    <div class="text">
+                    <div class="text mb-3">
                         <p><strong>{{ food.label }}</strong></p>
-                        <p>{{ food.price }} €</p>
                     </div>
 
-
-                    <div class="modal-food">
-                        <!--* MODAL BUTTON -->
-                        <button type="button" class="btn btn-bool" data-bs-toggle="modal" data-bs-target="#modal-cart">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                        </button>
-
-                        <!--* MODAL -->
-                        <div class="modal fade" id="modal-cart" tabindex="-1" aria-labelledby="modal-cart-Label"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="modal-cart-Label">{{ food.label }}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- TODO IMG FOOD -->
-                                        <p>{{ food.description }}</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-bool">Aggiungi al carrello</button>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <CartBTN :product="food" />
                         </div>
-
+                        <small class="text-muted"><i class="fa-solid fa-euro me-2"></i>{{ food.price }}</small>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div>
@@ -172,7 +152,20 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
 
-
+.cart-flag {
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $secondary;
+        border-radius: 50%;
+        background-color: #00CCBC;
+        position: absolute;
+        right: -9px;
+        top: -9px;
+    }
+}
 
 .pointer-none {
     cursor: default;

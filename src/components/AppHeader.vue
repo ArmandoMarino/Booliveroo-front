@@ -49,11 +49,14 @@ export default {
                         </li>
 
                         <!-- CART -->
-                        <li class="cart">
-                            <button class="btn nav-but" aria-current="page" href="#">
-                                <span style="font-size:0.8rem;"><i
-                                        class="primary-icon fa-solid fa-cart-shopping"></i>$0.00</span>
-                            </button>
+                        <li v-if="$store.state.cart.length" class="cart">
+                            <router-link class="btn nav-but" :class="$route.name == 'Cart' ? 'active' : ''"
+                                aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
+                                <i class="primary-icon fa-solid fa-cart-shopping"></i>
+                                <span v-if="$store.state.cart.length > 0">
+                                    {{ $store.state.cart.length }}
+                                </span>
+                            </router-link>
                         </li>
 
                         <!-- SIGN UP -->
