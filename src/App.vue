@@ -11,8 +11,14 @@ export default {
 
 <template>
   <app-header></app-header>
-  <RouterView />
+  <div id="main-wrapper">
+    <RouterView />
+  </div>
   <app-footer></app-footer>
 </template>
 
-<style></style>
+<style>
+#main-wrapper {
+  min-height: 800px;
+}
+</style>
