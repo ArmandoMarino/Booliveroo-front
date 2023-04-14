@@ -35,6 +35,11 @@ export default {
         <!--* ROUETR TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
+            <!-- go back button -->
+            <button v-if="isDetail" @click="$router.back()" class="btn btn-sm btn-info text-body pe-auto"><i
+                    class="fas fa-long-arrow-alt-left me-2"></i>Continue
+                shopping</button>
+
             <div id="card-restaurant" :class="isDetail ? 'd-flex' : 'card h-100'">
                 <!-- IMAGE -->
                 <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
