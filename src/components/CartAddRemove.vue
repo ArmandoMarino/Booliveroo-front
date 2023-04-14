@@ -18,9 +18,9 @@ export default {
                     this.qty++
                     this.product.qty = this.qty
                     await this.$store.commit('updateCart', { product: this.product })
-                    toast.success('cart updated', {
-                        autoClose: 1000,
-                    });
+                    // toast.success('cart updated', {
+                    //     autoClose: 1000,
+                    // });
                 } else {
                     toast.warning('You reached the limit', {
                         autoClose: 3000,
@@ -32,9 +32,9 @@ export default {
                     this.qty--
                     this.product.qty = this.qty
                     await this.$store.commit('updateCart', { product: this.product })
-                    toast.success('cart updated', {
-                        autoClose: 1000,
-                    });
+                    // toast.success('cart updated', {
+                    //     autoClose: 1000,
+                    // });
                 } else {
                     toast.warning('You reached the limit', {
                         autoClose: 3000,
@@ -64,4 +64,5 @@ export default {
 <style>
 .plus-minus input {
     max-width: 50px;
-}</style>
+}
+</style>
