@@ -48,7 +48,7 @@ export default {
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
-                    <div class="cart-flag" v-if="$store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
+                    <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
                     "></div>
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
