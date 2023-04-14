@@ -157,7 +157,7 @@ export default {
         display: inline-block;
         width: 20px;
         height: 20px;
-        border: 1px solid black;
+        border: 1px solid $secondary;
         border-radius: 50%;
         background-color: #00CCBC;
         position: absolute;
