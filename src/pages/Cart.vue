@@ -1,6 +1,6 @@
 <script>
 import CartAddRemove from '../components/CartAddRemove.vue';
-import store from '../store';
+import braintree from 'braintree-web';
 export default {
     components: { CartAddRemove },
     methods: {
