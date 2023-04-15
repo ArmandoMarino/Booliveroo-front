@@ -14,7 +14,7 @@ export default {
     },
     methods: {
         async addOrRemove() {
-            this.item.qty = 1;
+            this.item.quantity = 1;
             let restaurantId = this.item.restaurant_id;
             let cart = this.$store.state.cart;
             let sameRestaurant = true;

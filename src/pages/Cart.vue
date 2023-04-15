@@ -77,7 +77,7 @@ export default {
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
                                                         <h5 class="mb-0"><i class="bi bi-currency-dollar"></i>{{
-                                                            item.price * item.qty }}</h5>
+                                                            item.price * item.quantity }}</h5>
                                                         <small v-if="item.hasDiscount"
                                                             class="text-muted text-decoration-line-through"><i
                                                                 class="bi bi-currency-dollar"></i>{{ item.price }}</small>

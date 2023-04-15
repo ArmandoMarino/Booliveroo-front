@@ -25,7 +25,9 @@ export default createStore({
 
       //calculating the total
       state.cartTotal = state.cart.reduce((accumulator, object) => {
-        return parseFloat(accumulator) + parseFloat(object.price * object.qty);
+        return (
+          parseFloat(accumulator) + parseFloat(object.price * object.quantity)
+        );
       }, 0);
 
       //saving in web storage
@@ -34,12 +36,14 @@ export default createStore({
     },
     updateCart(state, payload) {
       //update quantity
-      state.cart.find((o) => o.id === payload.product.id).qty =
-        payload.product.qty;
+      state.cart.find((o) => o.id === payload.product.id).quantity =
+        payload.product.quantity;
 
       //calculating the total
       state.cartTotal = state.cart.reduce((accumulator, object) => {
-        return parseFloat(accumulator) + parseFloat(object.price * object.qty);
+        return (
+          parseFloat(accumulator) + parseFloat(object.price * object.quantity)
+        );
       }, 0);
 
       //saving in web storage

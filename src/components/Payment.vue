@@ -1,4 +1,5 @@
 <script>
+import axios, { formToJSON } from 'axios';
 import braintree from 'braintree-web-drop-in';
 export default {
     name: 'Payment',
@@ -17,26 +18,81 @@ export default {
     methods: {
         // render payment box and make payment
         makePayment() {
+            // get the button from dom
+            const button = document.querySelector('#submit-button');
+            let form = { token: '', foods: null, address: '', phone: '' }
+            const foods = this.$store.state.cart
+
+            // // instace of braintree
+            // braintree.create({
+            //     authorization: this.tokenApi,
+            //     container: '#dropin-container'
+            // }, function (err, dropinInstance) {
+            //     if (err) {
+            //         // Handle any errors that might've occurred when creating Drop-in
+            //         console.error(err);
+            //         return;
+            //     }
+            //     button.addEventListener('click', function () {
+            //         dropinInstance.requestPaymentMethod(function (err, payload) {
+            //             if (err) {
+            //                 alert('gay chi legge')
+            //             }
+
+            //             form.token = payload.nonce;
+            //             form.foods = foods;
+            //             form.address = 'via di qua, 12';
+            //             form.phone = '765418263';
+
+            //             axios.post('http://127.0.0.1:8000/api/make-payment', { ...form }).then(res => {
+            //                 console.log('pagamento buono');
+            //             }).catch(err => {
+            //                 console.error(err);
+            //             })
+
+            //         });
+            //     });
+            // });
+
+
+            const vm = this;
             braintree.create({
                 authorization: this.tokenApi,
                 selector: '#dropin-container'
             }, function (err, dropinInstance) {
                 if (err) {
-                    // Handle any errors that might've occurred when creating Drop-in
                     console.error(err);
                     return;
                 }
-                submitButton.addEventListener('click', function () {
+                button.addEventListener('click', function () {
                     dropinInstance.requestPaymentMethod(function (err, payload) {
                         if (err) {
-                            // Handle errors in requesting payment method
+                            console.error(err);
+                            return;
                         }
 
-                        // Send payload.nonce to your server
+                        const products = JSON.parse(localStorage.getItem('cart'));
+                        const address = 'via giglio';
+                        const phone = '12314';
+
+                        const data = {
+                            token: payload.nonce,
+                            foods: products,
+                            address: address,
+                            phone: phone
+                        };
+
+                        axios.post('http://127.0.0.1:8000/api/make-payment', data)
+                            .then(function (response) {
+                                console.log(response);
+                            })
+                            .catch(function (error) {
+                                console.error(error);
+                            });
                     });
                 });
             });
-        }
+        },
     },
 
     mounted() {
@@ -47,6 +103,39 @@ export default {
 
 <template>
     <div id="dropin-container"></div>
+    <button id="submit-button" class="button button--small button--green">Purchase</button>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+.button {
+    cursor: pointer;
+    font-weight: 500;
+    left: 3px;
+    line-height: inherit;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.button--small {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+}
+
+.button--green {
+    outline: none;
+    background-color: #64d18a;
+    border-color: #64d18a;
+    color: white;
+    transition: all 200ms ease;
+}
+
+.button--green:hover {
+    background-color: #8bdda8;
+    color: white;
+}
+</style>

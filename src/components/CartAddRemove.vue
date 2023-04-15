@@ -6,7 +6,7 @@ export default {
     props: ['product'],
     data() {
         return {
-            qty: 1,
+            quantity: 1,
             loading: false
         }
     },
@@ -14,9 +14,9 @@ export default {
         async addOrRemove(number) {
             this.loading = true
             if (number == 1) {
-                if (this.qty < 10) {
-                    this.qty++
-                    this.product.qty = this.qty
+                if (this.quantity < 10) {
+                    this.quantity++
+                    this.product.quantity = this.quantity
                     await this.$store.commit('updateCart', { product: this.product })
                     // toast.success('cart updated', {
                     //     autoClose: 1000,
@@ -29,9 +29,9 @@ export default {
                 }
             }
             if (number == -1) {
-                if (this.qty > 1) {
-                    this.qty--
-                    this.product.qty = this.qty
+                if (this.quantity > 1) {
+                    this.quantity--
+                    this.product.quantity = this.quantity
                     await this.$store.commit('updateCart', { product: this.product })
                     // toast.success('cart updated', {
                     //     autoClose: 1000,
@@ -47,7 +47,7 @@ export default {
         }
     },
     mounted() {
-        this.qty = this.product.qty
+        this.quantity = this.product.quantity
     }
 }
 </script>
@@ -56,7 +56,7 @@ export default {
     <div v-if="product" class="input-group plus-minus">
         <button class="btn btn-outline-secondary " :class="loading ? 'disabled' : ''" @click="addOrRemove(-1)" type="button"
             id="button-addon1">-</button>
-        <input type="number" v-model="qty" disabled class="form-control form-control-sm" placeholder=""
+        <input type="number" v-model="quantity" disabled class="form-control form-control-sm" placeholder=""
             aria-label="Example text with button addon" aria-describedby="button-addon1">
         <button class="btn btn-outline-secondary" :class="loading ? 'disabled' : ''" @click="addOrRemove(1)" type="button"
             id="button-addon1">+</button>
