@@ -18,7 +18,7 @@ export default {
         // render payment box and make payment
         makePayment() {
             braintree.create({
-                authorization: 'sandbox_2449cbxf_phqgnzghz4nhbfcd',
+                authorization: this.tokenApi,
                 selector: '#dropin-container'
             }, function (err, dropinInstance) {
                 if (err) {
@@ -41,7 +41,7 @@ export default {
 
     mounted() {
         this.makePayment();
-    }
+    },
 }
 </script>
 

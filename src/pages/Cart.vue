@@ -17,17 +17,10 @@ export default {
         emptyCart() {
             this.$store.commit('emptyCart', this.$store.state)
         },
-
-        // get client token from back-end
-        getClientToken() {
-            axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
-                this.tokenApi = res.data;
-            })
-        },
     },
 
-    async mounted() {
-        await axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
+    mounted() {
+        axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
             this.tokenApi = res.data;
         })
     }
@@ -119,7 +112,7 @@ export default {
                                             </div>
 
                                             <!-- payment component -->
-                                            <Payment :tokenApi="tokenApi" />
+                                            <Payment v-if="tokenApi" :tokenApi="tokenApi" />
 
                                             <button type="button" class="btn btn-info btn-block btn-lg">
                                                 Checkout
