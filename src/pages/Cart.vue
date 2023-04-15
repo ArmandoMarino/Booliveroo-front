@@ -1,8 +1,8 @@
 <script>
 import CartAddRemove from '../components/CartAddRemove.vue';
-import store from '../store';
+import Payment from '../components/Payment.vue';
 export default {
-    components: { CartAddRemove },
+    components: { CartAddRemove, Payment },
     methods: {
         removeItem(item) {
             this.$store.commit('addRemoveCart', { product: item, toAdd: false })
@@ -98,6 +98,9 @@ export default {
                                                 <p class="mb-2"><i class="bi bi-currency-dollar"></i>{{
                                                     $store.state.cartTotal }}</p>
                                             </div>
+
+                                            <!-- payment component -->
+                                            <Payment />
 
                                             <button type="button" class="btn btn-info btn-block btn-lg">
                                                 Checkout
