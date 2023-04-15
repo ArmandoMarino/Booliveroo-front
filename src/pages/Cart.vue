@@ -1,8 +1,14 @@
 <script>
+import axios from 'axios';
 import CartAddRemove from '../components/CartAddRemove.vue';
 import Payment from '../components/Payment.vue';
 export default {
     components: { CartAddRemove, Payment },
+    data() {
+        return {
+            tokenApi: ''
+        }
+    },
     methods: {
         removeItem(item) {
             this.$store.commit('addRemoveCart', { product: item, toAdd: false })
@@ -10,8 +16,21 @@ export default {
 
         emptyCart() {
             this.$store.commit('emptyCart', this.$store.state)
-        }
+        },
+
+        // get client token from back-end
+        getClientToken() {
+            axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
+                this.tokenApi = res.data;
+            })
+        },
     },
+
+    async mounted() {
+        await axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
+            this.tokenApi = res.data;
+        })
+    }
 }
 </script>
 
@@ -100,7 +119,7 @@ export default {
                                             </div>
 
                                             <!-- payment component -->
-                                            <Payment />
+                                            <Payment :tokenApi="tokenApi" />
 
                                             <button type="button" class="btn btn-info btn-block btn-lg">
                                                 Checkout

@@ -2,33 +2,51 @@
 import braintree from 'braintree-web-drop-in';
 export default {
     name: 'Payment',
-    mounted() {
-        braintree.create({
-            authorization: 'sandbox_2449cbxf_phqgnzghz4nhbfcd',
-            selector: '#dropin-container'
-        }, function (err, dropinInstance) {
-            if (err) {
-                // Handle any errors that might've occurred when creating Drop-in
-                console.error(err);
-                return;
-            }
-            submitButton.addEventListener('click', function () {
-                dropinInstance.requestPaymentMethod(function (err, payload) {
-                    if (err) {
-                        // Handle errors in requesting payment method
-                    }
+    props: {
+        tokenApi: {
+            // required: true,
+            type: String
+        }
+    },
+    data() {
+        return {
 
-                    // Send payload.nonce to your server
+        }
+    },
+
+    methods: {
+        // render payment box and make payment
+        makePayment() {
+            braintree.create({
+                authorization: 'sandbox_2449cbxf_phqgnzghz4nhbfcd',
+                selector: '#dropin-container'
+            }, function (err, dropinInstance) {
+                if (err) {
+                    // Handle any errors that might've occurred when creating Drop-in
+                    console.error(err);
+                    return;
+                }
+                submitButton.addEventListener('click', function () {
+                    dropinInstance.requestPaymentMethod(function (err, payload) {
+                        if (err) {
+                            // Handle errors in requesting payment method
+                        }
+
+                        // Send payload.nonce to your server
+                    });
                 });
             });
-        });
+        }
+    },
+
+    mounted() {
+        this.makePayment();
     }
 }
 </script>
 
 <template>
     <div id="dropin-container"></div>
-    <button id="submit-button">Purchase</button>
 </template>
 
 <style></style>
