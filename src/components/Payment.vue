@@ -24,37 +24,6 @@ export default {
             const foods = this.$store.state.cart
 
             // // instace of braintree
-            // braintree.create({
-            //     authorization: this.tokenApi,
-            //     container: '#dropin-container'
-            // }, function (err, dropinInstance) {
-            //     if (err) {
-            //         // Handle any errors that might've occurred when creating Drop-in
-            //         console.error(err);
-            //         return;
-            //     }
-            //     button.addEventListener('click', function () {
-            //         dropinInstance.requestPaymentMethod(function (err, payload) {
-            //             if (err) {
-            //                 alert('gay chi legge')
-            //             }
-
-            //             form.token = payload.nonce;
-            //             form.foods = foods;
-            //             form.address = 'via di qua, 12';
-            //             form.phone = '765418263';
-
-            //             axios.post('http://127.0.0.1:8000/api/make-payment', { ...form }).then(res => {
-            //                 console.log('pagamento buono');
-            //             }).catch(err => {
-            //                 console.error(err);
-            //             })
-
-            //         });
-            //     });
-            // });
-
-
             const vm = this;
             braintree.create({
                 authorization: this.tokenApi,
