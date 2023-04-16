@@ -82,8 +82,8 @@ export default {
                                     </div>
 
                                     <!-- OFFCANVAS MENU -->
-                                    <div class="container off-canvas-menu">
-                                        <div class="row text-start ms-4">
+                                    <div class="container-fluid off-canvas-menu">
+                                        <div class="row text-start">
 
                                             <!-- CART -->
                                             <div class="col-12 mb-3">
@@ -104,6 +104,14 @@ export default {
                                                 <a href="#"><span><i
                                                             class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></a>
                                             </div>
+
+                                            <figure class="d-flex justify-content-center">
+                                                <img class="img-fluid p-3 my-rounded"
+                                                    src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                                    alt="sidebar-img">
+                                            </figure>
+
+
 
                                         </div>
 
@@ -208,9 +216,11 @@ header {
         }
     }
 
-    .region {
-        position: absolute;
-        bottom: 20px;
+    .my-rounded {
+        margin-top: 5px;
+        border-radius: 50px;
+        padding: 2rem;
+        width: 80%;
     }
 }
 </style>
