@@ -6,12 +6,12 @@ export default {
 
 <template>
     <header>
-        <div class="container">
+        <div class="container-fluid">
             <div class="navbar d-flex">
 
                 <!-- logo -->
                 <div>
-                    <div class="logo m-0">
+                    <div class="logo m-0 ms-3">
                         <router-link :to="{ name: 'home', params: { component: HomePage } }">
                             <img src="../assets/img/Logo-BOOLIVEROO-PRIMARY.png" alt="logo-deliveroo" class="img-fluid">
                         </router-link>
@@ -21,14 +21,13 @@ export default {
                 <!-- navbar-menu -->
                 <div class="navbar-menu ">
                     <ul class=" d-flex mb-0">
-                        <!-- PARTNER WITH US -->
+                        <!-- CONTACT US -->
                         <li>
                             <div class="contact-us">
-                                <a class="btn nav-but" href="#" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false" id="partner-dropdown">
+                                <router-link class="btn nav-but" aria-current="page" :to="{ name: 'contact_page' }">
                                     <span style="font-size:0.9rem;"><i
-                                            class="primary-icon fa-solid fa-chevron-down"></i>Contact us</span>
-                                </a>
+                                            class="primary-icon fa-solid fa-user"></i>Contattaci</span>
+                                </router-link>
                             </div>
                         </li>
 
@@ -47,14 +46,14 @@ export default {
                         <li class="login">
                             <a href="http://127.0.0.1:8000/login">
                                 <button class="btn nav-but" href="#">
-                                    <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Sign up or
-                                        login</span>
+                                    <span style="font-size:0.8rem;"><i class="primary-icon fa-solid fa-house"></i>Accedi o
+                                        Registrati</span>
                                 </button>
                             </a>
                         </li>
 
                         <!-- MENU -->
-                        <li class="menu">
+                        <li class="menu me-3">
                             <button class="btn nav-but" type="button" data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><span
                                     style="font-size:0.9rem;"><i
