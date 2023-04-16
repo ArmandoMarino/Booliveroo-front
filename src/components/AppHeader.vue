@@ -78,7 +78,7 @@ export default {
                                     <hr>
                                     <!-- OFFCANVAS SIGN UP BUTTON -->
                                     <div class="my-5 ">
-                                        <a href="#" class="sign-up-button">Accedi o Registrati</a>
+                                        <a href="http://127.0.0.1:8000/login" class="sign-up-button">Accedi o Registrati</a>
                                     </div>
 
                                     <!-- OFFCANVAS MENU -->
@@ -87,7 +87,7 @@ export default {
 
                                             <!-- CART -->
                                             <div class="col-12 mb-3">
-                                                <router-link v-if="$store.state.cart.length" class="btn p-0 m-0 nav-but"
+                                                <router-link v-if="$store.state.cart.length" class="p-0 m-0 nav-but"
                                                     aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
                                                     <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
                                                     Vai al Carrello
@@ -218,9 +218,9 @@ header {
 
     .my-rounded {
         margin-top: 5px;
-        border-radius: 50px;
+        border-radius: 33px;
         padding: 2rem;
-        width: 80%;
+        width: 85%;
     }
 }
 </style>
