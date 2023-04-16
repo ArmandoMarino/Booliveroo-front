@@ -63,9 +63,9 @@ export default {
                                 aria-labelledby="offcanvasRightLabel">
                                 <div class="offcanvas-header">
                                     <!-- LOGO AND CLOSE UP BUTTON-->
-                                    <div class="logo d-flex align-items-center">
+                                    <div class="logo2 d-flex justify-content-between align-items-center">
                                         <img src="../assets/img/Logo-COLORATO-BOOLEVEROO-.png" alt="logo-deliveroo"
-                                            class="img-fluid ">
+                                            class="img-fluid w-50">
 
                                         <button type="button" class="btn-close m-0" data-bs-dismiss="offcanvas"
                                             aria-label="Close"></button>
@@ -78,7 +78,7 @@ export default {
                                     <hr>
                                     <!-- OFFCANVAS SIGN UP BUTTON -->
                                     <div class="my-5 ">
-                                        <a href="#" class="sign-up-button">Sign up or login</a>
+                                        <a href="#" class="sign-up-button">Accedi o Registrati</a>
                                     </div>
 
                                     <!-- OFFCANVAS MENU -->
@@ -87,8 +87,16 @@ export default {
 
                                             <!-- CART -->
                                             <div class="col-12 mb-3">
-                                                <a href="#"><span><i
-                                                            class="fa-solid fa-cart-shopping text-secondary pe-3"></i>$0.00</span></a>
+                                                <router-link v-if="$store.state.cart.length" class="btn p-0 m-0 nav-but"
+                                                    aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
+                                                    <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
+                                                    Vai al Carrello
+
+                                                    <span v-if="$store.state.cart.length > 0">
+                                                        + <i
+                                                            :class="`fa-beat fa-xs fa-solid fa-${$store.state.cart.length}`"></i>
+                                                    </span>
+                                                </router-link>
                                             </div>
 
                                             <!-- RIDER -->
@@ -200,6 +208,9 @@ header {
         width: 200px;
     }
 
+    .logo2 {
+        width: 350px;
+    }
 
 
     .nav-but {
