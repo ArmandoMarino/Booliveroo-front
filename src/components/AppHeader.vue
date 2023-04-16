@@ -99,28 +99,6 @@ export default {
                                                 </router-link>
                                             </div>
 
-                                            <!-- RIDER -->
-                                            <div class="col-12 mb-3">
-                                                <a href="#"><span><i
-                                                            class="fa-solid fa-bicycle pe-3 text-secondary"></i>Become a
-                                                        Rider</span></a>
-                                            </div>
-
-                                            <!-- RESTAURANT -->
-                                            <div class="col-12 mb-3">
-                                                <a href="#"><span><i
-                                                            class="fa-solid fa-utensils pe-3 text-secondary"></i>Add your
-                                                        restaurant</span></a>
-                                            </div>
-
-                                            <!-- OFFICE -->
-                                            <div class="col-12 mb-3">
-                                                <a href="#"><span><i
-                                                            class="fa-solid fa-briefcase pe-3 text-secondary"></i>Sign up
-                                                        your
-                                                        office</span></a>
-                                            </div>
-
                                             <!-- FAQS -->
                                             <div class="col-12">
                                                 <a href="#"><span><i
@@ -129,35 +107,7 @@ export default {
 
                                         </div>
 
-                                        <!-- region LANGUAGE  -->
 
-                                        <div class="region">
-                                            <div class="languages">
-                                                <select name="languages" id="languages" class="choose-your-button mx-auto">
-                                                    <option value="">English</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="country mt-4">
-                                                <select name="country" id="country" class="choose-your-button mx-auto">
-                                                    <option value="">United Kingdom</option>
-                                                    <option value="">Australia</option>
-                                                    <option value="">Belgium</option>
-                                                    <option value="">France</option>
-                                                    <option value="">Fermany</option>
-                                                    <option value="">Hong Kong</option>
-                                                    <option value="">Ireland</option>
-                                                    <option value="" selected>Italy</option>
-                                                    <option value="">Kuwait</option>
-                                                    <option value="">Netherlands</option>
-                                                    <option value="">Qatar</option>
-                                                    <option value="">Singapore</option>
-                                                    <option value="">Spain</option>
-                                                    <option value="">Taiwan</option>
-                                                    <option value="">United Arab Emirates</option>
-                                                </select>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
