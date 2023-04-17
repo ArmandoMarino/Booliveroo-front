@@ -16,19 +16,23 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" disabled>Discover
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable"
+                                    href="#">Discover
                                     Booliveroo</a>
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'about_us' }"
                                     class="text-decoration-none">About us</router-link></li>
                             <li class="list-group-item"><router-link :to="{ name: 'careers' }"
                                     class="text-decoration-none">Careers</router-link></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Become a rider</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Takeaway</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">More</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Git Cards</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Restaurant signup</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Become a rider</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Become
+                                    a rider</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Takeaway</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">More</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Git Cards</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Restaurant
+                                    signup</a></li>
                         </ul>
                     </div>
 
@@ -36,22 +40,29 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" disabled>Legal</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Terms and conditions</a>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Legal</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Privacy</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Cookies</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Modern Slavery
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Terms and
+                                    conditions</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Privacy</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Cookies</a>
+                            </li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Modern Slavery
                                     Statement</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">Tax Strategy</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Tax
+                                    Strategy</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold" disabled>Help</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Help</a>
+                            </li>
                             <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
                                     class="text-decoration-none">Contact</router-link></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">FAQs</a></li>
@@ -63,7 +74,7 @@ export default {
                     <div class="small-col mt-4 d-flex flex-column">
                         <ul class="p-3">
                             <li class="list-group-item d-none d-sm-block">
-                                <a class="text-decoration-none fs-4 fw-bold" disabled>Take
+                                <a class="text-decoration-none fs-4 fw-bold unclickable">Take
                                     Booliveroo
                                     with you</a>
                             </li>
@@ -111,7 +122,14 @@ export default {
     h2 {
         color: white;
     }
+
+    .unclickable {
+        cursor: default;
+        pointer-events: none;
+    }
+
 }
+
 
 .small-col {
     min-height: 320px;
