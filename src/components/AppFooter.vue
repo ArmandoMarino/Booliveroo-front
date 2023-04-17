@@ -68,7 +68,7 @@ export default {
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
                                     class="text-decoration-none">Contatti</router-link></li>
-                            <li class="list-group-item"><router-link :to="{ name: '' }"
+                            <li class="list-group-item"><router-link :to="{ name: 'faqs_page' }"
                                     class="text-decoration-none">FAQs</router-link></li>
                         </ul>
                     </div>

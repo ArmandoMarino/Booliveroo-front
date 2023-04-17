@@ -9,7 +9,7 @@ export default {
 
         <div class="container">
             <div class="img-work">
-                <img src="https://thumbs.dreamstime.com/b/work-progress-loading-bar-illustration-work-progress-loading-bar-illustration-152656134.jpg"
+                <img src="https://www.abprogetti.it/wp-content/uploads/2017/10/pagina-in-manutenzione-300x150.jpg"
                     alt="work in progress">
             </div>
             <div class="text-center py-3">
