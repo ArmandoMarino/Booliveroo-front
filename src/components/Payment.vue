@@ -5,6 +5,11 @@ const baseUrl = 'http://127.0.0.1:8000/api/';
 export default {
     name: 'Payment',
     props: { tokenApi: String, address: String, phone: String, email: String, name: String },
+    data() {
+        return {
+            isLoading: false
+        }
+    },
     methods: {
         // render payment box and make payment
         makePayment() {
@@ -22,6 +27,11 @@ export default {
                 }
                 // on "pay" click
                 button.addEventListener('click', () => {
+
+                    // start loader
+                    this.isLoading = true;
+
+
                     dropinInstance.requestPaymentMethod((err, payload) => {
                         if (err) {
                             console.error(err);
@@ -47,11 +57,15 @@ export default {
 
                         // post the payment in backend passing the data
                         axios.post(`${baseUrl}make-payment`, data)
-                            .then(function (response) {
-                                console.log(response);
+                            .then(response => {
+                                // empty cart
+                                this.$store.commit('emptyCart', this.$store.state)
+
+                                // redirect success page
+                                this.$router.push({ name: 'home' })
                             })
-                            .catch(function (error) {
-                                console.error(error);
+                            .catch(error => {
+                                // redirect error page
                             });
                     });
                 });
@@ -66,8 +80,12 @@ export default {
 </script>
 
 <template>
+    <!-- payment components -->
     <div id="dropin-container"></div>
     <button id="submit-button" class="button button--small button--green">Paga adesso</button>
+
+    <!-- loader -->
+    <app-loader v-if="isLoading"></app-loader>
 </template>
 
 <style scoped lang="scss">
