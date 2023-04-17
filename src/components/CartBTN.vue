@@ -61,10 +61,13 @@ export default {
                 toast.clearAll();
 
                 // show the toast
-                toast.error('Non puoi ordinare da più di un ristorante alla volta, clicca qui per modificare il carrello', {
+                toast.error('Non puoi ordinare da più di un ristorante alla volta, clicca qui per svuotare il carrello', {
                     autoClose: false,
                     onClick: () => {
-                        this.$router.push({ name: 'cart' })
+                        this.$store.commit('emptyCart', this.$store.state)
+
+                        // Se volessimo indirizzare al carrello
+                        // this.$router.push({ name: 'cart' })
                     },
                     limit: 1,
                     position: "top-center"
