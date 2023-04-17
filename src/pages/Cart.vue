@@ -90,11 +90,15 @@ export default {
                                     <div v-for="item in $store.state.cart" class="card mb-3 shadow-sm border-0"
                                         :key="item.id">
                                         <div class="card-body">
+
+                                            <div class="w-100 w-md-50 mb-3 info-food">{{ item.label }}</div>
+
                                             <div class="d-flex justify-content-between">
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
                                                         <img :src="item.image" class="img-fluid rounded-3"
                                                             alt="Shopping item" style="width: 65px;">
+
                                                     </div>
                                                     <div class="ms-3">
                                                         <p>{{ item.name }}</p>
