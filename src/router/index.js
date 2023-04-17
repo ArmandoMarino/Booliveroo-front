@@ -13,15 +13,16 @@ import AboutUsPage from "../pages/AboutUsPage.vue";
 import FaqsPage from "../pages/FaqsPage.vue";
 import CareersPage from "../pages/CareersPage.vue";
 import WorkInProgressPage from "../pages/WorkInProgressPage.vue";
+import PaymentsuccessPage from "../pages/PaymentsuccessPage.vue";
 
 
 // Creo il Router e definisco le rotte
 const router = createRouter({
   history: createWebHistory(),
-  linkActiveClass: "active",  
-  scrollBehavior (to, from, savedPosition) {
+  linkActiveClass: "active",
+  scrollBehavior(to, from, savedPosition) {
     return { top: 0 }
-    },
+  },
 
   // Rotte che useremo
   routes: [
@@ -43,9 +44,13 @@ const router = createRouter({
     { path: "/careers", name: "careers", component: CareersPage },
 
     // Rotta per la pagina Work in Progress
-    { path: '/work_in_progress', name: 'work_in_progress', component: WorkInProgressPage},
+    { path: '/work_in_progress', name: 'work_in_progress', component: WorkInProgressPage },
 
+    // Rotta per i ristoranti 
     { path: "/restaurants", name: "restaurants", component: RestaurantPage },
+
+    // Rotta per il pagamento avvenuto con successo
+    { path: "/payment-success", name: "payment-success", component: PaymentsuccessPage },
 
     //Rotta per lo show del restaurant con ID
     {
