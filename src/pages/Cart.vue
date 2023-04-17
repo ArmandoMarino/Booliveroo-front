@@ -113,18 +113,18 @@ export default {
                                     <div class="card bg-primary text-white rounded-0 border-0">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                                <h5 class="mb-0">Cart details</h5>
+                                                <h5 class="mb-0">Detteagli Pagamento</h5>
                                                 <i class="bi bi-cart3 h1"></i>
                                             </div>
                                             <hr class="my-4">
 
                                             <!--* TOTAL -->
                                             <div class="d-flex justify-content-between mb-4">
-                                                <p class="mb-2"><strong>Totale</strong></p>
+                                                <h5 class="mb-2"><strong>Totale</strong></h5>
                                                 <p class="mb-2"><i class="fa-solid fa-euro me-2"></i>{{
                                                     $store.state.cartTotal }}</p>
                                             </div>
-
+                                            <hr>
                                             <!-- payment component -->
                                             <Payment v-if="tokenApi" :tokenApi="tokenApi" />
 
