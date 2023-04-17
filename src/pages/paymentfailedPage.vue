@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex flex-column align-items-center justify-content-center vh-100">
+    <div id="payment-failed" class="d-flex flex-column align-items-center justify-content-center">
         <h4 class="mb-5">
             <i class="me-3 fa-solid fa-2xl text-danger fa-circle-xmark fa-shake"></i>
             Qualcosa è adato storto, il pagamento non è andato a buon fine.
@@ -16,5 +16,10 @@ export default {
     </div>
 </template>
 
+<style lang="scss" scoped>
+#payment-failed {
+    min-height: 400px;
+}
+</style>
 
 

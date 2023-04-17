@@ -35,6 +35,7 @@ export default {
                     dropinInstance.requestPaymentMethod((err, payload) => {
                         if (err) {
                             console.error(err);
+                            console.log('sono qui');
                             return;
                         }
 
@@ -66,6 +67,7 @@ export default {
                             })
                             .catch(error => {
                                 // redirect error page
+                                this.$router.push({ name: 'payment-failed' })
                             });
                     });
                 });

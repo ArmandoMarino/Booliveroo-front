@@ -143,8 +143,9 @@ export default {
 
 
 
-                                            <button v-if="!isOpenedUserForm && !isOpenedPayForm" type="button"
-                                                class="btn btn-sm btn-info btn-block btn-lg"
+                                            <button
+                                                v-if="!isOpenedUserForm && !isOpenedPayForm && $store.state.cart.length > 0"
+                                                type="button" class="btn btn-sm btn-info btn-block btn-lg"
                                                 @click="openUserForm()">Procedi</button>
 
                                         </div>
