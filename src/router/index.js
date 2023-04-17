@@ -14,6 +14,7 @@ import FaqsPage from "../pages/FaqsPage.vue";
 import CareersPage from "../pages/CareersPage.vue";
 import WorkInProgressPage from "../pages/WorkInProgressPage.vue";
 import PaymentsuccessPage from "../pages/PaymentsuccessPage.vue";
+import PaymentfailedPage from "../pages/PaymentfailedPage.vue";
 
 
 // Creo il Router e definisco le rotte
@@ -51,6 +52,9 @@ const router = createRouter({
 
     // Rotta per il pagamento avvenuto con successo
     { path: "/payment-success", name: "payment-success", component: PaymentsuccessPage },
+
+    // Rotta per il pagamento NON avvenuto
+    { path: "/payment-failed", name: "payment-failed", component: PaymentfailedPage },
 
     //Rotta per lo show del restaurant con ID
     {
