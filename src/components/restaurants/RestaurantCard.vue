@@ -208,7 +208,7 @@ export default {
 }
 
 .food-img {
-    height: 150px;
+    height: 100px;
     width: 80px;
 
 
