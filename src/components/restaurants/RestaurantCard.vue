@@ -22,7 +22,18 @@ export default {
                     return "No Vote yet";
                 }
             };
-        }
+        },
+        groupedFoods() {
+            const foods = this.restaurant.foods;
+            return foods.reduce((acc, food) => {
+                const category = food.type;
+                if (!acc[category]) {
+                    acc[category] = [];
+                }
+                acc[category].push(food);
+                return acc;
+            }, {});
+        },
     }
 }
 </script>
@@ -129,29 +140,32 @@ export default {
     </div>
 
     <!--* FOOD-CARD IN DETAIL -->
-    <div v-if="isDetail" class="container">
+    <div v-if="isDetail" class="container mt-5">
         <div class="row g-2">
-            <div class="pop-card text-left py-2 col-lg-3 col-md-6 col-sm-10" v-for="food in restaurant.foods"
-                :key="food.id">
-                <div class="p-2 card-food">
-                    <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
-                    <div class="text mb-3 d-flex">
-                        <div style="height: auto; width: 30%;">
-                            <img :src="food.image" class="img-fluid">
+            <div v-for="(foods, type) in groupedFoods" :key="type">
+                <p>{{ type }}</p>
+                <div class="row g-2">
+                    <div class="pop-card text-left py-2 col-lg-3 col-md-6 col-sm-10" v-for="food in foods" :key="food.id">
+                        <div class="p-2 card-food">
+                            <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
+                            <div class="text mb-3 d-flex">
+                                <div style="height: auto; width: 30%;">
+                                    <img :src="food.image" class="img-fluid">
+                                </div>
+                                <p class="ms-2"><strong>{{ food.label }}</strong></p>
+                            </div>
+
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <CartBTN :product="food" />
+                                </div>
+                                <small class="text-muted"><i class="fa-solid fa-euro me-2"></i>{{ food.price }}</small>
+                            </div>
                         </div>
-                        <p class="ms-2"><strong>{{ food.label }}</strong></p>
-                    </div>
-
-
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <CartBTN :product="food" />
-                        </div>
-                        <small class="text-muted"><i class="fa-solid fa-euro me-2"></i>{{ food.price }}</small>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
