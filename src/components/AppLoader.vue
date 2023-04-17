@@ -7,14 +7,38 @@ export default {
 <template>
     <div class="loader-overlay">
         <div class="my-spinner text-primary" role="status">
-            <span class="loader"></span>
+            <span class="loader">
+            </span>
         </div>
     </div>
 </template>
 
 
 <style lang="scss" scoped>
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.my-spinner {
+    height: 150px;
+    width: 150px;
+    z-index: 2;
+}
+
 .loader {
+    display: block;
     width: 48px;
     height: 48px;
     margin: auto;
@@ -35,10 +59,11 @@ export default {
 }
 
 .loader:after {
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
-    background: #fff;
+    background: url(../assets/img/loader_logo.png) no-repeat;
+    background-size: 45px;
     animation: bxSpin 0.5s linear infinite;
     position: absolute;
     top: 0;
@@ -79,4 +104,5 @@ export default {
     50% {
         transform: scale(1.2, 1);
     }
-}</style>
+}
+</style>
