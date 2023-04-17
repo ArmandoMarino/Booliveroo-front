@@ -1,6 +1,7 @@
 <script>
 import axios, { formToJSON } from 'axios';
 import braintree from 'braintree-web-drop-in';
+const baseUrl = 'http://127.0.0.1:8000/api/';
 export default {
     name: 'Payment',
     props: { tokenApi: String, address: String, phone: String, email: String },
@@ -49,7 +50,7 @@ export default {
                         };
 
                         // post the payment in backend passing the data
-                        axios.post('http://127.0.0.1:8000/api/make-payment', data)
+                        axios.post(`${baseUrl}make-payment`, data)
                             .then(function (response) {
                                 console.log(response);
                             })
