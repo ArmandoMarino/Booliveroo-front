@@ -62,7 +62,7 @@ export default {
                                 this.$store.commit('emptyCart', this.$store.state)
 
                                 // redirect success page
-                                this.$router.push({ name: 'home' })
+                                this.$router.push({ name: 'payment-success' })
                             })
                             .catch(error => {
                                 // redirect error page
