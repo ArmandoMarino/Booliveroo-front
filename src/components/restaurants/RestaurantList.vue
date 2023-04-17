@@ -89,10 +89,12 @@ export default {
 
 
                 <div class="row">
-                    <h4>I nostri Ristoranti</h4>
-                    <!-- TODO V-IF RESTAURANTS.LENGTH -->
-                    <restaurant-card v-for="restaurant in filteredRestaurants" :key="restaurant.name"
-                        :restaurant="restaurant"></restaurant-card>
+                    <h4>I nostri Ristoranti :</h4>
+                    <restaurant-card v-if="filteredRestaurants.length" v-for="restaurant in filteredRestaurants"
+                        :key="restaurant.name" :restaurant="restaurant">
+                    </restaurant-card>
+                    <h3 class="text-center" v-else><i class="me-3 fa-solid text-danger fa-circle-xmark fa-shake"></i>Nessun
+                        Risultato</h3>
                 </div>
             </section>
             <section class="row new"></section>
