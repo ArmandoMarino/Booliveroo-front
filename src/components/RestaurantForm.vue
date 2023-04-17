@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios';
-const endpoint = '';
+const endpoint = 'http://localhost:8000/api/contact-message';
 export default {
     name: "RestaurantForm",
     data: () => ({
@@ -8,7 +8,6 @@ export default {
             email: '',
             subject: '',
             message: '',
-            subscription: false,
         }
     }),
     methods: {
@@ -18,7 +17,6 @@ export default {
                     email: '',
                     subject: '',
                     message: '',
-                    subscription: false,
                 }
             }).catch(err => { console.error(err) }).then(() => {
 
@@ -57,7 +55,7 @@ export default {
     </form>
     <!-- <div class="mb-5 d-flex justify-content-end">
 
-                                </div> -->
+                                        </div> -->
 </template>
 
 <style scoped lang="scss">
