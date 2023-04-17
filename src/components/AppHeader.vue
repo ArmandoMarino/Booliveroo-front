@@ -88,34 +88,71 @@ export default {
                                             <!-- CART -->
                                             <div class="col-12 mb-3">
                                                 <router-link v-if="$store.state.cart.length" class="p-0 m-0 nav-but"
-                                                    aria-current="page" :to="{ name: 'cart', params: { component: Cart } }">
-                                                    <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
-                                                    Vai al Carrello
+                                                    aria-current="page"
+                                                    :to="{ name: 'cart', params: { component: Cart } }"><button
+                                                        data-bs-toggle="offcanvas"
+                                                        class="btn btn-link text-decoration-none text-body-emphasis">
+                                                        <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
+                                                        Vai al Carrello
 
-                                                    <span v-if="$store.state.cart.length > 0">
-                                                        + <i
-                                                            :class="`fa-beat fa-xs fa-solid fa-${$store.state.cart.length}`"></i>
-                                                    </span>
+                                                        <span v-if="$store.state.cart.length > 0">
+                                                            + <i
+                                                                :class="`fa-beat fa-xs fa-solid fa-${$store.state.cart.length}`"></i>
+                                                        </span>
+                                                    </button>
                                                 </router-link>
                                             </div>
 
-                                            <!-- FAQS -->
+                                            <!-- Link sidebar -->
                                             <div class="col-12">
-
-                                                <router-link :to="{ name: 'faqs_page', params: { component: FaqsPage } }">
-                                                    <a href="#"><span><i
-                                                                class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></a>
+                                                <div class="d-flex flex-column menu-sidebar">
+                                                    <router-link
+                                                        :to="{ name: 'restaurants', params: { component: RestaurantPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-solid fa-utensils pe-3 text-secondary"></i>I
+                                                                nostri ristoranti</span></button>
+                                                    </router-link>
+                                                    <router-link
+                                                        :to="{ name: 'about_us', params: { component: AboutUsPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-solid fa-industry pe-3 text-secondary"></i>Chi
+                                                                siamo</span></button>
+                                                    </router-link>
+                                                    <router-link
+                                                        :to="{ name: 'contact_page', params: { component: ContactPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-regular fa-envelope pe-3 text-secondary"></i>Contatti</span></button>
+                                                    </router-link>
+                                                    <router-link
+                                                        :to="{ name: 'careers', params: { component: CareersPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-solid fa-briefcase pe-3 text-secondary"></i>Lavora
+                                                                con noi</span></button>
+                                                    </router-link>
+                                                    <router-link
+                                                        :to="{ name: 'faqs_page', params: { component: FaqsPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></button>
                                                 </router-link>
-
                                             </div>
 
-                                            <figure class="d-flex justify-content-center">
-                                                <img class="img-fluid p-3 my-rounded"
-                                                    src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                                                    alt="sidebar-img">
-                                            </figure>
+                                        </div>
 
-
+                                            <!-- <figure class="d-flex justify-content-center">
+                                                                                                                                                                               <img class="img-fluid p-3 my-rounded"
+                                                                                                                                                                                   src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                                                                                                                                                                                   alt="sidebar-img">
+                                                                                                                                                                           </figure> -->
 
                                         </div>
 
@@ -225,6 +262,15 @@ header {
         border-radius: 33px;
         padding: 2rem;
         width: 85%;
+    }
+}
+
+.btn-menu {
+    color: black;
+
+    &:hover {
+        color: $primary;
+        font-size: 18px;
     }
 }
 </style>
