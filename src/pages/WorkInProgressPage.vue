@@ -8,20 +8,15 @@ export default {
     <div class="main-page">
 
         <div class="container">
-            <div class="img-work">
-                <img src="https://www.abprogetti.it/wp-content/uploads/2017/10/pagina-in-manutenzione-300x150.jpg"
-                    alt="work in progress">
-            </div>
-            <div class="text-center py-3">
-                <h1>Pagina in manutenzione</h1>
-                <p class="work-page fs-3">(Sarà disponibile a breve)</p>
-            </div>
-            <div class="d-flex justify-content-end pb-5">
-
+            <div class="d-flex justify-content-start pt-3">
                 <button class="btn btn-secondary" @click="$router.back()">
                     Torna Indietro
                 </button>
             </div>
+            <div class="img-work">
+                <img src="../assets/img/comingsoon-logo.png" alt="work in progress">
+            </div>
+
         </div>
     </div>
 </template>
@@ -33,7 +28,7 @@ export default {
 
 .img-work {
     width: 900px;
-    height: 900px;
+    // height: 900px;
     margin: 0 auto;
     padding-top: 5rem;
 
