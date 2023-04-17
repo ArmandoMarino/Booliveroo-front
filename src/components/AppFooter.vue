@@ -13,6 +13,7 @@ export default {
         <div class="container py-4">
 
             <div class="row list-footer py-4">
+                <!-- sezione footer Scopri Booliveroo -->
                 <div class="col-lg-3 col-sm-6 col-12 mt-4">
                     <div class="small-col">
                         <ul class="p-3">
@@ -39,6 +40,8 @@ export default {
                     </div>
 
                 </div>
+
+                <!-- sezione footer Note legali -->
                 <div class="col-lg-3 col-sm-6 col-12 mt-4">
                     <div class="small-col">
                         <ul class="p-3">
@@ -56,6 +59,8 @@ export default {
                         </ul>
                     </div>
                 </div>
+
+                <!-- sezione footer Aiuto -->
                 <div class="col-lg-3 col-sm-6 col-12 mt-4">
                     <div class="small-col">
                         <ul class="p-3">
@@ -63,12 +68,14 @@ export default {
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
                                     class="text-decoration-none">Contatti</router-link></li>
-                            <li class="list-group-item"><router-link :to="{ name: 'faqs_page' }"
+                            <li class="list-group-item"><router-link :to="{ name: '' }"
                                     class="text-decoration-none">FAQs</router-link></li>
                         </ul>
                     </div>
 
                 </div>
+
+                <!-- sezione footer Porta Boolivero con te -->
                 <div class="col-lg-3 col-sm-6 col-12 mt-4">
                     <div class="small-col d-flex flex-column">
                         <ul class="p-3">
@@ -76,7 +83,7 @@ export default {
                                 <a class="text-decoration-none fs-4 fw-bold unclickable">Porta Booliveroo con te</a>
                             </li>
                         </ul>
-                        <div class="images-footer ms-5">
+                        <div class="images-footer ms-3">
                             <router-link :to="{ name: 'work_in_progress' }">
                                 <img class="img-fluid"
                                     src="https://chiavari.ditechmobility.com/wp-content/uploads/2018/04/apple-store.png"
@@ -91,7 +98,9 @@ export default {
                     </div>
                 </div>
             </div>
+
             <div class="row justify-content-between align-items-center mt-4">
+                <!-- icone social network -->
                 <div class="col-sm-3 col-12 icon-footer d-flex">
                     <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-facebook fa-2x me-3 social-link"
                             style="color: #ffffff;"></i></router-link>
@@ -100,6 +109,8 @@ export default {
                     <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-instagram fa-2x me-3 social-link"
                             style="color: #ffffff;"></i></router-link>
                 </div>
+
+                <!-- copyright -->
                 <div class="col-sm-3 col-12 d-none d-sm-flex copyright d-flex align-items-center justify-content-end">
                     <span class="me-3 copyright-icon fs-4">&copy</span>
                     <span class="text-copyright">2023 Booliveroo</span>
@@ -125,6 +136,7 @@ export default {
         font-size: 18px;
     }
 
+    // gestione link non cliccabili
     .unclickable {
         cursor: default;
         pointer-events: none;
@@ -132,18 +144,15 @@ export default {
 
     }
 
-    .social-link:hover {
-        color: $primary;
-    }
 }
 
-
-
+// altezza colonne
 .small-col {
     height: 100%;
     background-color: #323844;
 }
 
+// grandezza immagini del footer
 .images-footer {
     width: 150px;
 }
