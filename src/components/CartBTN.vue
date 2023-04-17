@@ -26,17 +26,40 @@ export default {
             });
 
             if (sameRestaurant) {
+                // clear toast waiting queue
+                toast.clearAll();
+
+                // call the store method
                 this.$store.commit('addRemoveCart', { product: this.item, toAdd: this.toAdd });
-                let toastMSG;
-                this.toAdd ? toastMSG = 'Articolo aggiunto al carrello' : toastMSG = 'Articolo rimosso dal carrello';
-                toast(toastMSG, {
-                    autoClose: 1000,
-                    limit: 3
-                });
+
+                if (this.toAdd) {
+                    // clear toast waiting queue
+                    toast.clearAll();
+
+                    // show the toast
+                    toast.success('Articolo aggiunto al carrello', {
+                        autoClose: 1000,
+                        limit: 1
+                    })
+                } else {
+                    // clear toast waiting queue
+                    toast.clearAll();
+
+                    // show the toast
+                    toast.warning('Articolo rimosso dal carrello', {
+                        autoClose: 1000,
+                        limit: 1
+                    })
+                }
+
                 this.toAdd = !this.toAdd;
             } else {
 
-                toast.warning('Non puoi ordinare da più di un ristorante alla volta, clicca qui per modificare il carrello', {
+                //clear toast waiting queue
+                toast.clearAll();
+
+                // show the toast
+                toast.error('Non puoi ordinare da più di un ristorante alla volta, clicca qui per modificare il carrello', {
                     autoClose: false,
                     onClick: () => {
                         this.$router.push({ name: 'cart' })
