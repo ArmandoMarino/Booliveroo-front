@@ -29,10 +29,6 @@ export default {
 </script>
 
 <template>
-    <div class="my-5">
-
-        <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary mt-2 ">TORNA ALLA HOME</router-link>
-    </div>
     <form @submit.prevent="sendForm">
         <div class="mb-3">
             <label for="email" class="form-label">Inidirizzo Email<sup class="text-danger">*</sup> </label>
@@ -52,18 +48,16 @@ export default {
             <label for="message" class="form-label">Contenuto del messaggio<sup class="text-danger">*</sup></label>
             <textarea class="form-control" name="message" id="message" rows="5" v-model.trim="form.message"></textarea>
         </div>
-        <!-- check -->
 
-        <!-- <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="subscription" id="subscription" value="1"
-                            v-model.trim="form.subscription">
-                        <label class="form-check-label" for="subscription">Iscriviti alla Newsletter!</label>
-                    </div> -->
-
-        <div class="d-flex justify-content-end my-3">
-            <button type="submit" class="btn btn-primary">INVIA</button>
+        <div class="d-flex justify-content-between my-3">
+            <!-- <router-link :to="{ name: 'home' }" class="btn btn-secondary mt-2 ">TORNA INDIETRO</router-link> -->
+            <button @click="$router.back()" class="btn btn-secondary mt-2 ">Torna indietro</button>
+            <button type="submit" class="btn btn-primary px-3">Invia</button>
         </div>
     </form>
+    <!-- <div class="mb-5 d-flex justify-content-end">
+
+                            </div> -->
 </template>
 
 <style scoped lang="scss">
