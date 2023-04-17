@@ -5,6 +5,7 @@ export default {
     data() {
         return {
             currentIndex: 0,
+            // array di oggetti contenente i dati dei ruoli disponibili per lavorare in booliveroo
             roleLinks: [
                 {
                     link: 'Tutti i dipartimenti',
@@ -56,6 +57,7 @@ export default {
         }
     },
     methods: {
+        // metodo per far comparire al click i ruoli in base alla sezione selezionata
         showSpecificRole(i) {
             this.currentIndex = i;
             this.roleLinks[this.currentIndex].isClicked = true;
@@ -74,14 +76,16 @@ export default {
 
 
 <template>
+    <!-- Jumbotron -->
     <div id="jumbotron">
-        <div class="d-flex justify-content-end">
+        <div class="d-md-flex justify-content-md-end d-none text-center">
             <div class="jumbo-claim text-white me-5 pt-3">
                 <h1 class="fw-bold">Affamato di una nuova sfida?</h1>
                 <p class="fs-3">Trova una carriera appagante in Booliveroo</p>
             </div>
         </div>
     </div>
+    <!-- sezione experience -->
     <section id="experience">
         <div class="container">
             <div class="py-5">
@@ -134,6 +138,7 @@ export default {
             </div>
         </div>
     </section>
+    <!-- sezione i nostri valori -->
     <section id="values">
         <div class="container">
             <div class="row mb-5">
@@ -238,20 +243,26 @@ export default {
             </div>
         </div>
     </section>
+
+    <!-- sezione ruoli disponibili -->
     <section id="roles">
         <div class="container">
             <h1 class="text-center fw-bold available-roles">Ruoli disponibili</h1>
             <nav class="navbar bg-body-tertiary mt-5">
                 <div class="container-fluid">
+                    <!-- v-for per generare 5 buttons della navbar -->
                     <button v-for="(link, i) in roleLinks" :key="link.link" @click="showSpecificRole(i)"
                         class="btn-role fw-semibold navbar-brand border-0 rounded-2 my-2">{{ link.link
                         }}</button>
                 </div>
             </nav>
-            <section v-for="link in roleLinks" :key="link.link">
+            <!-- v-for per girare sull'array roleLinks -->
+            <section v-for="link in roleLinks" :key="link.link" class="mb-5">
+                <!-- mostro solo la sezione che è stata cliccata -->
                 <div v-if="link.isClicked" class="row">
-                    <div v-for="role in link.role" :key="role.id" class="col-sm-6 col-12">
-                        <!-- <div>{{ role.name }}</div> -->
+
+                    <!-- v-for per girare sui ruoli di ogni singola sezione -->
+                    <div v-for="role in link.role" :key="role.id" class="col-sm-6 col-12 my-3">
                         <div class="card my-3 card-role">
                             <div class="card-body">
                                 <h5 class="card-title">{{ role.name }}</h5>
@@ -280,7 +291,8 @@ export default {
 }
 
 .small-col {
-    min-height: 250px;
+    // min-height: 250px;
+    height: 100%;
     position: relative;
     background-color: $background-color;
     padding: 1rem;
@@ -308,7 +320,9 @@ export default {
 }
 
 .h-card {
-    min-height: 390px;
+    // min-height: 390px;
+    height: 100%;
+
 
     img {
         height: 180px;
@@ -325,7 +339,8 @@ export default {
 }
 
 .card-role {
-    min-height: 230px;
+    // min-height: 230px;
+    height: 100%;
     background-color: $background-color;
 
     .location,
