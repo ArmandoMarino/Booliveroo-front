@@ -17,22 +17,23 @@ export default {
                     <div class="small-col mt-4">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable"
-                                    href="#">Discover
+                                    href="#">Scopri
                                     Booliveroo</a>
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'about_us' }"
-                                    class="text-decoration-none">About us</router-link></li>
+                                    class="text-decoration-none">Chi siamo</router-link></li>
                             <li class="list-group-item"><router-link :to="{ name: 'careers' }"
-                                    class="text-decoration-none">Careers</router-link></li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Become
-                                    a rider</a></li>
+                                    class="text-decoration-none">Lavora con noi</router-link></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Diventa
+                                    rider</a></li>
                             <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Takeaway</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">More</a></li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Git Cards</a>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Altro</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable"
+                                    href="#">Programmazione</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Restaurant
-                                    signup</a></li>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Diventa noostro
+                                    partner</a></li>
                         </ul>
                     </div>
 
@@ -40,20 +41,16 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Legal</a>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Note
+                                    legali</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Terms and
-                                    conditions</a>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Termini e
+                                    condizioni</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Privacy</a>
+                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Informativa
+                                    sulla privacy</a>
                             </li>
                             <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Cookies</a>
-                            </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Modern Slavery
-                                    Statement</a>
-                            </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Tax
-                                    Strategy</a>
                             </li>
                         </ul>
                     </div>
@@ -61,10 +58,10 @@ export default {
                 <div class="col-lg-3 col-sm-6 col-12">
                     <div class="small-col mt-4">
                         <ul class="p-3">
-                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Help</a>
+                            <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Aiuto</a>
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
-                                    class="text-decoration-none">Contact</router-link></li>
+                                    class="text-decoration-none">Contatti</router-link></li>
                             <li class="list-group-item"><a class="text-decoration-none" href="#">FAQs</a></li>
                         </ul>
                     </div>
@@ -74,9 +71,7 @@ export default {
                     <div class="small-col mt-4 d-flex flex-column">
                         <ul class="p-3">
                             <li class="list-group-item d-none d-sm-block">
-                                <a class="text-decoration-none fs-4 fw-bold unclickable">Take
-                                    Booliveroo
-                                    with you</a>
+                                <a class="text-decoration-none fs-4 fw-bold unclickable">Porta Booliveroo con te</a>
                             </li>
                         </ul>
                         <div class="images-footer ms-5">
@@ -96,11 +91,11 @@ export default {
             </div>
             <div class="row justify-content-between align-items-center mt-4">
                 <div class="col-sm-3 col-12 icon-footer d-flex">
-                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-facebook fa-2x me-3"
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-facebook fa-2x me-3 social-link"
                             style="color: #ffffff;"></i></router-link>
-                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-twitter fa-2x me-3"
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-twitter fa-2x me-3 social-link"
                             style="color: #ffffff;"></i></router-link>
-                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-instagram fa-2x me-3"
+                    <router-link :to="{ name: 'work_in_progress' }"><i class="fa-brands fa-instagram fa-2x me-3 social-link"
                             style="color: #ffffff;"></i></router-link>
                 </div>
                 <div class="col-sm-3 col-12 d-none d-sm-flex copyright d-flex align-items-center justify-content-end">
@@ -123,18 +118,22 @@ export default {
         color: white;
     }
 
+    a:hover {
+        color: $primary;
+        transform: scale(0.5, 0.5);
+    }
+
     .unclickable {
         cursor: default;
         pointer-events: none;
         color: rgba(255, 255, 255, 0.7);
 
-        &:hover {
-            color: red;
-        }
     }
 
+    // .social-link:hover {
+    //     color: $primary;
+    // }
 }
-
 
 
 
