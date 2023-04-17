@@ -128,6 +128,48 @@ export default {
 
                             </div>
 
+                            <hr>
+
+                            <!-- form after "procedi" -->
+                            <div class="row">
+
+                                <!-- title -->
+                                <div class="col-12 mb-4 mt-3">
+                                    <h3 class="text-center">Inserisci i tuoi dati per procedere al pagamento</h3>
+                                </div>
+
+                                <!-- name field -->
+                                <div class="col-4">
+                                    <div class="mb-4">
+                                        <input type="text" class="form-control" v-model="name" required>
+                                        <div class="form-text">Inserisci il tuo nome</div>
+                                    </div>
+                                </div>
+
+                                <!-- email field -->
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" v-model="email" required>
+                                        <div class="form-text">Inserisci la tua email</div>
+                                    </div>
+                                </div>
+
+                                <!-- address field -->
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" v-model="address" required>
+                                        <div class="form-text">Inserisci il indirizzo</div>
+                                    </div>
+                                </div>
+
+                                <!-- phone field -->
+                                <div class="col-4">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" v-model="phone" required>
+                                        <div class="form-text">Inserisci il tuo numero di telefono</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
