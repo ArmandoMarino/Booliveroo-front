@@ -41,7 +41,7 @@ export default {
 
 
 <template>
-    <div class="text-left" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10 mb-4'">
+    <div class="text-left" :class="isDetail ? 'container col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10 mb-4'">
         <button v-if="isDetail" @click="$router.back()" class="my-4 btn btn-sm btn-info text-body"><i
                 class="fas text-white fa-long-arrow-alt-left me-2"></i>
             <span class="text-white">Torna alla lista dei Ristoranti</span>
