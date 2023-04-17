@@ -20,6 +20,7 @@ export default {
                                     href="#">Scopri
                                     Booliveroo</a>
                             </li>
+                            <li class="list-group-item"><router-link class="text-decoration-none">Login</router-link></li>
                             <li class="list-group-item"><router-link :to="{ name: 'about_us' }"
                                     class="text-decoration-none">Chi siamo</router-link></li>
                             <li class="list-group-item"><router-link :to="{ name: 'careers' }"
@@ -32,8 +33,7 @@ export default {
                             <li class="list-group-item"><a class="text-decoration-none unclickable"
                                     href="#">Programmazione</a>
                             </li>
-                            <li class="list-group-item"><a class="text-decoration-none unclickable" href="#">Diventa noostro
-                                    partner</a></li>
+
                         </ul>
                     </div>
 
@@ -120,7 +120,6 @@ export default {
 
     a:hover {
         color: $primary;
-        transform: scale(0.5, 0.5);
     }
 
     .unclickable {
