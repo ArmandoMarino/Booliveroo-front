@@ -8,6 +8,12 @@ export default {
         return {
             tokenApi: '',
             isLoading: false,
+            isOpenedUserForm: false,
+            isOpenedPayForm: false,
+            name: '',
+            address: '',
+            email: '',
+            phone: '',
         }
     },
     methods: {
@@ -18,6 +24,15 @@ export default {
         emptyCart() {
             this.$store.commit('emptyCart', this.$store.state)
         },
+
+        openUserForm() {
+            this.isOpenedUserForm = true;
+        },
+
+        openPayForm() {
+            this.isOpenedUserForm = false;
+            this.isOpenedPayForm = true;
+        }
     },
 
     mounted() {
@@ -125,62 +140,82 @@ export default {
                                                     $store.state.cartTotal }}</p>
                                             </div>
                                             <hr>
-                                            <!-- payment component -->
-                                            <Payment v-if="tokenApi" :tokenApi="tokenApi" />
 
-                                            <button type="button" class="btn btn-info btn-block btn-lg">
-                                                Checkout
-                                            </button>
+
+
+                                            <button v-if="!isOpenedUserForm && !isOpenedPayForm" type="button"
+                                                class="btn btn-sm btn-info btn-block btn-lg"
+                                                @click="openUserForm()">Procedi</button>
 
                                         </div>
+
+                                        <!-- form after "procedi" -->
+                                        <div v-if="isOpenedUserForm" class="row px-3">
+
+                                            <!-- title -->
+                                            <div class="col-12 mb-4 mt-3">
+                                                <h3 class="text-center">Inserisci i tuoi dati per procedere al pagamento
+                                                </h3>
+                                            </div>
+
+                                            <!-- name field -->
+                                            <div class="col-12">
+                                                <div class="mb-4">
+                                                    <input type="text" class="form-control" v-model="name" required>
+                                                    <div class="form-text text-white">Inserisci il tuo nome</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- email field -->
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <input type="email" class="form-control" v-model="email" required>
+                                                    <div class="form-text text-white">Inserisci la tua email</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- address field -->
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" v-model="address" required>
+                                                    <div class="form-text text-white">Inserisci il indirizzo</div>
+                                                </div>
+                                            </div>
+
+                                            <!-- phone field -->
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <input type="text" class="form-control" v-model="phone" required>
+                                                    <div class="form-text text-white">Inserisci il tuo numero di telefono
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- open payment button -->
+                                            <div class="col-12">
+                                                <div class="mb-3 d-flex justify-content-end">
+                                                    <button @click="openPayForm()" class="btn btn-sm btn-success">Procedi al
+                                                        pagamento</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- payment component -->
+                                        <div class="px-3 pb-3" v-if="tokenApi && isOpenedPayForm">
+                                            <Payment :tokenApi="tokenApi" :address="address" :phone="phone"
+                                                :email="email" />
+                                        </div>
+
                                     </div>
 
                                 </div>
+
+
 
                             </div>
 
                             <hr>
 
-                            <!-- form after "procedi" -->
-                            <div class="row">
-
-                                <!-- title -->
-                                <div class="col-12 mb-4 mt-3">
-                                    <h3 class="text-center">Inserisci i tuoi dati per procedere al pagamento</h3>
-                                </div>
-
-                                <!-- name field -->
-                                <div class="col-4">
-                                    <div class="mb-4">
-                                        <input type="text" class="form-control" v-model="name" required>
-                                        <div class="form-text">Inserisci il tuo nome</div>
-                                    </div>
-                                </div>
-
-                                <!-- email field -->
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <input type="email" class="form-control" v-model="email" required>
-                                        <div class="form-text">Inserisci la tua email</div>
-                                    </div>
-                                </div>
-
-                                <!-- address field -->
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" v-model="address" required>
-                                        <div class="form-text">Inserisci il indirizzo</div>
-                                    </div>
-                                </div>
-
-                                <!-- phone field -->
-                                <div class="col-4">
-                                    <div class="mb-3">
-                                        <input type="text" class="form-control" v-model="phone" required>
-                                        <div class="form-text">Inserisci il tuo numero di telefono</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

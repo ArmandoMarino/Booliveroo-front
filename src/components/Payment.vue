@@ -1,5 +1,5 @@
 <script>
-import axios, { formToJSON } from 'axios';
+import axios from 'axios';
 import braintree from 'braintree-web-drop-in';
 const baseUrl = 'http://127.0.0.1:8000/api/';
 export default {
