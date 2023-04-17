@@ -41,20 +41,21 @@ export default {
 
 
 <template>
-    <div class="text-left container" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
-    ">
+    <div class="text-left container" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10 mb-4'">
         <button v-if="isDetail" @click="$router.back()" class="my-4 btn btn-sm btn-info text-body"><i
                 class="fas text-white fa-long-arrow-alt-left me-2"></i>
             <span class="text-white">Torna alla lista dei Ristoranti</span>
         </button>
 
         <!--* ROUETER TO SHOW PICK ALL CARD-->
-        <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
+        <router-link :class="isDetail ? 'pe-none' : ''" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'card h-100'">
                 <!-- IMAGE -->
-                <img :src="restaurant.banner" class="img-fluid" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
-                " :alt="restaurant.name">
+                <div class="pic-img">
+                    <img :src="restaurant.banner" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                    " :alt="restaurant.name">
+                </div>
 
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
@@ -79,7 +80,7 @@ export default {
                             {{ setVote }}
                         </li>
                         <!-- DISTANCE -->
-                        <li class="mt-1">{{ restaurant.address }}</li>
+                        <li class="mt-1 mb-3">{{ restaurant.address }}</li>
                     </ul>
 
                     <!--* INFO ALLERGENI MODAL -->
@@ -149,10 +150,12 @@ export default {
                         <div class="p-2 card-food">
                             <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
                             <div class="text mb-3 d-flex">
-                                <div style="height: auto; width: 30%;">
-                                    <img :src="food.image" class="img-fluid">
+                                <div class="food-img">
+                                    <img :src="food.image">
                                 </div>
-                                <p class="ms-2"><strong>{{ food.label }}</strong></p>
+                                <div class="overflow-y h-100">
+                                    <p class="ms-2 "><strong>{{ food.label }}</strong></p>
+                                </div>
                             </div>
 
 
@@ -191,6 +194,29 @@ export default {
 
 .pointer-none {
     cursor: default;
+}
+
+.pic-img {
+    height: 16rem;
+    width: auto;
+
+    img {
+        height: 100%;
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
+.food-img {
+    height: 150px;
+    width: 80px;
+
+
+    img {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+    }
 }
 
 .btn-bool {
@@ -251,7 +277,7 @@ a {
 
 // FOOD
 .card-food {
-    min-height: 125px;
+    min-height: 120px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
     p {
