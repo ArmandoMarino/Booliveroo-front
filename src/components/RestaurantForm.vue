@@ -49,7 +49,7 @@ export default {
             <textarea class="form-control" name="message" id="message" rows="5" v-model.trim="form.message"></textarea>
         </div>
 
-        <div class="d-flex justify-content-between my-3">
+        <div class="d-flex justify-content-between align-items-center my-3">
             <!-- <router-link :to="{ name: 'home' }" class="btn btn-secondary mt-2 ">TORNA INDIETRO</router-link> -->
             <button @click="$router.back()" class="btn btn-secondary mt-2 ">Torna indietro</button>
             <button type="submit" class="btn btn-primary px-3">Invia</button>
@@ -57,7 +57,7 @@ export default {
     </form>
     <!-- <div class="mb-5 d-flex justify-content-end">
 
-                            </div> -->
+                                </div> -->
 </template>
 
 <style scoped lang="scss">
