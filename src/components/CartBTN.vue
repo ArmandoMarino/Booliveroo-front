@@ -39,6 +39,7 @@ export default {
                     // show the toast
                     toast.success('Articolo aggiunto al carrello', {
                         autoClose: 1000,
+                        position: "top-center",
                         limit: 1
                     })
                 } else {
@@ -48,6 +49,7 @@ export default {
                     // show the toast
                     toast.warning('Articolo rimosso dal carrello', {
                         autoClose: 1000,
+                        position: "top-center",
                         limit: 1
                     })
                 }
@@ -65,6 +67,7 @@ export default {
                         this.$router.push({ name: 'cart' })
                     },
                     limit: 1,
+                    position: "top-center"
                 })
             }
         },

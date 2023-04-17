@@ -18,15 +18,13 @@ export default {
                     this.quantity++
                     this.product.quantity = this.quantity
                     await this.$store.commit('updateCart', { product: this.product })
-                    // toast.success('cart updated', {
-                    //     autoClose: 1000,
-                    // });
                 } else {
                     // clear toast waiting queue
                     toast.clearAll();
 
                     toast.error('Hai raggiunto il limite massimo consentito!', {
                         autoClose: 3000,
+                        position: "top-center",
                         limit: 1
                     });
                 }
@@ -36,15 +34,13 @@ export default {
                     this.quantity--
                     this.product.quantity = this.quantity
                     await this.$store.commit('updateCart', { product: this.product })
-                    // toast.success('cart updated', {
-                    //     autoClose: 1000,
-                    // });
                 } else {
                     // clear toast waiting queue
                     toast.clearAll();
 
                     toast.error('Non puoi selezionare una quantità inferiore!', {
                         autoClose: 3000,
+                        position: "top-center",
                         limit: 1
                     });
                 }
