@@ -7,10 +7,12 @@ export default {
     components: { SingleCategoryRestaurant },
     data: () => ({
         restaurants: {},
-        categories: null
+        categories: null,
+        isLoading: false,
     }),
     methods: {
         fetchRestaurants(endpoint = null) {
+            this.isLoading = true;
             if (!endpoint)
                 endpoint = `${apiBaseUrl}/categories/${this.$route.params.id}/restaurants`;
             axios.get(endpoint).then((res) => {
@@ -22,7 +24,7 @@ export default {
                 // TODO LOADER
                 console.error(err)
             }).then(() => {
-                // TODO LOADER
+                this.isLoading = false;
             })
         }
     },
@@ -34,6 +36,6 @@ export default {
 
 
 <template>
-    <!-- <restaurant-list :restaurants="restaurants" :categories="categories"></restaurant-list> -->
-    <single-category-restaurant :restaurants="restaurants" :categories="categories"></single-category-restaurant>
+    <app-loader v-if="isLoading"></app-loader>
+    <single-category-restaurant v-else :restaurants="restaurants" :categories="categories"></single-category-restaurant>
 </template>

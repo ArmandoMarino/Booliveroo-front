@@ -19,7 +19,7 @@ export default {
                     this.restaurant = res.data;
                 })
                 .catch(() => {
-                    this.isLoading = true
+                    // this.isLoading = true
                     this.$router.push({ name: "not-found" });
                 }).then(() => {
                     this.isLoading = false
