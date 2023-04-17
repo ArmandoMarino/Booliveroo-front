@@ -23,6 +23,6 @@ export default {
 
 <style>
 .wrapper {
-  min-height: 800px;
+  min-height: calc(100vh - 584.13px);
 }
 </style>
