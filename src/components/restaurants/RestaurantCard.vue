@@ -30,9 +30,14 @@ export default {
 
 
 <template>
-    <div class="text-center container" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
+    <div class="text-left container" :class="isDetail ? 'col-11 mx-auto' : 'col-lg-3 col-md-6 col-sm-10'
     ">
-        <!--* ROUETR TO SHOW PICK ALL CARD-->
+        <button v-if="isDetail" @click="$router.back()" class="my-4 btn btn-sm btn-info text-body"><i
+                class="fas text-white fa-long-arrow-alt-left me-2"></i>
+            <span class="text-white">Torna alla lista dei Ristoranti</span>
+        </button>
+
+        <!--* ROUETER TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ' '" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'card h-100'">
@@ -64,11 +69,9 @@ export default {
                         </li>
                         <!-- DISTANCE -->
                         <li class="mt-1">{{ restaurant.address }}</li>
-                        <!-- HOUR -->
-                        <li v-if="isDetail">Chiude alle 23.30</li>
                     </ul>
 
-                    <!--! CHIAVE TELEFONO DB e POSIZIONE           INFO ALLERGENI MODAL -->
+                    <!--* INFO ALLERGENI MODAL -->
                     <div class="info pe-auto" v-if="isDetail">
                         <button type="button" class="btn d-flex align-items-center" data-bs-toggle="modal"
                             data-bs-target="#modal-info">
@@ -100,10 +103,10 @@ export default {
                                             sui metodi di cottura e sugli ingredienti utilizzati.
                                         </p>
                                         <p>
-                                            <a href="tel:+390000000000">
+                                            <a href="tel:+39 0000000000">
                                                 <i style="color: #00CCBC;" class="fa-solid fa-phone me-2"></i>
                                                 Chiama {{ restaurant.name }} al numero
-                                                +390000000000
+                                                +39 0000000000
                                             </a>
                                         </p>
                                     </div>
@@ -196,6 +199,11 @@ ul {
     li::marker {
         color: gray;
     }
+}
+
+// INFO MODAL
+.info {
+    width: 210px;
 }
 
 // VOTE
