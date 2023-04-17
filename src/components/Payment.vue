@@ -3,12 +3,7 @@ import axios, { formToJSON } from 'axios';
 import braintree from 'braintree-web-drop-in';
 export default {
     name: 'Payment',
-    props: {
-        tokenApi: {
-            // required: true,
-            type: String
-        }
-    },
+    props: { tokenApi: String, address: String, phone: String, email: String },
     data() {
         return {
 
@@ -20,11 +15,8 @@ export default {
         makePayment() {
             // get the button from dom
             const button = document.querySelector('#submit-button');
-            let form = { token: '', foods: null, address: '', phone: '' }
-            const foods = this.$store.state.cart
 
             // // instace of braintree
-            const vm = this;
             braintree.create({
                 authorization: this.tokenApi,
                 selector: '#dropin-container'
@@ -33,6 +25,7 @@ export default {
                     console.error(err);
                     return;
                 }
+                // on "pay" click
                 button.addEventListener('click', function () {
                     dropinInstance.requestPaymentMethod(function (err, payload) {
                         if (err) {
@@ -40,17 +33,22 @@ export default {
                             return;
                         }
 
-                        const products = JSON.parse(localStorage.getItem('cart'));
-                        const address = 'via giglio';
-                        const phone = '12314';
+                        // define what will be passed to backend
+                        const foods = JSON.parse(localStorage.getItem('cart'));
+                        const address = this.address;
+                        const phone = this.phone;
+                        const email = this.email;
 
+                        // pack everything in a data object
                         const data = {
                             token: payload.nonce,
-                            foods: products,
+                            foods: foods,
                             address: address,
-                            phone: phone
+                            phone: phone,
+                            email: email
                         };
 
+                        // post the payment in backend passing the data
                         axios.post('http://127.0.0.1:8000/api/make-payment', data)
                             .then(function (response) {
                                 console.log(response);
