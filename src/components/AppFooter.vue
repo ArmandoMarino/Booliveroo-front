@@ -13,8 +13,8 @@ export default {
         <div class="container py-4">
 
             <div class="row list-footer py-4">
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="small-col mt-4">
+                <div class="col-lg-3 col-sm-6 col-12 mt-4">
+                    <div class="small-col">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable"
                                     href="#">Scopri
@@ -39,8 +39,8 @@ export default {
                     </div>
 
                 </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="small-col mt-4">
+                <div class="col-lg-3 col-sm-6 col-12 mt-4">
+                    <div class="small-col">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Note
                                     legali</a>
@@ -56,8 +56,8 @@ export default {
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 col-12">
-                    <div class="small-col mt-4">
+                <div class="col-lg-3 col-sm-6 col-12 mt-4">
+                    <div class="small-col">
                         <ul class="p-3">
                             <li class="list-group-item"><a class="text-decoration-none fs-4 fw-bold unclickable">Aiuto</a>
                             </li>
@@ -69,8 +69,8 @@ export default {
                     </div>
 
                 </div>
-                <div class="col-lg-3 col-sm-6 col-12 ">
-                    <div class="small-col mt-4 d-flex flex-column">
+                <div class="col-lg-3 col-sm-6 col-12 mt-4">
+                    <div class="small-col d-flex flex-column">
                         <ul class="p-3">
                             <li class="list-group-item d-none d-sm-block">
                                 <a class="text-decoration-none fs-4 fw-bold unclickable">Porta Booliveroo con te</a>
@@ -139,7 +139,7 @@ export default {
 
 
 .small-col {
-    min-height: 320px;
+    height: 100%;
     background-color: #323844;
 }
 
