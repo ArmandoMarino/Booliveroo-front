@@ -43,17 +43,30 @@ export default {
                                 <div class="col-lg-7">
                                     <h5 class="mb-3"><button @click="$router.back()"
                                             class="btn btn-sm btn-info text-body"><i
-                                                class="fas fa-long-arrow-alt-left me-2"></i>Continue
-                                            shopping</button>
+                                                class="text-white fas fa-long-arrow-alt-left me-2"></i>
+                                            <span class="text-white fw-bold">Continua su Boolivero</span>
+                                        </button>
                                     </h5>
                                     <hr>
 
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div>
-                                            <p class="mb-0">You have {{ $store.state.cart.length }} items in your cart</p>
+                                            <p class="mb-0">
+                                                <span
+                                                    v-if="$store.state.cart.length > 1 || $store.state.cart.length < 1">Hai
+                                                    <strong class="me-2"> {{
+                                                        $store.state.cart.length
+                                                    }}</strong>oggetti nel
+                                                    tuo carrello.</span>
+
+                                                <span v-else>Hai un <strong class="me-2">{{
+                                                    $store.state.cart.length }}</strong>oggetto nel
+                                                    tuo carrello.</span>
+                                            </p>
+
                                         </div>
 
-                                        <div>
+                                        <div v-if="$store.state.cart.length > 0">
                                             <button class="btn btn-sm btn-danger" @click="emptyCart()">Svuota
                                                 carrello</button>
                                         </div>
@@ -96,24 +109,22 @@ export default {
                                 </div>
                                 <div class="col-lg-5">
 
+                                    <!-- CART DETAILS -->
                                     <div class="card bg-primary text-white rounded-0 border-0">
                                         <div class="card-body">
                                             <div class="d-flex justify-content-between align-items-center mb-4">
-                                                <h5 class="mb-0">Cart details</h5>
+                                                <h5 class="mb-0">Carrello</h5>
                                                 <i class="bi bi-cart3 h1"></i>
                                             </div>
                                             <hr class="my-4">
-                                            <div class="d-flex justify-content-between">
-                                                <p class="mb-2">Subtotal</p>
-                                                <p class="mb-2"><i class="bi bi-currency-dollar"></i>{{
-                                                    $store.state.cartTotal }}</p>
-                                            </div>
-                                            <div class="d-flex justify-content-between mb-4">
-                                                <p class="mb-2">Total</p>
-                                                <p class="mb-2"><i class="bi bi-currency-dollar"></i>{{
-                                                    $store.state.cartTotal }}</p>
-                                            </div>
 
+                                            <!--* TOTAL -->
+                                            <div class="d-flex justify-content-between mb-4">
+                                                <h5 class="mb-2"><strong>Totale</strong></h5>
+                                                <p class="mb-2 fw-bold"><i class="fa-solid fa-euro me-2"></i>{{
+                                                    $store.state.cartTotal }}</p>
+                                            </div>
+                                            <hr>
                                             <!-- payment component -->
                                             <Payment v-if="tokenApi" :tokenApi="tokenApi" />
 
