@@ -17,7 +17,10 @@ import WorkInProgressPage from "../pages/WorkInProgressPage.vue";
 // Creo il Router e definisco le rotte
 const router = createRouter({
   history: createWebHistory(),
-  linkActiveClass: "active",
+  linkActiveClass: "active",  
+  scrollBehavior (to, from, savedPosition) {
+    return { top: 0 }
+    },
 
   // Rotte che useremo
   routes: [
