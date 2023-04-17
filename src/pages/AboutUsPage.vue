@@ -13,6 +13,7 @@ export default {
             <h1 class="text-white fw-bold py-5">Chi siamo</h1>
             <div class="row justify-content-between">
                 <div class="col-md-5 col-12 d-none d-sm-block list-group navbar-aboutus mt-2">
+                    <!-- Sezioni nella side-bar -->
                     <a href="#story" class="list-group-item list-group-item-action py-3">La storia di Booliveroo</a>
                     <a href="#riders" class="list-group-item list-group-item-action py-3">Rider</a>
                     <a href="#technology" class="list-group-item list-group-item-action py-3">La tecnologia ci guida</a>
@@ -20,6 +21,7 @@ export default {
                     <a href="#values" class="list-group-item list-group-item-action py-3">I nostri valori</a>
                 </div>
                 <div class="col-md-7 col-12 section rounded-2 mt-2">
+                    <!-- sezione la storia di booliveroo -->
                     <section id="story">
                         <h2>La storia di Booliveroo</h2>
                         <img src="https://j7a5u2n2.stackpathcdn.com/wp-content/uploads/2022/04/Richard-Liu-148552-detailp.png"
@@ -38,6 +40,8 @@ export default {
                             collabora con migliaia di ristoranti, supermercati e rider e arriva nelle case di milioni di
                             clienti.</p>
                     </section>
+
+                    <!-- sezione rider -->
                     <section id="riders">
                         <h2>Rider</h2>
                         <img src="https://i0.wp.com/www.fruitbookmagazine.it/wp-content/uploads/2020/11/aldi-deliveroo.jpg?fit=1200%2C800&ssl=1"
@@ -56,6 +60,8 @@ export default {
                             tempo pieno durante il primo anno di attività dell’azienda. Insieme ad altri membri del nostro
                             team, ad oggi consegna ancora a domicilio a cadenza regolare</p>
                     </section>
+
+                    <!-- sezione tecnologia -->
                     <section id="technology">
                         <h2>La tecnologia ci guida</h2>
                         <img src="https://fooda-wordpress.s3.amazonaws.com/blog2/wp-content/uploads/2018/06/23180453/phone-lunch-1024x464.jpg"
@@ -79,6 +85,8 @@ export default {
                             stima del tempo di percorrenza di un determinato itinerario in momenti diversi della giornata -
                             per rendere il servizio ancora più efficiente.</p>
                     </section>
+
+                    <!-- sezione innovazione -->
                     <section id="innovation">
                         <h2>Innovazione, a domicilio</h2>
                         <img src="https://sialamerica.com/wp-content/uploads/2022/05/MicrosoftTeams-image-13-scaled.jpg"
@@ -103,6 +111,8 @@ export default {
                             fornendo la consegna rapida dalla nostra rete di negozi dedicati esclusivamente al delivery, che
                             si chiama Booliveroo HOP.</p>
                     </section>
+
+                    <!-- sezione i nostri valori -->
                     <section id="values">
                         <h2>I nostri valori</h2>
                         <img src="https://i0.wp.com/www.creativityandchange.ie/wp-content/uploads/2018/01/Values.gif?fit=730%2C350&ssl=1&resize=940,650"
@@ -117,9 +127,12 @@ export default {
             </div>
         </div>
         <div class="container d-flex justify-content-end py-3">
+            <!-- link per tornare al top della pagina -->
             <div>
                 <a href="#about-us" class="btn btn-sm btn-primary me-2">TORNA SU</a>
             </div>
+
+            <!-- link per tornare alla home -->
             <div>
                 <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary">TORNA ALLA HOME</router-link>
             </div>
