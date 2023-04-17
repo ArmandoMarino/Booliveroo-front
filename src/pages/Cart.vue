@@ -202,8 +202,8 @@ export default {
 
                                         <!-- payment component -->
                                         <div class="px-3 pb-3" v-if="tokenApi && isOpenedPayForm">
-                                            <Payment :tokenApi="tokenApi" :address="address" :phone="phone"
-                                                :email="email" />
+                                            <Payment :tokenApi="tokenApi" :address="address" :phone="phone" :email="email"
+                                                :name="name" />
                                         </div>
 
                                     </div>

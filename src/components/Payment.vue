@@ -4,13 +4,7 @@ import braintree from 'braintree-web-drop-in';
 const baseUrl = 'http://127.0.0.1:8000/api/';
 export default {
     name: 'Payment',
-    props: { tokenApi: String, address: String, phone: String, email: String },
-    data() {
-        return {
-
-        }
-    },
-
+    props: { tokenApi: String, address: String, phone: String, email: String, name: String },
     methods: {
         // render payment box and make payment
         makePayment() {
@@ -21,14 +15,14 @@ export default {
             braintree.create({
                 authorization: this.tokenApi,
                 selector: '#dropin-container'
-            }, function (err, dropinInstance) {
+            }, (err, dropinInstance) => {
                 if (err) {
                     console.error(err);
                     return;
                 }
                 // on "pay" click
-                button.addEventListener('click', function () {
-                    dropinInstance.requestPaymentMethod(function (err, payload) {
+                button.addEventListener('click', () => {
+                    dropinInstance.requestPaymentMethod((err, payload) => {
                         if (err) {
                             console.error(err);
                             return;
@@ -39,6 +33,7 @@ export default {
                         const address = this.address;
                         const phone = this.phone;
                         const email = this.email;
+                        const name = this.name
 
                         // pack everything in a data object
                         const data = {
@@ -46,7 +41,8 @@ export default {
                             foods: foods,
                             address: address,
                             phone: phone,
-                            email: email
+                            email: email,
+                            name: name
                         };
 
                         // post the payment in backend passing the data
