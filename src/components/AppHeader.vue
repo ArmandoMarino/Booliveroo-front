@@ -101,8 +101,12 @@ export default {
 
                                             <!-- FAQS -->
                                             <div class="col-12">
-                                                <a href="#"><span><i
-                                                            class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></a>
+
+                                                <router-link :to="{ name: 'faqs_page', params: { component: FaqsPage } }">
+                                                    <a href="#"><span><i
+                                                                class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></a>
+                                                </router-link>
+
                                             </div>
 
                                             <figure class="d-flex justify-content-center">
