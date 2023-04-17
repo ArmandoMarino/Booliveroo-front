@@ -6,7 +6,8 @@ export default {
     components: { CartAddRemove, Payment },
     data() {
         return {
-            tokenApi: ''
+            tokenApi: '',
+            isLoading: false,
         }
     },
     methods: {
@@ -20,16 +21,18 @@ export default {
     },
 
     mounted() {
+        this.isLoading = true;
         axios.get('http://127.0.0.1:8000/api/ctoken').then(res => {
+            this.isLoading = false;
             this.tokenApi = res.data;
         })
     }
 }
 </script>
 
-
 <template>
-    <section class="h-100 h-custom">
+    <app-loader v-if="isLoading"></app-loader>
+    <section v-else class="h-100 h-custom">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
