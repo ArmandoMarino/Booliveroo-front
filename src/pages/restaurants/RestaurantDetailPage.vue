@@ -40,7 +40,7 @@ export default {
 </template>
 
 <style scoped lang="scss">
-.restaurant-detail {
-    margin-top: 100px;
-}
+// .restaurant-detail {
+//     margin-top: 100px;
+// }
 </style>
