@@ -20,7 +20,8 @@ export default {
                                     href="#">Scopri
                                     Booliveroo</a>
                             </li>
-                            <li class="list-group-item"><router-link class="text-decoration-none">Login</router-link></li>
+                            <li class="list-group-item"><a href="http://127.0.0.1:8000/login"
+                                    class="text-decoration-none">Accedi o registrati</a></li>
                             <li class="list-group-item"><router-link :to="{ name: 'about_us' }"
                                     class="text-decoration-none">Chi siamo</router-link></li>
                             <li class="list-group-item"><router-link :to="{ name: 'careers' }"
@@ -62,7 +63,8 @@ export default {
                             </li>
                             <li class="list-group-item"><router-link :to="{ name: 'contact_page' }"
                                     class="text-decoration-none">Contatti</router-link></li>
-                            <li class="list-group-item"><a class="text-decoration-none" href="#">FAQs</a></li>
+                            <li class="list-group-item"><router-link :to="{ name: '' }"
+                                    class="text-decoration-none">FAQs</router-link></li>
                         </ul>
                     </div>
 
