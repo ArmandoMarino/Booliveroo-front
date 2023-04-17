@@ -7,9 +7,11 @@ export default {
     components: { RestaurantCard },
     data: () => ({
         restaurant: {},
+        isLoading: false,
     }),
     methods: {
         getRestaurant() {
+            this.isLoading = true
             const endpoint = apiBaseUrl + "restaurants/" + this.$route.params.id;
             axios
                 .get(endpoint)
@@ -17,8 +19,11 @@ export default {
                     this.restaurant = res.data;
                 })
                 .catch(() => {
+                    this.isLoading = true
                     this.$router.push({ name: "not-found" });
-                });
+                }).then(() => {
+                    this.isLoading = false
+                })
         },
     },
     created() {
@@ -28,7 +33,8 @@ export default {
 </script>
 
 <template>
-    <section class="restaurant-detail">
+    <app-loader v-if="isLoading"></app-loader>
+    <section v-else class="restaurant-detail">
         <RestaurantCard :restaurant="restaurant" :isDetail="true" />
     </section>
 </template>
