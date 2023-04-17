@@ -9,18 +9,21 @@ export default {
     data() {
         return {
             restaurants: {},
-            categories: {}
+            categories: {},
+            isLoading: false,
         }
     },
     components: { AppMain },
 
     methods: {
         fetchCategories() {
+            this.isLoading = true;
+
             axios.get(apiBase).then(res => { this.categories = res.data })
             console.log(this.categories);
         },
         fetchRestaurants() {
-            axios.get(apiRestaurants).then(res => { this.restaurants = res.data })
+            axios.get(apiRestaurants).then(res => { this.isLoading = false; this.restaurants = res.data })
             console.log(this.restaurants);
         }
     },
@@ -32,7 +35,8 @@ export default {
 </script>
 
 <template>
-    <app-main :restaurants="restaurants" :categories="categories"></app-main>
+    <app-loader v-if="isLoading"></app-loader>
+    <app-main v-else :restaurants="restaurants" :categories="categories"></app-main>
 </template>
 
 <style></style>

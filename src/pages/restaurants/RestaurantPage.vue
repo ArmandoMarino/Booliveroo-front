@@ -5,7 +5,8 @@ const apiBaseUrl = "http://127.0.0.1:8000/api";
 export default {
     data() {
         return {
-            restaurants: {}
+            restaurants: {},
+            isLoading: false,
         }
     },
     name: 'HomePage',
@@ -22,10 +23,12 @@ export default {
                     this.restaurants = res.data;
                 })
                 .catch((err) => {
+                    this.isALertOpen = true;
                     console.error(err);
                 })
                 // Loading a chiamata finita a false (off)
                 .then(() => {
+                    this.isLoading = false;
                 });
         },
     },
@@ -36,5 +39,6 @@ export default {
 </script>
 
 <template>
-    <restaurant-list :restaurants="restaurants"></restaurant-list>
+    <app-loader v-if="isLoading"></app-loader>
+    <restaurant-list v-else :restaurants="restaurants"></restaurant-list>
 </template>
