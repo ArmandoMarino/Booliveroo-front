@@ -10,108 +10,129 @@ export default {
     <div id="about-us">
 
         <div class="container">
-            <h1 class="text-white fw-bold py-5">About Us</h1>
+            <h1 class="text-white fw-bold py-5">Chi siamo</h1>
             <div class="row justify-content-between">
                 <div class="col-md-5 col-12 d-none d-sm-block list-group navbar-aboutus mt-2">
-                    <a href="#story" class="list-group-item list-group-item-action py-3">The Story of Booliveroo</a>
-                    <a href="#riders" class="list-group-item list-group-item-action py-3">Riders</a>
-                    <a href="#technology" class="list-group-item list-group-item-action py-3">Driven by technology</a>
-                    <a href="#innovation" class="list-group-item list-group-item-action py-3">Innovation, delivered</a>
-                    <a href="#values" class="list-group-item list-group-item-action py-3">Our Values</a>
+                    <!-- Sezioni nella side-bar -->
+                    <a href="#story" class="list-group-item list-group-item-action py-3">La storia di Booliveroo</a>
+                    <a href="#riders" class="list-group-item list-group-item-action py-3">Rider</a>
+                    <a href="#technology" class="list-group-item list-group-item-action py-3">La tecnologia ci guida</a>
+                    <a href="#innovation" class="list-group-item list-group-item-action py-3">Innovazione a domicilio</a>
+                    <a href="#values" class="list-group-item list-group-item-action py-3">I nostri valori</a>
                 </div>
                 <div class="col-md-7 col-12 section rounded-2 mt-2">
+                    <!-- sezione la storia di booliveroo -->
                     <section id="story">
-                        <h2>The Story of Booliveroo</h2>
+                        <h2>La storia di Booliveroo</h2>
                         <img src="https://j7a5u2n2.stackpathcdn.com/wp-content/uploads/2022/04/Richard-Liu-148552-detailp.png"
                             class="img-fluid w-100" alt="founder">
-                        <p class="py-3">When Booliveroo's founder and CEO Will Shu moved to London in 2013 he discovered a
-                            city full of
-                            great restaurants, but he was amazed that so few of them delivered food. He made it his personal
-                            mission to bring the best local restaurants direct to people’s doors.
+                        <p class="py-3">Quando il fondatore e CEO di Booliveroo Will Shu si è trasferito a Londra nel 2013,
+                            ha trovato una città piena di ristoranti incredibili, ma è rimasto stupito che davvero pochi di
+                            questi consegnassero a domicilio. Così, ha deciso che la sua missione personale sarebbe stata
+                            quella di portare i migliori ristoranti della città direttamente nelle case delle persone.
 
-                            Today, Booliveroo operates a hyperlocal three-sided marketplace, connecting local consumers,
-                            restaurants and grocers, and riders to fulfill a mission critical, emotional purchase in under
-                            30 minutes. By offering fast and reliable delivery which consumers can track online, Booliveroo
-                            has grown rapidly. Booiveroo now operates in 11 markets worldwide, working with thousands of
-                            restaurants and grocers, thousands of riders, and serving millions of consumers.</p>
+                            Oggi Booliveroo è al centro di un marketplace che mette in connessione tre attori: i clienti, i
+                            ristoranti e i supermercati, e i rider. L’obiettivo principale di questa connessione è
+                            facilitare un’esperienza di acquisto indimenticabile, in circa 30 minuti. Offrendo una consegna
+                            veloce e affidabile, che il cliente può seguire passo passo dallo smartphone, Booliveroo ha
+                            visto
+                            una crescita rapida e sostenuta. Oggi Booliveroo è presente in 11 mercati in tutto il mondo,
+                            collabora con migliaia di ristoranti, supermercati e rider e arriva nelle case di milioni di
+                            clienti.</p>
                     </section>
+
+                    <!-- sezione rider -->
                     <section id="riders">
-                        <h2>Riders</h2>
+                        <h2>Rider</h2>
                         <img src="https://i0.wp.com/www.fruitbookmagazine.it/wp-content/uploads/2020/11/aldi-deliveroo.jpg?fit=1200%2C800&ssl=1"
                             class="img-fluid" alt="rider">
-                        <p class="py-3">We build our proposition for riders based on the things they tell us they value
-                            most.
+                        <p class="py-3">La nostra proposta ai rider si basa su ciò che conta di più per loro. Come facciamo
+                            a sapere di cosa si tratta? Chiediamo e ascoltiamo sempre la loro opinione.
 
-                            This understanding of what riders care about most has helped us to develop an offer that
-                            prioritises the things they value: flexible work, good earnings and security. Booliveroo was
-                            amongst the first food delivery platforms to provide free personal accident and third-party
-                            liability insurance to all self-employed riders globally. This cover is provided free of charge
-                            and protects riders from their very first order with Booliveroo.
+                            In questo modo, abbiamo potuto sviluppare un’offerta che mette in primo piano ciò di cui hanno
+                            bisogno: orari flessibili, guadagni buoni e sicurezza. Booliveroo è stata fra le prime
+                            piattaforme di consegne a domicilio al mondo a offrire l’assicurazione contro gli infortuni
+                            personali (oggi in Italia è fornita da INAIL) e un’assicurazione ulteriore per eventuali danni a
+                            cose o a terzi. La copertura è offerta a titolo gratuito e protegge i rider fin dalla loro prima
+                            consegna con Booliveroo.
 
-                            Our founder and CEO, Will, was the very first rider and worked doing deliveries full time for
-                            the first year of running the business. Along with team members right across Booliveroo, he
-                            still
-                            completes deliveries regularly today.</p>
+                            Will, fondatore e CEO di Booliveroo, è stato il nostro primo rider e ha effettuato consegne a
+                            tempo pieno durante il primo anno di attività dell’azienda. Insieme ad altri membri del nostro
+                            team, ad oggi consegna ancora a domicilio a cadenza regolare</p>
                     </section>
+
+                    <!-- sezione tecnologia -->
                     <section id="technology">
-                        <h2>Driven by technology</h2>
+                        <h2>La tecnologia ci guida</h2>
                         <img src="https://fooda-wordpress.s3.amazonaws.com/blog2/wp-content/uploads/2018/06/23180453/phone-lunch-1024x464.jpg"
                             class="img-fluid" alt="technology">
-                        <p class="py-3">Booliveroo has built technology to enable us to simultaneously complete hundreds of
-                            thousands of orders right across the globe – in a way that is intuitive and reliable for riders,
-                            restaurants and grocers.
+                        <p class="py-3">La tecnologia sviluppata da Booliveroo permette di portare a termine
+                            contemporaneamente centinaia di migliaia di ordini in tutto il mondo, in modo intuitivo e
+                            affidabile per i rider, per i ristoranti e per i supermercati.
 
-                            Our technology has opened up new opportunities for restaurant and grocery partners to grow their
-                            businesses through delivery, often for the first time; for riders to access flexible work
-                            opportunities; and to ultimately deliver a great experience for consumers.
+                            La nostra tecnologia ha permesso di scoprire nuove opportunità di crescita per i ristoranti e i
+                            supermercati attraverso il delivery, spesso per la prima volta; nuove opportunità di lavoro
+                            flessibile per i rider; e per i clienti, la possibilità di godersi un’esperienza di delivery
+                            fantastica.
 
-                            Booliveroo's pioneering logistics technology is based on intelligent machine learning which
-                            allows us to continually improve the nuances of delivering neighbourhood by neighbourhood.
-                            Booliveroo deploys technology, such as our Frank algorithm, to find the best way of connecting
-                            riders, restaurants, and customers to deliver a best-in-class logistics service. Frank is
-                            continuously improving its knowledge-learning capabilities, such as how long it takes a
-                            restaurant to prepare a meal to the time it takes to travel a certain route at different times
-                            of the day, to make the service even more efficient.</p>
+                            L’innovativa tecnologia logistica di Booliveroo è basata su un machine learning intelligente,
+                            che
+                            ci permette di migliorare costantemente ogni piccolo aspetto del delivery, quartiere dopo
+                            quartiere. Booliveroo ha sviluppato tecnologie come quella del nostro algoritmo Frank, che ci
+                            permette di individuare il modo migliore di mettere in connessione rider, ristoranti e clienti
+                            per dar vita a un servizio leader nel settore. Frank migliora costantemente la sua precisione -
+                            come, ad esempio, il tempo che necessita un ristorante per la preparazione di un piatto o la
+                            stima del tempo di percorrenza di un determinato itinerario in momenti diversi della giornata -
+                            per rendere il servizio ancora più efficiente.</p>
                     </section>
+
+                    <!-- sezione innovazione -->
                     <section id="innovation">
-                        <h2>Innovation, delivered</h2>
+                        <h2>Innovazione, a domicilio</h2>
                         <img src="https://sialamerica.com/wp-content/uploads/2022/05/MicrosoftTeams-image-13-scaled.jpg"
                             class="img-fluid" alt="innovation">
-                        <p class="py-3">Booliveroo is passionate about food and bringing people evermore choice.
+                        <p class="py-3">La passione di Booliveroo è il cibo, con l’obiettivo di fornire alle persone una
+                            scelta sempre più ampia.
 
-                            But Booliveroo’s mission is not only to make sure that the restaurants and grocers in your area
-                            are available to you when and where you want them - we want to go further and bring new
-                            restaurants to your area so you have even more choice of amazing food.
+                            Ma la missione di Booliveroo non è solo quella di far sì che i ristoranti e supermercati della
+                            tua zona siano a tua disposizione dove vuoi e quando vuoi; vogliamo spingerci più in là,
+                            portando nuovi ristoranti vicino a te perché tu possa avere ancora più scelta quando si tratta
+                            di mangiare bene.
 
-                            Booliveroo’s delivery-only kitchens concept, ‘Editions’, is an innovation we pioneered that
-                            helps
-                            restaurants expand to new areas at lower cost and with lower risk. We help restaurants to set up
-                            delivery-only kitchens in new areas without the upfront costs of a high-street premise.
-                            Deliveroo provides restaurants with data insights so that they know which cuisines will be
-                            popular in specific local areas - meaning restaurants grow faster and customers have wider
-                            choice.
+                            Booliveroo Editions, il concept di cucine dedicate esclusivamente al delivery, è un’innovazione
+                            che abbiamo introdotto noi e che aiuta i ristoranti ad espandersi in nuove zone, abbattendo
+                            costi e rischi. Aiutiamo i ristoranti ad avviare cucine dedicate al delivery in nuove zone,
+                            senza i costi che presupporrebbe una struttura in una zona centrale. Booliveroo fornisce inoltre
+                            ai ristoranti dati e informazioni perché conoscano le tipologie di cucina più gettonate nelle
+                            varie zone: in questo modo i ristoranti crescono più in fretta e i clienti hanno più scelta.
 
-                            Booliveroo is also investing in expanding our on-demand grocery service, offering delivery from
-                            national supermarkets as well as providing rapid delivery from our own network of delivery-only
-                            sites, called Booliveroo ‘Hop’, which is being rolled out in several markets</p>
+                            Booliveroo sta inoltre investendo nell’espansione del proprio servizio di spesa “on demand”
+                            offrendo la consegna dalle catene di supermercati più conosciute a livello nazionale, ma anche
+                            fornendo la consegna rapida dalla nostra rete di negozi dedicati esclusivamente al delivery, che
+                            si chiama Booliveroo HOP.</p>
                     </section>
+
+                    <!-- sezione i nostri valori -->
                     <section id="values">
-                        <h2>Our values</h2>
+                        <h2>I nostri valori</h2>
                         <img src="https://i0.wp.com/www.creativityandchange.ie/wp-content/uploads/2018/01/Values.gif?fit=730%2C350&ssl=1&resize=940,650"
                             class="img-fluid" alt="values">
-                        <p class="py-3">At Booliveroo, our values are at the core of everything we do. They guide how we
-                            work
-                            together and make decisions, whether it be recruitment or the evolution and development of our
-                            people, teams and products</p>
+                        <p class="py-3">I nostri valori sono al centro di tutto l’operato di Booliveroo. Ci guidano ogni
+                            giorno per lavorare in squadra e prendere decisioni, dalle scelte che hanno un impatto sulle
+                            assunzioni e sullo sviluppo del personale, a quelle che scrivono il futuro dei prodotti
+                            Booliveroo.</p>
                     </section>
 
                 </div>
             </div>
         </div>
         <div class="container d-flex justify-content-end py-3">
+            <!-- link per tornare al top della pagina -->
             <div>
                 <a href="#about-us" class="btn btn-sm btn-primary me-2">TORNA SU</a>
             </div>
+
+            <!-- link per tornare alla home -->
             <div>
                 <router-link :to="{ name: 'home' }" class="btn btn-sm btn-secondary">TORNA ALLA HOME</router-link>
             </div>
