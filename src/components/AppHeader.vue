@@ -91,7 +91,7 @@ export default {
                                                     aria-current="page"
                                                     :to="{ name: 'cart', params: { component: Cart } }"><button
                                                         data-bs-toggle="offcanvas"
-                                                        class="btn btn-link text-decoration-none text-body-emphasis">
+                                                        class="btn btn-link text-decoration-none btn-menu">
                                                         <i class="pe-3 fa-solid fa-cart-shopping text-secondary"></i>
                                                         Vai al Carrello
 
@@ -143,20 +143,11 @@ export default {
                                                         <button data-bs-toggle="offcanvas"
                                                             class="btn btn-link text-decoration-none btn-menu"><span><i
                                                                     class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></button>
-                                                </router-link>
+                                                    </router-link>
+                                                </div>
+
                                             </div>
-
                                         </div>
-
-                                            <!-- <figure class="d-flex justify-content-center">
-                                                                                                                                                                               <img class="img-fluid p-3 my-rounded"
-                                                                                                                                                                                   src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                                                                                                                                                                                   alt="sidebar-img">
-                                                                                                                                                                           </figure> -->
-
-                                        </div>
-
-
                                     </div>
                                 </div>
                             </div>
