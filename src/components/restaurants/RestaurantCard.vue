@@ -49,10 +49,10 @@ export default {
 
         <!--* ROUETER TO SHOW PICK ALL CARD-->
         <!-- cart flag
-                                                                <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
-                                                                    class="i-cart">
-                                                                    <i class="primary-icon fa-solid fa-cart-shopping"></i>
-                                                                </div> -->
+                                                                                        <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
+                                                                                            class="i-cart">
+                                                                                            <i class="primary-icon fa-solid fa-cart-shopping"></i>
+                                                                                        </div> -->
         <router-link :class="isDetail ? 'pe-none' : ''" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'shadow card h-100'">
@@ -66,7 +66,7 @@ export default {
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
                     <!-- <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
-                                                                                                                                                                                            "></div> -->
+                                                                                                                                                                                                                    "></div> -->
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
@@ -146,10 +146,12 @@ export default {
         <!-- cart flag -->
         <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
             class="i-cart">
-            <div class="d-flex align-items-center primary-icon">
-                <span>+{{ $store.state.cart.length }}</span>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+            <router-link :to="{ name: 'cart', params: { component: Cart } }">
+                <div class="d-flex align-items-center primary-icon">
+                    <span>+{{ $store.state.cart.length }}</span>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+            </router-link>
         </div>
     </div>
 
@@ -198,7 +200,7 @@ export default {
         right: 10px;
         bottom: 10px;
         z-index: 1;
-        font-size: 15px;
+        font-size: 18px;
         color: $secondary;
     }
 }
