@@ -196,7 +196,7 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 2;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 
