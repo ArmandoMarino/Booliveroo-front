@@ -41,10 +41,11 @@ export default {
                 </div>
             </div>
         </div>
-
-        <router-link :to="{ name: 'home', params: { component: HomePage } }">
-            <button class="btn btn-secondary">Torna Indietro</button>
-        </router-link>
+        <div class="d-flex justify-content-end my-4">
+            <router-link :to="{ name: 'home', params: { component: HomePage } }">
+                <button class="btn btn-secondary">Torna Indietro</button>
+            </router-link>
+        </div>
 
 
     </div>
