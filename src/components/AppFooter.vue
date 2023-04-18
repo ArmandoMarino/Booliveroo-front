@@ -125,6 +125,7 @@ export default {
 
 #footer-food {
     background-color: #252A33;
+    height: 500px;
 
     a,
     h2 {
