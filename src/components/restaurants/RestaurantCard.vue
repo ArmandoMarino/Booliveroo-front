@@ -48,6 +48,11 @@ export default {
         </button>
 
         <!--* ROUETER TO SHOW PICK ALL CARD-->
+        <!-- cart flag -->
+        <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
+            class="i-cart">
+            <i class="primary-icon fa-solid fa-cart-flatbed"></i>
+        </div>
         <router-link :class="isDetail ? 'pe-none' : ''" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'shadow card h-100'">
@@ -60,8 +65,8 @@ export default {
                 <!-- TEXT -->
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
-                    <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
-                    "></div>
+                    <!-- <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
+                                                                                                                "></div> -->
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
@@ -177,24 +182,37 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
 
+.i-cart {
+    position: relative;
+
+    .primary-icon {
+        position: absolute;
+        right: -15px;
+        top: -15px;
+        z-index: 1;
+        font-size: 30px;
+        color: #0ea4af;
+    }
+}
+
 .shadow {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.cart-flag {
-    &:after {
-        content: "";
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 1px solid $secondary;
-        border-radius: 50%;
-        background-color: #00CCBC;
-        position: absolute;
-        right: -9px;
-        top: -9px;
-    }
-}
+// .cart-flag {
+//     &:after {
+//         content: "";
+//         display: inline-block;
+//         width: 20px;
+//         height: 20px;
+//         border: 1px solid $secondary;
+//         border-radius: 50%;
+//         background-color: #00CCBC;
+//         position: absolute;
+//         right: -9px;
+//         top: -9px;
+//     }
+// }
 
 .pointer-none {
     cursor: default;
