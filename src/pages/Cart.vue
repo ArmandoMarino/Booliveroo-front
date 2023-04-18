@@ -183,7 +183,7 @@ export default {
                                             <div class="col-12">
                                                 <div class="mb-3">
                                                     <input type="text" class="form-control" v-model="address" required>
-                                                    <div class="form-text text-white">Inserisci il indirizzo</div>
+                                                    <div class="form-text text-white">Inserisci il tuo indirizzo</div>
                                                 </div>
                                             </div>
 
