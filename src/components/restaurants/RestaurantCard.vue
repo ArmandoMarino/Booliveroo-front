@@ -50,7 +50,7 @@ export default {
         <!--* ROUETER TO SHOW PICK ALL CARD-->
         <router-link :class="isDetail ? 'pe-none' : ''" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
-            <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'card h-100'">
+            <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'shadow card h-100'">
                 <!-- IMAGE -->
                 <div class="pic-img">
                     <img :src="restaurant.banner" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
@@ -176,6 +176,10 @@ export default {
 
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
+
+.shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
 
 .cart-flag {
     &:after {
