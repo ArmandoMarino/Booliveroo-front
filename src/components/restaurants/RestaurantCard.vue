@@ -30,9 +30,16 @@ export default {
                 if (!acc[category]) {
                     acc[category] = [];
                 }
+                food.image = food.image.startsWith('http') ? food.image : 'http://127.0.0.1:8000/storage/' + food.image;
+                // Dario è bravo
                 acc[category].push(food);
                 return acc;
             }, {});
+        },
+        getResImage() {
+            let image = this.restaurant.banner;
+            image = image.startsWith('http') ? image : 'http://127.0.0.1:8000/storage/' + image;
+            return image;
         },
     }
 }
@@ -58,7 +65,7 @@ export default {
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'shadow card h-100'">
                 <!-- IMAGE -->
                 <div class="pic-img">
-                    <img :src="restaurant.banner" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
+                    <img :src="getResImage" :class="isDetail ? 'my-card-detail' : 'card-img-top col-lg-3 col-md-6 col-sm-10'
                     " :alt="restaurant.name">
                 </div>
 
@@ -66,7 +73,7 @@ export default {
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
                     <!-- <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
-                                                                                                                "></div> -->
+                                                                                                                                                                                                                    "></div> -->
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
@@ -155,6 +162,7 @@ export default {
                         <div class="p-2 card-food">
                             <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
                             <div class="text mb-3 d-flex">
+                                <!-- IMAGE FOOD CARD -->
                                 <div class="food-img">
                                     <img :src="food.image">
                                 </div>
