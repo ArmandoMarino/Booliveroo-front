@@ -105,13 +105,13 @@ export default {
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
-                                                    <div>
+                                                    <div v-if="!isOpenedUserForm && !isOpenedPayForm" class="disabled">
                                                         <CartAddRemove :product="item" />
                                                     </div>
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
-                                                        <h5 class="mb-0"><i class="bi bi-currency-dollar"></i>{{
+                                                        <h5 class="mb-0"><i class="fa-solid fa-euro me-2"></i>{{
                                                             item.price * item.quantity }}</h5>
                                                         <small v-if="item.hasDiscount"
                                                             class="text-muted text-decoration-line-through"><i
@@ -119,7 +119,9 @@ export default {
                                                     </div>
                                                     <a role="button" @click="removeItem(item)" class="ms-4"
                                                         style="color: #cecece;"><i
-                                                            class="fa-solid fa-trash-can text-danger h4"></i></a>
+                                                            class="fa-solid fa-trash-can text-danger h4"
+                                                            v-if="!isOpenedUserForm && !isOpenedPayForm"
+                                                            :class="disabled"></i></a>
                                                 </div>
                                             </div>
                                         </div>
