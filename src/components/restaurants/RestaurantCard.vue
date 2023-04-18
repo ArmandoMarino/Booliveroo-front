@@ -56,10 +56,10 @@ export default {
 
         <!--* ROUETER TO SHOW PICK ALL CARD-->
         <!-- cart flag
-                                                                                            <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
-                                                                                                class="i-cart">
-                                                                                                <i class="primary-icon fa-solid fa-cart-shopping"></i>
-                                                                                            </div> -->
+                                                                                                                                                                                                                    <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
+                                                                                                                                                                                                                        class="i-cart">
+                                                                                                                                                                                                                        <i class="primary-icon fa-solid fa-cart-shopping"></i>
+                                                                                                                                                                                                                    </div> -->
         <router-link :class="isDetail ? 'pe-none' : ''" :to="{ name: 'restaurant-detail', params: { id: restaurant.id } }">
 
             <div id="card-restaurant" :class="isDetail ? 'd-flex flex-column flex-md-row' : 'shadow card h-100'">
@@ -73,7 +73,7 @@ export default {
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
                     <!-- <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
-                                                                                                                                                                                                                                "></div> -->
+                                                                                                                                                                                                                                                                                                                                                        "></div> -->
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
@@ -153,11 +153,12 @@ export default {
         <!-- cart flag -->
         <div v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id"
             class="i-cart">
-            <router-link :to="{ name: 'cart', params: { component: Cart } }">
-                <div class="d-flex align-items-center primary-icon">
-                    <span>+{{ $store.state.cart.length }}</span>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </div>
+            <router-link :to="{ name: 'cart', params: { component: Cart } }" type="button"
+                class="btn btn-primary btn-sm position-relative primary-icon">
+                <i class="text-white fa-solid fa-cart-shopping"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    +{{ $store.state.cart.length }}
+                </span>
             </router-link>
         </div>
     </div>
@@ -200,16 +201,21 @@ export default {
 <style scoped lang="scss">
 @use '../../assets/scss/partials/variables' as*;
 
+.btn-primary {
+    --bs-btn-bg: #00CCBC;
+    --bs-btn-border-color: #00CCBC;
+    --bs-btn-hover-bg: #00717c;
+}
+
 .i-cart {
     position: relative;
 
     .primary-icon {
         position: absolute;
-        right: 10px;
-        bottom: 10px;
+        bottom: 437px;
+        right: -281px;
         z-index: 1;
         font-size: 18px;
-        color: $secondary;
     }
 }
 
