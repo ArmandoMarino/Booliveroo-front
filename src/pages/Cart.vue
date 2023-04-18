@@ -74,7 +74,7 @@ export default {
                                                     }}</strong>oggetti nel
                                                     tuo carrello.</span>
 
-                                                <span v-else>Hai un <strong class="me-2">{{
+                                                <span v-else>Hai <strong class="me-2">{{
                                                     $store.state.cart.length }}</strong>oggetto nel
                                                     tuo carrello.</span>
                                             </p>
