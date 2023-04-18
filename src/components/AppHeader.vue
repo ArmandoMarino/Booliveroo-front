@@ -197,7 +197,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1;
-    box-shadow: 2px 2px black;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
 
     .logo {
