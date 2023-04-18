@@ -93,11 +93,12 @@ export default {
 
 <template>
     <div class="d-flex align-items-center">
-        <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm me-2">
-            <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-trash-can text-danger'"></i>
+        <button type="button" @click="addOrRemove()"
+            class="d-flex justify-content-center align-items-center cart-btn btn btn-sm me-2">
+            <i :class="toAdd ? 'fa-solid fa-cart-plus me-2' : 'fa-solid fa-trash-can text-danger'"></i>
+            <span v-if="toAdd">Aggiungi</span>
         </button>
         <CartAddRemove v-if="!toAdd" :product="item" />
-        <span v-else>Aggiungi al carrello</span>
     </div>
 </template>
 
@@ -106,7 +107,7 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 .cart-btn {
-    width: 40px;
+    width: 100px;
     height: 38px;
 }
 

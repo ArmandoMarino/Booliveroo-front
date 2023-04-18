@@ -73,7 +73,7 @@ export default {
                 <div class="text-start" :class="isDetail ? 'card-body ms-4' : 'ms-3'">
                     <!-- cart flag -->
                     <!-- <div class="cart-flag" v-if="!isDetail && $store.state.cart.length !== 0 && restaurant.id == $store.state.cart[0].restaurant_id
-                                                                                                                                                                                                                    "></div> -->
+                                                                                                                                                                                                                            "></div> -->
 
                     <p :class="isDetail ? 'h1' : 'p my-1'"><strong>{{ restaurant.restaurant_name }}</strong></p>
                     <div :class="isDetail ? 'mb-3' : ''">
@@ -159,7 +159,7 @@ export default {
                 <p>{{ type }}</p>
                 <div class="row g-2">
                     <div class="pop-card text-left py-2 col-lg-3 col-md-6 col-sm-10" v-for="food in foods" :key="food.id">
-                        <div class="p-2 card-food">
+                        <div class="p-2 card-food h-100 d-flex flex-column justify-content-between">
                             <!-- <img :src="food.image" class="card-img-top col-lg-3 col-md-6 col-sm-10" :alt="food.name"> -->
                             <div class="text mb-3 d-flex">
                                 <!-- IMAGE FOOD CARD -->
