@@ -193,6 +193,12 @@ export default {
 
 header {
     background-color: black;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-shadow: 2px 2px black;
+
 
     .logo {
         width: 200px;
