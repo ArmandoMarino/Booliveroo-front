@@ -92,10 +92,13 @@ export default {
 </script>
 
 <template>
-    <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm me-2">
-        <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-trash-can text-danger'"></i>
-    </button>
-    <CartAddRemove v-if="!toAdd" :product="item" />
+    <div class="d-flex align-items-center">
+        <button type="button" @click="addOrRemove()" class="cart-btn btn btn-sm me-2">
+            <i :class="toAdd ? 'fa-solid fa-cart-plus' : 'fa-solid fa-trash-can text-danger'"></i>
+        </button>
+        <CartAddRemove v-if="!toAdd" :product="item" />
+        <span v-else>Aggiungi al carrello</span>
+    </div>
 </template>
 
 
