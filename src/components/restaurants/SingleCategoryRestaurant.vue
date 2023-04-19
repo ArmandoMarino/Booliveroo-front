@@ -26,6 +26,12 @@ export default {
             </section>
             <section class="row new"></section>
             <section class="row top-rated"></section>
+
+            <div class="d-flex justify-content-start my-4">
+                <router-link :to="{ name: 'home', params: { component: HomePage } }">
+                    <button class="btn btn-secondary">Torna Indietro</button>
+                </router-link>
+            </div>
         </div>
     </div>
 </template>

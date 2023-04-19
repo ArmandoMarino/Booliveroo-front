@@ -32,7 +32,7 @@ export default {
             </div>
         </div>
 
-        <div class="d-flex justify-content-end my-4">
+        <div class="d-flex justify-content-start my-4">
             <router-link :to="{ name: 'home', params: { component: HomePage } }">
                 <button class="btn btn-secondary">Torna Indietro</button>
             </router-link>
