@@ -81,7 +81,8 @@ export default {
 
                                         </div>
 
-                                        <div v-if="!isOpenedUserForm && !isOpenedPayForm" class="disabled">
+                                        <div v-if="!isOpenedUserForm && !isOpenedPayForm && $store.state.cart.length > 0"
+                                            class="disabled">
                                             <button class="btn btn-sm btn-danger" @click="emptyCart()">Svuota
                                                 carrello</button>
                                         </div>
