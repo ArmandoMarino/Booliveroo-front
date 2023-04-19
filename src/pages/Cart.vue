@@ -111,8 +111,8 @@ export default {
                                                 </div>
                                                 <div class="d-flex flex-row align-items-center">
                                                     <div>
-                                                        <h5 class="mb-0"><i class="fa-solid fa-euro me-2"></i>{{
-                                                            item.price * item.quantity }}</h5>
+                                                        <h5 class="mb-0"><i class="fa-solid fa-euro me-2"></i>{{ (item.price
+                                                            * item.quantity).toFixed(2) }}</h5>
                                                         <small v-if="item.hasDiscount"
                                                             class="text-muted text-decoration-line-through"><i
                                                                 class="bi bi-currency-dollar"></i>{{ item.price }}</small>

@@ -11,7 +11,7 @@ export default createStore({
         state.cart = JSON.parse(localStorage.getItem("cart"));
       }
       if (localStorage.getItem("cartTotal")) {
-        state.cartTotal = parseFloat(localStorage.getItem("cartTotal"));
+        state.cartTotal = parseFloat(localStorage.getItem("cartTotal")).toFixed(2);
       }
       return true;
     },
@@ -20,15 +20,15 @@ export default createStore({
       payload.toAdd
         ? state.cart.push(payload.product)
         : (state.cart = state.cart.filter(function (obj) {
-            return obj.id !== payload.product.id;
-          }));
+          return obj.id !== payload.product.id;
+        }));
 
       //calculating the total
       state.cartTotal = state.cart.reduce((accumulator, object) => {
         return (
           parseFloat(accumulator) + parseFloat(object.price * object.quantity)
         );
-      }, 0);
+      }, 0).toFixed(2);
 
       //saving in web storage
       localStorage.setItem("cartTotal", JSON.stringify(state.cartTotal));
@@ -43,7 +43,7 @@ export default createStore({
       state.cartTotal = state.cart.reduce((accumulator, object) => {
         return (
           parseFloat(accumulator) + parseFloat(object.price * object.quantity)
-        );
+        ).toFixed(2);
       }, 0);
 
       //saving in web storage
