@@ -44,7 +44,7 @@ export default {
 
         <div class="mb-3">
             <label for="message" class="form-label">Contenuto del messaggio<sup class="text-danger">*</sup></label>
-            <textarea class="form-control" name="message" id="message" rows="5" v-model.trim="form.message"></textarea>
+            <textarea class="form-control" name="message" id="message" rows="5" v-model.trim="form.text"></textarea>
         </div>
 
         <div class="d-flex justify-content-between align-items-center my-3">
@@ -55,7 +55,7 @@ export default {
     </form>
     <!-- <div class="mb-5 d-flex justify-content-end">
 
-                                        </div> -->
+                                            </div> -->
 </template>
 
 <style scoped lang="scss">
