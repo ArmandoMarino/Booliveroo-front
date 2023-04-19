@@ -13,7 +13,7 @@ const members = [
     name: "Armando Marino",
     role: "Full Stack Web Developer",
     profile_pic:
-      "https://media.licdn.com/dms/image/D4D03AQHSYm2Qlgl1cA/profile-displayphoto-shrink_800_800/0/1679768844313?e=2147483647&v=beta&t=chgZAPmlUk-Xd3H_SGnaqPAXmO0jnHnrH7Ahhph17TI",
+      "https://cdn.discordapp.com/attachments/1090194914433839158/1098190843350884492/armando.jpeg",
     git_hub_link: "https://github.com/ArmandoMarino",
     linkedin_link: "https://www.linkedin.com/in/armando-marino-943b2a237/",
     instagram_link: "",
