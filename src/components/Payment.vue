@@ -36,6 +36,7 @@ export default {
                         if (err) {
                             console.error(err);
                             console.log('sono qui');
+                            this.isLoading = false;
                             return;
                         }
 
