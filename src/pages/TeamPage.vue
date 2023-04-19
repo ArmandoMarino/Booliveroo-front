@@ -31,6 +31,12 @@ export default {
                 </div>
             </div>
         </div>
+
+        <div class="d-flex justify-content-start my-4">
+            <router-link :to="{ name: 'home', params: { component: HomePage } }">
+                <button class="btn btn-secondary">Torna Indietro</button>
+            </router-link>
+        </div>
     </div>
 </template>
     
@@ -38,9 +44,7 @@ export default {
 @use '../assets/scss/partials/variables' as *;
 
 // GENERAL
-.shadow {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
+
 
 .member-card {
     height: 300px;
@@ -88,10 +92,12 @@ export default {
         .member-socials {
             display: flex;
             column-gap: 8px;
+            cursor: pointer;
+
 
 
             .fa-brands {
-                cursor: pointer;
+
                 background-color: white;
                 color: $primary;
                 width: 30px;
@@ -117,16 +123,7 @@ export default {
 
 }
 
-.member-card::after {
-    position: absolute;
-    top: 0;
-    content: "";
-    width: 100%;
-    height: 100%;
 
-    transition: 500ms ease all;
-
-}
 
 .member-card:hover .member-card-content {
     transform: translateY(0);
