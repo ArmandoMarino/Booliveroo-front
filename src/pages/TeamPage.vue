@@ -22,8 +22,8 @@ export default {
                         <p class="member-card-sub-title my-2">{{ member.role }}</p>
                         <!-- SOCIALS -->
                         <div class="member-socials">
-                            <a :href="`${member.git_hub_link}`"><i class="fa-brands fa-github"></i></a>
-                            <a :href="`${member.linkedin_link}`"><i class="fa-brands fa-linkedin"></i></a>
+                            <a :href="`${member.git_hub_link}`" target="_blank"><i class="fa-brands fa-github"></i></a>
+                            <a :href="`${member.linkedin_link}`" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                             <!-- <a :href="`${member.git_hub_link}`"><i class="fa-brands fa-instagram"></i></a> -->
                         </div>
 

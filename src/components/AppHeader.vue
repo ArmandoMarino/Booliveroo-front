@@ -144,6 +144,15 @@ export default {
                                                             class="btn btn-link text-decoration-none btn-menu"><span><i
                                                                     class="fa-solid fa-circle-question pe-3 text-secondary"></i>FAQs</span></button>
                                                     </router-link>
+
+                                                    <router-link
+                                                        :to="{ name: 'team_page', params: { component: TeamPage } }"
+                                                        class="pb-1">
+                                                        <button data-bs-toggle="offcanvas"
+                                                            class="btn btn-link text-decoration-none btn-menu"><span><i
+                                                                    class="fa-solid fa-people-group pe-2 text-secondary"></i>Team
+                                                                di Booliveroo</span></button>
+                                                    </router-link>
                                                 </div>
 
                                             </div>
