@@ -27,6 +27,7 @@ export default {
 }
 
 .img-work {
+    // Alessà mannaggia a te 
     // width: 900px;
     // height: 900px;
     margin: 0 auto;
