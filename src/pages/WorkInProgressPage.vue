@@ -13,8 +13,8 @@ export default {
                     Torna Indietro
                 </button>
             </div>
-            <div class="img-work">
-                <img src="../assets/img/comingsoon-logo.png" alt="work in progress">
+            <div class="img-work text-center">
+                <img class="img-fluid" src="../assets/img/comingsoon-logo.png" alt="work in progress">
             </div>
 
         </div>
@@ -27,7 +27,7 @@ export default {
 }
 
 .img-work {
-    width: 900px;
+    // width: 900px;
     // height: 900px;
     margin: 0 auto;
     padding-top: 5rem;
